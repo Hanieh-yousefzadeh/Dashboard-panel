@@ -24,7 +24,7 @@ export const navigation = {
         href: "/panel/orders",
         icon: ShoppingCart,
     }, {
-        title: "Reposts",
+        title: "Reports",
         href: "/panel/reports",
         icon: BarChart3,
     }
