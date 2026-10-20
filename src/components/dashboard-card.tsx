@@ -14,7 +14,7 @@ type Card = {
     icon: keyof typeof icons
 };
 
-export default function DashboardCadr({ title, value, icon }: Card) {
+export default function DashboardCard({ title, value, icon }: Card) {
 
     const Icon = icons[icon]
 

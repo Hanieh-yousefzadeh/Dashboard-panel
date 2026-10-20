@@ -7,7 +7,7 @@ export const monthSales = [
   { month: "June", sales: 41 },
 ];
 
-export const dashboardUi = [
+export const dashboardCard = [
   {
     title: "Total Users",
     value: "1,280",
@@ -30,7 +30,7 @@ export const dashboardUi = [
   },
 ];
 
-export const statusOrders = [
+export const statusorders = [
   {
     id: 1001,
     customer: "Ali Rezai",
