@@ -1,6 +1,7 @@
 "use client"
 
 import { navigation } from "@/data/navigation"
+import { useState ,useEffect } from "react"
 import { stateType } from "@/lib/store"
 import { usePathname } from "next/navigation"
 import { useSelector } from "react-redux"
@@ -11,6 +12,16 @@ import Link from "next/link"
 export default function SideBar() {
     const pathName = usePathname()
     const user = useSelector((state: stateType) => state.auth.user)
+    const [mounted, setMounted] = useState(false);
+    
+        useEffect(() => {
+            setMounted(true);
+        }, []);
+    
+    
+        if (!mounted) {
+            return <p className="p-8">Loading...</p>;
+        }
 
     if (!user) {
         return null
