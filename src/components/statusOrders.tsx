@@ -1,6 +1,6 @@
 import {statusorders} from "@/data/mock-dashboard"
 
-export default function statusOrders(){
+export default function StatusOrders(){
 
     return (
     <section className="rounded-xl border bg-card p-5 shadow-sm">

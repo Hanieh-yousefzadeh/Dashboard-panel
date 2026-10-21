@@ -28,7 +28,7 @@ export const dashboardCard = [
     value: " $ 85.6",
     icon: "wallet",
   },
-];
+] as const;
 
 export const statusorders = [
   {

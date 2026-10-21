@@ -1,12 +1,15 @@
 "use client";
 
-import {  useSelector } from "react-redux";
-import { stateType} from "@/lib/store";
+import { useSelector } from "react-redux";
+import { stateType } from "@/lib/store";
 import { useState, useEffect } from "react";
+import AdminDashboard from "@/components/admin-dashbord"
 
 export default function DashboardPage() {
     const user = useSelector((state: stateType) => state.auth.user)
-
+    if (!user) {
+        return null;
+    }
 
     const [mounted, setMounted] = useState(false);
 
@@ -18,13 +21,22 @@ export default function DashboardPage() {
     if (!mounted) {
         return <p className="p-8">Loading...</p>;
     }
+ if (user.role === "admin") {
+    return <AdminDashboard />;
+  }
 
+  if (user.role === "vendor") {
     return (
-        <main className="p-8">
-            <h1 className="text-2xl font-bold"> Dashboard </h1>
-            <p className="mt-4"> welcome {user?.name} </p>
-            <p> Role: {user?.role} </p>
-
-        </main>
+      <div>
+        <h1 className="text-2xl font-bold"> Seller Dashboard</h1>
+      </div>
     );
+  }
+
+  return (
+    <div>
+      <h1 className="text-2xl font-bold">User Dashboard</h1>
+     
+    </div>
+  );
 }
