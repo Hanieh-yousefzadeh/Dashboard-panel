@@ -43,22 +43,22 @@ export default function Theme() {
         <ActiveIcon />
       </DropdownMenuTrigger>
 
-      <DropdownMenuContent className="text-[#103362] dark:text-current">
+      <DropdownMenuContent className="dark:text-current mt-2">
         <DropdownMenuRadioGroup
           value={theme}
           onValueChange={(value) => setTheme(value)}
         >
-          <DropdownMenuRadioItem value="light">
+          <DropdownMenuRadioItem value="light"  className="focus:bg-[#F1EBFE] text-[#031381]">
             <SunMedium />
             Light
           </DropdownMenuRadioItem>
 
-          <DropdownMenuRadioItem value="dark">
+          <DropdownMenuRadioItem value="dark" className="focus:bg-[#F1EBFE] text-[#031381]">
             <Moon />
             Dark
           </DropdownMenuRadioItem>
 
-          <DropdownMenuRadioItem value="system">
+          <DropdownMenuRadioItem value="system" className="focus:bg-[#F1EBFE] text-[#031381]">
             <Monitor />
             System
           </DropdownMenuRadioItem>

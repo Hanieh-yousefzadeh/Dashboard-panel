@@ -1,5 +1,5 @@
 
-import { LayoutDashboard, Users, Store, Package, ShoppingCart, Heart, MapPin, MessageSquare, BarChart3, Boxes ,Layers} from "lucide-react";
+import { LayoutDashboard, Users, Store, Package, ShoppingCart, Heart, MapPin, MessageSquare, BarChart3, Boxes ,Layers ,ClipboardList} from "lucide-react";
 
 
 export const navigation = {
@@ -30,7 +30,7 @@ export const navigation = {
     }, {
         title: "Reports",
         href: "/panel/reports",
-        icon: BarChart3,
+        icon: ClipboardList,
     },{
     title: "Comments",
     href: "/admin/comments",

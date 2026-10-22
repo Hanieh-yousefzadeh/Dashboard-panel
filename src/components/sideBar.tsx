@@ -30,7 +30,7 @@ export default function SideBar() {
 
     const menu = navigation[user.role]
     return (
-        <aside className=" flex h-153 w-64 shrink-0 flex-col border-r-2 border-[#7a3ffa1a] p-4  ">
+        <aside className=" flex h-153 w-64 shrink-0 flex-col border-r-2 border-[#7a3ffa2d] p-4  ">
             <div className="flex items-center pl-1 pb-8 gap-1">
                 <CircleUserRound className="text-[#5d16f76f] size-9" />
                 <h2 className=" font-bold">{user.role} Dashboard </h2>
