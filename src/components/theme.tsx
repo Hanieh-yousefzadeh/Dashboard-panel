@@ -39,7 +39,7 @@ export default function Theme() {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger>
+      <DropdownMenuTrigger className="cursor-pointer">
         <ActiveIcon />
       </DropdownMenuTrigger>
 

@@ -35,10 +35,10 @@ export default function Header() {
         <header className="flex justify-between pr-7 pl-4 border-b-2 border-[#7a3ffa2d]">
             <img src="/Logo.png" className="h-20" />
             <div className="flex items-center gap-3">
-               <div className=" border-2 border-[#7a3ffa2d] flex items-center rounded-full p-1">
+               <div className=" border-2 border-[#7a3ffa2d] flex items-center rounded-full p-1 cursor-pointer">
                 <Theme/>
                </div>
-                <button onClick={handleLougout} className="flex items-center gap-1"><LogOut  className="size-5.5"/> logout</button>
+                <button onClick={handleLougout} className="flex items-center gap-1 cursor-pointer"><LogOut  className="size-5.5"/> logout</button>
             </div>
         </header>
     )

@@ -7,16 +7,16 @@ export default function StatusOrders(){
       <h2 className="mb-7 text-lg font-semibold">Latest Orders</h2>
 
       <div className="">
-        <table className="w-full text-right text-sm">
+        <table className="w-full text-right text-sm ">
           <thead>
-            <tr className="border-b border-[#9468fc47]">
-              <th className="pb-3 text-center font-medium w-30">Order Number</th>
+            <tr className="border-b border-[#9468fc47] font-semibold text-[#7B29FB]">
+              <th className="pb-3 text-center w-30">Order Number</th>
 
-              <th className="pb-3 text-center pl-4 font-medium">Customer</th>
+              <th className="pb-3 text-center pl-4">Customer</th>
 
-              <th className="pb-3 text-center pl-4 font-medium">Amount</th>
+              <th className="pb-3 text-center pl-4">Amount</th>
 
-              <th className="pb-3 text-center pl-4 font-medium"> Status</th>
+              <th className="pb-3 text-center pl-4"> Status</th>
             </tr>
           </thead>
 

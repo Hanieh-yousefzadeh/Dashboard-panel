@@ -20,7 +20,7 @@ export default function SalesChart() {
           Sales Statistics
         </h2>
 
-        <p className="mt-1 text-sm text-muted-foreground">
+        <p className="mt-1 text-sm text-[#7B29FB]">
           Monthly Sales
         </p>
       </div>

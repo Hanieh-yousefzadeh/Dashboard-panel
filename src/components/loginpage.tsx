@@ -9,8 +9,6 @@ import {LockKeyhole ,Mail} from "lucide-react"
 import { useDispatch } from "react-redux"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import Image from "next/image"
 import { Card, CardHeader, CardDescription, CardContent, CardTitle } from "@/components/ui/card"
 
 
