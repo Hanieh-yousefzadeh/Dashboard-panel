@@ -5,18 +5,19 @@ import { dispatchType, stateType } from "@/lib/store"
 import { login } from "@/redux/authSlice"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
-import { useDispatch, useSelector } from "react-redux"
+import {LockKeyhole ,Mail} from "lucide-react"
+import { useDispatch } from "react-redux"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import {Card,CardHeader,CardDescription,CardContent, CardTitle } from "@/components/ui/card"
+import Image from "next/image"
+import { Card, CardHeader, CardDescription, CardContent, CardTitle } from "@/components/ui/card"
 
 
 
 
 export default function LoginPage() {
     const router = useRouter()
-    const user = useSelector((state: stateType) => state.auth.user)
     const dispatch = useDispatch<dispatchType>()
 
     const [email, setEmail] = useState("")
@@ -47,47 +48,59 @@ export default function LoginPage() {
 
     return (
 
-        <main className="flex pt-40 items-center justify-center bg-background p-4">
-            <Card className="w-full max-w-md p-7">
-                <CardHeader className="text-center pb-9">
-                    <CardTitle className="text-2xl"> Login to your account</CardTitle>
-                    <CardDescription> Enter your email and password  </CardDescription>
-                </CardHeader>
+        <main className="flex w-full">
 
-                <CardContent>
-                    <form onSubmit={handleSubmit} className="flex flex-col gap-8" >
-                        <div className="grid gap-2">
-                            <Label htmlFor="email">Email</Label>
-                            <Input
-                                id="email"
-                                type="email"
-                                placeholder="m@example.com"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                                required
-                            />
-                        </div>
+            <div className="flex flex-col md:flex-row lg:w-[36%] sm:w-[45%]  w-full items-center justify-center bg-white md:p-10">
+                <img src="/Logo.png" className="md:hidden  h-26" />
+                <Card className="w-full max-w-md md:p-7 px-5 xl:pt-30  border-0 ring-0 shadow-none xl:h-130">
+                    <CardHeader className="text-center pb-9">
+                        <CardTitle className="lg:text-3xl text-xl font-extrabold md:text-start pb-3">   Welcome Back 👋</CardTitle>
+                        <CardDescription className="md:text-start lg:w-70 md:text-base text-sm">Login to your acount and continue your shopping journey with Ecomrace. </CardDescription>
+                    </CardHeader>
 
-                        <div className="grid gap-2">
-                            <Label htmlFor="password">Password</Label>
-                            <Input
-                                id="password"
-                                type="password"
-                                placeholder="Enter yor password"
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)}
-                                required
-                            />
-                        </div>
+                    <CardContent>
+                        <form onSubmit={handleSubmit} className="flex flex-col gap-5" >
+                            <div className="flex items-center  border rounded-lg px-3 py-1.5 w-full">
+                               <Mail className="text-gray-500" size={16}/>
+                                <Input
+                                    id="email"
+                                    type="email"
+                                    placeholder="Email Address"
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
+                                    required
+                                    className="border-0 bg-white file:bg-white disabled:bg-white focus-visible:ring-0 placeholder:text-sm"
+                                />
+                            </div>
 
-                        {error && (
-                            <p  className="text-sm text-red-600">{error}</p>
-                        )}
+                            <div className="flex items-center  border rounded-lg px-3 py-1.5 w-full">
+                               <LockKeyhole className="text-gray-500" size={16}/>
+                                <Input
+                                    id="password"
+                                    type="password"
+                                    placeholder="password"
+                                    value={password}
+                                    onChange={(e) => setPassword(e.target.value)}
+                                    required
+                                    className="border-0 file:bg-white disabled:bg-white focus-visible:ring-0"
+                                />
+                            </div>
 
-                        <Button type="submit" className="w-full"> login </Button>
-                    </form>
-                </CardContent>
-            </Card>
+                            {error && (
+                                <p className="text-sm text-red-600">{error}</p>
+                            )}
+
+                            <Button type="submit" className="w-full bg-[#7925FF] py-5.5 text-lg cursor-pointer hover:bg-[#05139E]"> login </Button>
+                        </form>
+                    </CardContent>
+                </Card>
+
+
+            </div>
+            <div className="w-[64%] hidden sm:block sm:h-auto">
+                <img src="/Experience.png" className="w-300 xl:h-173.5 h-140" />
+            </div>
+
         </main>
     )
 
