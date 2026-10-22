@@ -1,9 +1,9 @@
 
-import { LayoutDashboard, Users, Store, Package, ShoppingCart, Heart, MapPin, MessageSquare, BarChart3, Boxes } from "lucide-react";
+import { LayoutDashboard, Users, Store, Package, ShoppingCart, Heart, MapPin, MessageSquare, BarChart3, Boxes ,Layers} from "lucide-react";
 
 
 export const navigation = {
-    admin: [{
+    Admin: [{
         title: "Dashboard",
         href: "/panel",
         icon: LayoutDashboard,
@@ -20,6 +20,10 @@ export const navigation = {
         href: "/panel/products",
         icon: Package,
     }, {
+    title: "Categories",
+    href: "/admin/categories",
+    icon: Layers,
+  },{
         title: "Orders",
         href: "/panel/orders",
         icon: ShoppingCart,
@@ -27,10 +31,14 @@ export const navigation = {
         title: "Reports",
         href: "/panel/reports",
         icon: BarChart3,
-    }
+    },{
+    title: "Comments",
+    href: "/admin/comments",
+    icon: MessageSquare,
+  },
     ],
 
-    vendor: [{
+    Vendor: [{
         title: "Dashboard",
         href: "/panel",
         icon: LayoutDashboard,
@@ -53,7 +61,7 @@ export const navigation = {
     }
     ],
 
-    user: [{
+    User: [{
             title: "Dashboard",
             href: "/panel",
             icon: LayoutDashboard,

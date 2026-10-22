@@ -1,4 +1,4 @@
-export type Role = "admin" | "vendor" | "user"
+export type Role = "Admin" | "Vendor" | "User"
 
 export type MockUser = {
     id: number

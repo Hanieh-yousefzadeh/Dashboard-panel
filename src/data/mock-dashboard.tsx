@@ -33,7 +33,7 @@ export const dashboardCard = [
 export const statusorders = [
   {
     id: 1001,
-    customer: "Ali Rezai",
+    customer: "sahar nori",
     amount: 25.0,
     status: "Paid",
   },

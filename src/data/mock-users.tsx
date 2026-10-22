@@ -6,20 +6,20 @@ export const mockUsers : MockUser []= [
         name : "admin",
         email : "admin@example.com",
         password : "admin123",
-        role : "admin"
+        role : "Admin"
     },
     {
        id:2,
         name : "vendor",
         email : "vendor@example.com",
         password : "vendor123",
-        role : "vendor"  
+        role : "Vendor"  
     },
     {
         id:3,
         name : "user",
         email : "user@example.com",
         password : "user123",
-        role : "user"   
+        role : "User"   
     }
 ]

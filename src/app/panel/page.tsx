@@ -21,11 +21,11 @@ export default function DashboardPage() {
     if (!mounted) {
         return <p className="p-8">Loading...</p>;
     }
- if (user.role === "admin") {
-    return <AdminDashboard />;
+ if (user.role === "Admin") {
+    // return <AdminDashboard />;
   }
 
-  if (user.role === "vendor") {
+  if (user.role === "Vendor") {
     return (
       <div>
         <h1 className="text-2xl font-bold"> Seller Dashboard</h1>
@@ -35,7 +35,7 @@ export default function DashboardPage() {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold">User Dashboard</h1>
+      {/* <h1 className="text-2xl font-bold">User Dashboard</h1> */}
      
     </div>
   );
