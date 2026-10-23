@@ -1,4 +1,3 @@
-// src/data/mock-orders.ts
 
 export type OrderStatus =
     | "pending"

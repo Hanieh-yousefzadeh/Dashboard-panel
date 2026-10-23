@@ -210,7 +210,7 @@ export default function VendorsPage() {
             {mounted && (
                 <div className="rounded-md border-2 border-[#7a3ffa1a]">
                     <Table className="">
-                        <TableHeader className="h-12 text-base">
+                        <TableHeader className="h-12 text-base bg-[#f1ebfe6a]">
                             <TableRow>
                                 <TableHead className="pl-11 font-semibold text-[#5409cd]">ID</TableHead>
                                 <TableHead className=" font-semibold text-[#5409cd]">Name</TableHead>

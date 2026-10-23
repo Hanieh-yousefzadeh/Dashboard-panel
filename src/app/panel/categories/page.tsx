@@ -142,7 +142,7 @@ export default function categoryPage() {
             {mounted && (
                 <div className="rounded-md border-2 border-[#7a3ffa1a]">
                     <Table className="">
-                        <TableHeader className="h-12 text-base">
+                        <TableHeader className="h-12 text-base bg-[#f1ebfe6a]">
                             <TableRow>
                                 <TableHead className="pl-11 font-semibold text-[#5409cd]">ID</TableHead>
                                 <TableHead className=" font-semibold text-[#5409cd]">Category Name</TableHead>
@@ -153,7 +153,7 @@ export default function categoryPage() {
                             {categories.map((item) => (
                                 <TableRow key={item.id}>
                                     <TableCell className="pl-10">{item.id}</TableCell>
-                                    <TableCell>{item.name}</TableCell>
+                                    <TableCell>  {item.name}</TableCell>
                                     <TableCell className="flex items-center justify-center">
                                         <button onClick={() => handleEditClick(item)} className="text-[#6e2dfab3] cursor-pointer ">
                                             <PencilSparkles className=" size-5" />

@@ -167,7 +167,7 @@ export default function ProductsPage() {
             {mounted && (
                 <div className="rounded-md border-2 border-[#7a3ffa1a]">
                     <Table>
-                        <TableHeader className="h-15 text-base">
+                        <TableHeader className="h-15 text-base bg-[#f1ebfe6a]">
                             <TableRow>
                                 <TableHead className="pl-8 font-semibold text-[#5409cd]"> ID </TableHead>
                                 <TableHead className="font-semibold text-[#5409cd]">  Product </TableHead>
