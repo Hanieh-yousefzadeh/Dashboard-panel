@@ -3,6 +3,7 @@ import authReducer from "@/redux/authSlice"
 import customersReducer from "@/redux/customersSlice"
 import vendorReducer from "@/redux/vendorSlice"
 import productReducer from "@/redux/productSlice"
+import categoryReducer from "@/redux/categorySlice"
 
 
 export const Store = configureStore({
@@ -10,7 +11,8 @@ export const Store = configureStore({
     auth: authReducer,
     customers: customersReducer,
     vendors: vendorReducer,
-    products: productReducer
+    products: productReducer,
+    categories : categoryReducer
   }
 })
 
