@@ -1,12 +1,11 @@
 "use client"
 
-import { mockCustomers } from "@/data/mock-customers"
 import { useDispatch, useSelector } from "react-redux"
 import type { stateType, dispatchType } from "@/lib/store"
 import { addCustomer, editeCustomer, deletecustomer } from "@/redux/customersSlice"
 import type { Customer } from "@/data/mock-customers"
 import { PencilSparkles, Trash } from "lucide-react"
-import { useState } from "react"
+import { useState ,useEffect } from "react"
 import { Plus } from "lucide-react"
 
 import {
@@ -30,6 +29,12 @@ import { Label } from "@/components/ui/label"
 import { Button } from "@/components/ui/button"
 
 export default function UsersPage() {
+
+    const [mounted, setMounted] = useState(false)
+
+    useEffect(() => {
+        setMounted(true)
+    }, [])
 
     const dispatch = useDispatch<dispatchType>()
 
