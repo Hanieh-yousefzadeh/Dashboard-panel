@@ -103,7 +103,10 @@ export default function ProductsPage() {
     return (
         <div className="p-5">
             <div className="pb-12 flex items-center justify-between">
-                <h1 className="text-2xl font-bold">Products Management </h1>
+                <div className="flex flex-col gap-3">
+                    <h1 className="text-2xl font-bold">Products Management </h1>
+                    <p className="text-sm text-[#7B29FB]"> Total Products: ({products.length}) </p>
+                </div>
                 <Dialog open={open} onOpenChange={setOpen}>
                     <DialogTrigger render={<Button className="text-base bg-[#7a3ffacb] py-4.5 pr-3.5 hover:bg-[#5409cd] cursor-pointer">
                         <Plus strokeWidth={3} /> Add Product </Button>} />

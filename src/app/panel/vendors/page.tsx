@@ -97,7 +97,10 @@ export default function VendorsPage() {
     return (
         <div className="p-5 w-7xl">
             <div className="flex justify-between pb-12">
-                <p className="text-2xl font-bold"> Vendors Management</p>
+                <div className="flex flex-col gap-3">
+                    <h1 className="text-2xl font-bold"> Vendors Management </h1>
+                    <p className="text-sm text-[#7B29FB]"> Total Vendors: ({vendors.length}) </p>
+                </div>
                 <Dialog open={open} onOpenChange={setOpen}>
                     <DialogTrigger render={<Button className="text-base bg-[#7a3ffacb] py-4.5 pr-3.5 hover:bg-[#5409cd] cursor-pointer"><Plus strokeWidth={3} /> Add Vendor</Button>} />
 
@@ -183,7 +186,7 @@ export default function VendorsPage() {
                                     value={editEmail}
                                     onChange={(e) => setEditEmail(e.target.value)}
                                     required
-                                     className="border-[#7a3ffa1a] text-[#4104a2] placeholder:text-[#6315e16e] focus-visible:ring-0"
+                                    className="border-[#7a3ffa1a] text-[#4104a2] placeholder:text-[#6315e16e] focus-visible:ring-0"
                                 />
                             </div>
 
@@ -194,7 +197,7 @@ export default function VendorsPage() {
                                     value={editAddress}
                                     onChange={(e) => setEditAddress(e.target.value)}
                                     required
-                                     className="border-[#7a3ffa1a] text-[#4104a2] placeholder:text-[#6315e16e] focus-visible:ring-0"
+                                    className="border-[#7a3ffa1a] text-[#4104a2] placeholder:text-[#6315e16e] focus-visible:ring-0"
                                 />
                             </div>
 

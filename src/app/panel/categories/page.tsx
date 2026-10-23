@@ -79,7 +79,10 @@ export default function categoryPage() {
     return (
         <div className="p-5 w-7xl">
             <div className="flex justify-between pb-12">
-                <p className="text-2xl font-bold"> Categories Management</p>
+                <div className="flex flex-col gap-3">
+                    <p className="text-2xl font-bold"> Categories Management</p>
+                    <p className="text-sm text-[#7B29FB]"> Total Categories: ({categories.length}) </p>
+                </div>
                 <Dialog open={open} onOpenChange={setOpen}>
                     <DialogTrigger render={<Button className="text-base bg-[#7a3ffacb] py-4.5 pr-3.5 hover:bg-[#5409cd] cursor-pointer"><Plus strokeWidth={3} />  Add Category</Button>} />
 
@@ -123,9 +126,9 @@ export default function categoryPage() {
                                 <Input
                                     id="edit-category-name"
                                     value={editingCategory?.name}
-                                     onChange={(e) =>setEditingCategory((prev) => prev ? {...prev, name: e.target.value }: null
+                                    onChange={(e) => setEditingCategory((prev) => prev ? { ...prev, name: e.target.value } : null
                                     )
-                                }
+                                    }
                                     required
                                     className="border-[#7a3ffa1a] text-[#4104a2] placeholder:text-[#6315e16e] focus-visible:ring-0"
                                 />
@@ -143,7 +146,7 @@ export default function categoryPage() {
                             <TableRow>
                                 <TableHead className="pl-11 font-semibold text-[#5409cd]">ID</TableHead>
                                 <TableHead className=" font-semibold text-[#5409cd]">Category Name</TableHead>
-                                 <TableHead className=" font-semibold text-[#5409cd] text-center">Actions</TableHead>
+                                <TableHead className=" font-semibold text-[#5409cd] text-center">Actions</TableHead>
                             </TableRow>
                         </TableHeader>
                         <TableBody >
@@ -152,10 +155,10 @@ export default function categoryPage() {
                                     <TableCell className="pl-10">{item.id}</TableCell>
                                     <TableCell>{item.name}</TableCell>
                                     <TableCell className="flex items-center justify-center">
-                                        <button  onClick={() => handleEditClick(item)} className="text-[#6e2dfab3] cursor-pointer ">
+                                        <button onClick={() => handleEditClick(item)} className="text-[#6e2dfab3] cursor-pointer ">
                                             <PencilSparkles className=" size-5" />
                                         </button>
-                                        <button   onClick={() => handleDeleteCategory(item.id)} className="ml-3 text-red-600 cursor-pointer">
+                                        <button onClick={() => handleDeleteCategory(item.id)} className="ml-3 text-red-600 cursor-pointer">
                                             <Trash className="size-5" />
                                         </button>
                                     </TableCell>
