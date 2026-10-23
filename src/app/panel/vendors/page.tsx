@@ -89,7 +89,6 @@ export default function VendorsPage() {
             address: editAddress
         })
         )
-
         setEditingVendor(null)
     }
     function handleDeleteVendor(id: number) {
@@ -164,7 +163,6 @@ export default function VendorsPage() {
                         <DialogHeader>
                             <DialogTitle className="text-[#5409cd] font-bold"> Edit Vendor </DialogTitle>
                         </DialogHeader>
-
                         <form onSubmit={handleEditSubmit} className="flex flex-col gap-5 pt-5">
                             <div className="flex flex-col gap-2">
                                 <Label htmlFor="editName">Name</Label>
@@ -173,7 +171,7 @@ export default function VendorsPage() {
                                     value={editName}
                                     onChange={(e) => setEditName(e.target.value)}
                                     required
-                                    className="text-[#4104a2]"
+                                    className="border-[#7a3ffa1a] text-[#4104a2] placeholder:text-[#6315e16e] focus-visible:ring-0"
                                 />
                             </div>
 
@@ -185,7 +183,7 @@ export default function VendorsPage() {
                                     value={editEmail}
                                     onChange={(e) => setEditEmail(e.target.value)}
                                     required
-                                    className="text-[#4104a2] "
+                                     className="border-[#7a3ffa1a] text-[#4104a2] placeholder:text-[#6315e16e] focus-visible:ring-0"
                                 />
                             </div>
 
@@ -196,19 +194,15 @@ export default function VendorsPage() {
                                     value={editAddress}
                                     onChange={(e) => setEditAddress(e.target.value)}
                                     required
-                                    className="text-[#4104a2] "
+                                     className="border-[#7a3ffa1a] text-[#4104a2] placeholder:text-[#6315e16e] focus-visible:ring-0"
                                 />
                             </div>
 
-                            <Button type="submit" className="w-full py-5 bg-[#7a3ffacb] hover:bg-[#5409cd]" >
-                                Save Changes
-                            </Button>
+                            <Button type="submit" className="w-full py-5 bg-[#7a3ffacb] hover:bg-[#5409cd]" > Save Changes  </Button>
                         </form>
                     </DialogContent>
                 </Dialog>
             </div>
-
-
 
             {mounted && (
                 <div className="rounded-md border-2 border-[#7a3ffa1a]">
@@ -222,7 +216,6 @@ export default function VendorsPage() {
                                 <TableHead className=" font-semibold text-[#4e07c2] text-center">Actions</TableHead>
                             </TableRow>
                         </TableHeader>
-
                         <TableBody >
                             {vendors.map((vendor) => (
                                 <TableRow key={vendor.id}>
@@ -230,7 +223,6 @@ export default function VendorsPage() {
                                     <TableCell>{vendor.name}</TableCell>
                                     <TableCell>{vendor.email}</TableCell>
                                     <TableCell>{vendor.address}</TableCell>
-
                                     <TableCell className="flex items-center justify-center">
                                         <button onClick={() => handleEditClick(vendor)} className="text-[#6e2dfab3] cursor-pointer ">
                                             <PencilSparkles className=" size-5" />

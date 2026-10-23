@@ -6,6 +6,7 @@ import AuthStorage from "@/lib/authStorage";
 import { ThemeProvider } from "@/components/themeprovider";
 import CustomersStorage from "@/lib/customerStorage";
 import VendorsStorage from "@/lib/vendorStorage"
+import ProductStorage from "@/lib/productStorage"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,6 +36,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             <AuthStorage />
             <CustomersStorage/>
             <VendorsStorage/>
+            <ProductStorage/>
             {children}
           </ThemeProvider>
         </StoreProvider>
