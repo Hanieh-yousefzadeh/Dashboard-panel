@@ -27,11 +27,12 @@ export const navigation = {
         title: "Orders",
         href: "/panel/orders",
         icon: ShoppingCart,
-    },{
-    title: "Comments",
-    href: "/panel/comments",
-    icon: MessageSquare,
-  },
+    },
+//     {
+//     title: "Comments",
+//     href: "/panel/comments",
+//     icon: MessageSquare,
+//   },
     ],
 
     Vendor: [{
