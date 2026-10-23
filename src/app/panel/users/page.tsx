@@ -5,7 +5,7 @@ import type { stateType, dispatchType } from "@/lib/store"
 import { addCustomer, editeCustomer, deletecustomer } from "@/redux/customersSlice"
 import type { Customer } from "@/data/mock-customers"
 import { PencilSparkles, Trash } from "lucide-react"
-import { useState ,useEffect } from "react"
+import { useState, useEffect } from "react"
 import { Plus } from "lucide-react"
 
 import {
@@ -182,39 +182,41 @@ export default function UsersPage() {
 
 
 
-            <div className="rounded-md border-2 border-[#7a3ffa1a]">
-                <Table className="">
-                    <TableHeader className="h-12 text-base">
-                        <TableRow>
-                            <TableHead className="pl-11 font-semibold text-[#5409cd]">ID</TableHead>
-                            <TableHead className=" font-semibold text-[#5409cd]">Name</TableHead>
-                            <TableHead className=" font-semibold text-[#5409cd]">Email</TableHead>
-                            <TableHead className=" font-semibold text-[#5409cd]">Created</TableHead>
-                            <TableHead className=" font-semibold text-[#4e07c2] text-center">Actions</TableHead>
-                        </TableRow>
-                    </TableHeader>
-
-                    <TableBody >
-                        {customers.map((customer) => (
-                            <TableRow key={customer.id}>
-                                <TableCell className="pl-10">{customer.id}</TableCell>
-                                <TableCell>{customer.name}</TableCell>
-                                <TableCell>{customer.email}</TableCell>
-                                <TableCell>{customer.created}</TableCell>
-
-                                <TableCell className="flex items-center justify-center">
-                                    <button onClick={() => handleEditClick(customer)} className="text-[#6e2dfab3] cursor-pointer ">
-                                        <PencilSparkles className=" size-5" />
-                                    </button>
-                                    <button onClick={() => handleDeleteCustomer(customer.id)} className="ml-3 text-red-600 cursor-pointer">
-                                        <Trash className="size-5" />
-                                    </button>
-                                </TableCell>
+            {mounted && (
+                <div className="rounded-md border-2 border-[#7a3ffa1a]">
+                    <Table className="">
+                        <TableHeader className="h-12 text-base">
+                            <TableRow>
+                                <TableHead className="pl-11 font-semibold text-[#5409cd]">ID</TableHead>
+                                <TableHead className=" font-semibold text-[#5409cd]">Name</TableHead>
+                                <TableHead className=" font-semibold text-[#5409cd]">Email</TableHead>
+                                <TableHead className=" font-semibold text-[#5409cd]">Created</TableHead>
+                                <TableHead className=" font-semibold text-[#4e07c2] text-center">Actions</TableHead>
                             </TableRow>
-                        ))}
-                    </TableBody>
-                </Table>
-            </div>
+                        </TableHeader>
+
+                        <TableBody >
+                            {customers.map((customer) => (
+                                <TableRow key={customer.id}>
+                                    <TableCell className="pl-10">{customer.id}</TableCell>
+                                    <TableCell>{customer.name}</TableCell>
+                                    <TableCell>{customer.email}</TableCell>
+                                    <TableCell>{customer.created}</TableCell>
+
+                                    <TableCell className="flex items-center justify-center">
+                                        <button onClick={() => handleEditClick(customer)} className="text-[#6e2dfab3] cursor-pointer ">
+                                            <PencilSparkles className=" size-5" />
+                                        </button>
+                                        <button onClick={() => handleDeleteCustomer(customer.id)} className="ml-3 text-red-600 cursor-pointer">
+                                            <Trash className="size-5" />
+                                        </button>
+                                    </TableCell>
+                                </TableRow>
+                            ))}
+                        </TableBody>
+                    </Table>
+                </div>
+            )}
         </div>
     )
 }
