@@ -5,26 +5,28 @@ import StatusOrders from "@/components/statusOrders";
 
 export default function AdminDashboard() {
   return (
-    <div className="space-y-6">
-      <div>
-        <h1 className="text-2xl font-bold">Management Dashboard</h1>
-        <p className="mt-2 text-sm "> Overview of the Store's Status </p>
-      </div>
+    <div className="w-315 pl-5 pt-6">
+      {/* <div>
+        <p className="mt-2 text-lg "> Overview of the Store's Status </p>
+      </div> */}
 
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
+
+      <div className="flex justify-between pb-5">
         {dashboardCard.map((stat) => (
           <DashboardCard
             key={stat.title}
             title={stat.title}
             value={stat.value}
             icon={stat.icon}
+            description={stat.description}
           />
         ))}
       </div>
+      <div className="flex justify-between gap-5 w-full">
+        <SalesChart />
+        <StatusOrders />
 
-      <SalesChart />
-
-      <StatusOrders />
+      </div>
     </div>
   );
 }

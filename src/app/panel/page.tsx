@@ -22,7 +22,7 @@ export default function DashboardPage() {
         return <p className="p-8">Loading...</p>;
     }
  if (user.role === "Admin") {
-    // return <AdminDashboard />;
+    return <AdminDashboard />;
   }
 
   if (user.role === "Vendor") {
@@ -35,7 +35,7 @@ export default function DashboardPage() {
 
   return (
     <div>
-      {/* <h1 className="text-2xl font-bold">User Dashboard</h1> */}
+      <h1 className="text-2xl font-bold">User Dashboard</h1>
      
     </div>
   );
