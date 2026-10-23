@@ -1,7 +1,7 @@
 "use client"
 
 import { useDispatch, useSelector } from "react-redux"
-import { dispatchType, stateType } from "@/lib/store"
+import type { dispatchType, stateType } from "@/lib/store"
 import { useEffect, useState } from "react"
 import {setCustomers} from "@/redux/customersSlice"
 
@@ -14,22 +14,22 @@ export default function CustomersStorage(){
     const dispatch = useDispatch<dispatchType>()
     const customers = useSelector((state :stateType) => state.customers.customers)
 
-    const [Loaded ,setLoaded] = useState(false)
+    const [loaded ,setLoaded] = useState(false)
 
 
     useEffect(()=>{
-        const seved = localStorage.getItem("customers")
-        if(seved){
-            dispatch(setCustomers(JSON.parse(seved)))
+        const saved = localStorage.getItem("customers")
+        if(saved){
+            dispatch(setCustomers(JSON.parse(saved)))
         }
         setLoaded(true)
     },[dispatch])
 
     useEffect(()=>{
-        if(!Loaded) return
+        if(!loaded) return
 
         localStorage.setItem("customers" , JSON.stringify(customers))
-    },[customers,Loaded])
+    },[customers,loaded])
 
     return null
 

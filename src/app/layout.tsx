@@ -4,7 +4,8 @@ import "./globals.css";
 import StoreProvider from "@/providers/StoreProvider";
 import AuthStorage from "@/lib/authStorage";
 import { ThemeProvider } from "@/components/themeprovider";
-import CustomersStorage from "@/components/customerStorage";
+import CustomersStorage from "@/lib/customerStorage";
+import VendorsStorage from "@/lib/vendorStorage"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,6 +34,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <ThemeProvider>
             <AuthStorage />
             <CustomersStorage/>
+            <VendorsStorage/>
             {children}
           </ThemeProvider>
         </StoreProvider>
