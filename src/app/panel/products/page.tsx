@@ -106,7 +106,7 @@ export default function ProductsPage() {
                 <h1 className="text-2xl font-bold">Products Management </h1>
                 <Dialog open={open} onOpenChange={setOpen}>
                     <DialogTrigger render={<Button className="text-base bg-[#7a3ffacb] py-4.5 pr-3.5 hover:bg-[#5409cd] cursor-pointer">
-                        <Plus strokeWidth={3}/> Add Product </Button>} />
+                        <Plus strokeWidth={3} /> Add Product </Button>} />
                     <DialogContent className="border-[#7a3ffa1a] text-[#5409cd]">
                         <DialogHeader>
                             <DialogTitle className="text-[#5409cd] font-bold">Add New Product</DialogTitle>
@@ -161,131 +161,133 @@ export default function ProductsPage() {
                     </DialogContent>
                 </Dialog>
             </div>
-            <div className="rounded-md border-2 border-[#7a3ffa1a]">
-                <Table>
-                    <TableHeader className="h-15 text-base">
-                        <TableRow>
-                            <TableHead className="pl-8 font-semibold text-[#5409cd]"> ID </TableHead>
-                            <TableHead className="font-semibold text-[#5409cd]">  Product </TableHead>
-                            <TableHead className="font-semibold text-[#5409cd]"> Category  </TableHead>
-                            <TableHead className="font-semibold text-[#5409cd]"> Price </TableHead>
-                            <TableHead className="font-semibold text-[#5409cd]"> Stock </TableHead>
-                            <TableHead className=" font-semibold text-[#5409cd]"> Actions </TableHead>
-                        </TableRow>
-                    </TableHeader>
-                    <TableBody>
-                        {products.map((product) => {
-                            const category = mockCategories.find((item) => item.id === product.categoryId)
-                            return (
-                                <TableRow key={product.id}>
-                                    <TableCell className="pl-8 pr-30">{product.id} </TableCell>
-                                    <TableCell>
-                                        <div className="flex items-center gap-3 min-w-40">
-                                            <Image src={product.image} alt={product.name} width={48} height={48}
-                                                className="size-12 shrink-0 rounded-md object-cover"/>
-                                            <span className="line-clamp-1 pr-25"> {product.name}</span>
-                                        </div>
-                                    </TableCell>
-                                    <TableCell className="pr-30"> {category?.name}</TableCell>
-                                    <TableCell className="pr-28">  ${product.price} </TableCell>
-                                    <TableCell className="pr-28"> {product.stock}</TableCell>
+            {mounted && (
+                <div className="rounded-md border-2 border-[#7a3ffa1a]">
+                    <Table>
+                        <TableHeader className="h-15 text-base">
+                            <TableRow>
+                                <TableHead className="pl-8 font-semibold text-[#5409cd]"> ID </TableHead>
+                                <TableHead className="font-semibold text-[#5409cd]">  Product </TableHead>
+                                <TableHead className="font-semibold text-[#5409cd]"> Category  </TableHead>
+                                <TableHead className="font-semibold text-[#5409cd]"> Price </TableHead>
+                                <TableHead className="font-semibold text-[#5409cd]"> Stock </TableHead>
+                                <TableHead className=" font-semibold text-[#5409cd]"> Actions </TableHead>
+                            </TableRow>
+                        </TableHeader>
+                        <TableBody>
+                            {products.map((product) => {
+                                const category = mockCategories.find((item) => item.id === product.categoryId)
+                                return (
+                                    <TableRow key={product.id}>
+                                        <TableCell className="pl-8 pr-30">{product.id} </TableCell>
+                                        <TableCell>
+                                            <div className="flex items-center gap-3 min-w-40">
+                                                <Image src={product.image} alt={product.name} width={48} height={48}
+                                                    className="size-12 shrink-0 rounded-md object-cover" />
+                                                <span className="line-clamp-1 pr-25"> {product.name}</span>
+                                            </div>
+                                        </TableCell>
+                                        <TableCell className="pr-30"> {category?.name}</TableCell>
+                                        <TableCell className="pr-28">  ${product.price} </TableCell>
+                                        <TableCell className="pr-28"> {product.stock}</TableCell>
 
-                                    <TableCell>
-                                        <div className="flex items-center justify-center gap-3 pr-8">
-                                            <Dialog open={editingProduct?.id === product.id}
-                                                onOpenChange={(isOpen) => { if (!isOpen) setEditingProduct(null) }}
-                                            >
-                                                <DialogTrigger render={
-                                                    <button type="button" className="cursor-pointer text-[#6e2dfab3]" onClick={() => handleEditClick(product)}>
-                                                        <PencilSparkles className="size-5" />
-                                                    </button>
-                                                }/>
-                                                <DialogContent className="border-[#7a3ffa1a] text-[#5409cd]">
-                                                    <DialogHeader>
-                                                        <DialogTitle className="text-[#5409cd] font-bold">Edit Product</DialogTitle>
-                                                    </DialogHeader>
+                                        <TableCell>
+                                            <div className="flex items-center justify-center gap-3 pr-8">
+                                                <Dialog open={editingProduct?.id === product.id}
+                                                    onOpenChange={(isOpen) => { if (!isOpen) setEditingProduct(null) }}
+                                                >
+                                                    <DialogTrigger render={
+                                                        <button type="button" className="cursor-pointer text-[#6e2dfab3]" onClick={() => handleEditClick(product)}>
+                                                            <PencilSparkles className="size-5" />
+                                                        </button>
+                                                    } />
+                                                    <DialogContent className="border-[#7a3ffa1a] text-[#5409cd]">
+                                                        <DialogHeader>
+                                                            <DialogTitle className="text-[#5409cd] font-bold">Edit Product</DialogTitle>
+                                                        </DialogHeader>
 
-                                                    <form onSubmit={handleEditSubmit} className="flex flex-col gap-5 pt-5">
-                                                        <div className="flex flex-col gap-2">
-                                                            <Label>Product Name</Label>
-                                                            <Input value={editForm.name}
-                                                                onChange={(e) => setEditForm({...editForm, name: e.target.value}) }
-                                                                required  className="border-[#7a3ffa1a] text-[#4104a2] placeholder:text-[#6315e16e] focus-visible:ring-0"
-                                                            />
-                                                        </div>
+                                                        <form onSubmit={handleEditSubmit} className="flex flex-col gap-5 pt-5">
+                                                            <div className="flex flex-col gap-2">
+                                                                <Label>Product Name</Label>
+                                                                <Input value={editForm.name}
+                                                                    onChange={(e) => setEditForm({ ...editForm, name: e.target.value })}
+                                                                    required className="border-[#7a3ffa1a] text-[#4104a2] placeholder:text-[#6315e16e] focus-visible:ring-0"
+                                                                />
+                                                            </div>
 
-                                                        <div className="flex flex-col gap-2">
-                                                            <Label>Image Path</Label>
-                                                            <Input value={editForm.image}
-                                                                onChange={(e) => setEditForm({ ...editForm, image: e.target.value })
-                                                                }
-                                                                required  className="border-[#7a3ffa1a] text-[#4104a2] placeholder:text-[#6315e16e] focus-visible:ring-0"
-                                                            />
-                                                        </div>
+                                                            <div className="flex flex-col gap-2">
+                                                                <Label>Image Path</Label>
+                                                                <Input value={editForm.image}
+                                                                    onChange={(e) => setEditForm({ ...editForm, image: e.target.value })
+                                                                    }
+                                                                    required className="border-[#7a3ffa1a] text-[#4104a2] placeholder:text-[#6315e16e] focus-visible:ring-0"
+                                                                />
+                                                            </div>
 
-                                                        <div className="flex flex-col gap-2">
-                                                            <Label>Category</Label>
-                                                            <select value={editForm.categoryId}
-                                                                onChange={(e) => setEditForm({
+                                                            <div className="flex flex-col gap-2">
+                                                                <Label>Category</Label>
+                                                                <select value={editForm.categoryId}
+                                                                    onChange={(e) => setEditForm({
                                                                         ...editForm,
                                                                         categoryId: e.target.value,
                                                                     })
-                                                                }
-                                                                required className="w-full rounded-md border bg-transparent p-2 text-sm"
-                                                            >
-                                                                <option value="">Select category</option>
-                                                                {mockCategories.map((category) => (
-                                                                    <option key={category.id}  value={category.id} >
-                                                                        {category.name}
-                                                                    </option>
-                                                                ))}
-                                                            </select>
-                                                        </div>
+                                                                    }
+                                                                    required className="w-full rounded-md border bg-transparent p-2 text-sm"
+                                                                >
+                                                                    <option value="">Select category</option>
+                                                                    {mockCategories.map((category) => (
+                                                                        <option key={category.id} value={category.id} >
+                                                                            {category.name}
+                                                                        </option>
+                                                                    ))}
+                                                                </select>
+                                                            </div>
 
-                                                        <div className="flex flex-col gap-2">
-                                                            <Label>Price</Label>
-                                                            <Input type="number" value={editForm.price}
-                                                                onChange={(e) => setEditForm({
+                                                            <div className="flex flex-col gap-2">
+                                                                <Label>Price</Label>
+                                                                <Input type="number" value={editForm.price}
+                                                                    onChange={(e) => setEditForm({
                                                                         ...editForm,
                                                                         price: e.target.value,
                                                                     })
-                                                                }
-                                                                required className="border-[#7a3ffa1a] text-[#4104a2] placeholder:text-[#6315e16e] focus-visible:ring-0"
-                                                            />
-                                                        </div>
+                                                                    }
+                                                                    required className="border-[#7a3ffa1a] text-[#4104a2] placeholder:text-[#6315e16e] focus-visible:ring-0"
+                                                                />
+                                                            </div>
 
-                                                        <div className="flex flex-col gap-2">
-                                                            <Label>Stock</Label>
-                                                            <Input type="number"  value={editForm.stock}
-                                                                onChange={(e) => setEditForm({
+                                                            <div className="flex flex-col gap-2">
+                                                                <Label>Stock</Label>
+                                                                <Input type="number" value={editForm.stock}
+                                                                    onChange={(e) => setEditForm({
                                                                         ...editForm,
                                                                         stock: e.target.value,
                                                                     })
-                                                                }
-                                                                required className="border-[#7a3ffa1a] text-[#4104a2] placeholder:text-[#6315e16e] focus-visible:ring-0"
-                                                            />
-                                                        </div>
-                                                        <Button type="submit" className="w-full py-5 bg-[#7a3ffacb] hover:bg-[#5409cd]"> Save Changes  </Button>
-                                                    </form>
-                                                </DialogContent>
-                                            </Dialog>
+                                                                    }
+                                                                    required className="border-[#7a3ffa1a] text-[#4104a2] placeholder:text-[#6315e16e] focus-visible:ring-0"
+                                                                />
+                                                            </div>
+                                                            <Button type="submit" className="w-full py-5 bg-[#7a3ffacb] hover:bg-[#5409cd]"> Save Changes  </Button>
+                                                        </form>
+                                                    </DialogContent>
+                                                </Dialog>
 
-                                            <button type="button" className="cursor-pointer text-red-600" onClick={() => handleDeleteProduct(product.id)} >
-                                                <Trash className="size-5" />
-                                            </button>
-                                        </div>
-                                    </TableCell>
+                                                <button type="button" className="cursor-pointer text-red-600" onClick={() => handleDeleteProduct(product.id)} >
+                                                    <Trash className="size-5" />
+                                                </button>
+                                            </div>
+                                        </TableCell>
+                                    </TableRow>
+                                )
+                            })}
+                            {products.length === 0 && (
+                                <TableRow>
+                                    <TableCell colSpan={6} className="py-8 text-center"> No products found.</TableCell>
                                 </TableRow>
-                            )
-                        })}
-                        {products.length === 0 && (
-                            <TableRow>
-                                <TableCell colSpan={6} className="py-8 text-center"> No products found.</TableCell>
-                            </TableRow>
-                        )}
-                    </TableBody>
-                </Table>
-            </div>
+                            )}
+                        </TableBody>
+                    </Table>
+                </div>
+            )}
         </div>
     )
 }

@@ -21,7 +21,7 @@ export const navigation = {
         icon: Package,
     }, {
     title: "Categories",
-    href: "/admin/categories",
+    href: "/panel/categories",
     icon: Layers,
   },{
         title: "Orders",
@@ -33,7 +33,7 @@ export const navigation = {
         icon: ClipboardList,
     },{
     title: "Comments",
-    href: "/admin/comments",
+    href: "/panel/comments",
     icon: MessageSquare,
   },
     ],
