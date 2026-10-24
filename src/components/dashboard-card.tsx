@@ -1,4 +1,4 @@
-import { Users, Package, ShoppingCart, Wallet ,MessageSquare ,Clock} from "lucide-react";
+import { Users, Package, ShoppingCart, Wallet, MessageSquare, Clock , Heart, MapPin } from "lucide-react";
 
 
 
@@ -7,8 +7,10 @@ const icons = {
     package: Package,
     "shopping-cart": ShoppingCart,
     wallet: Wallet,
-    "message-square" :MessageSquare,
-     clock: Clock,
+    "message-square": MessageSquare,
+    clock: Clock,
+    Heart,
+    MapPin,
 }
 type Card = {
     title: string
