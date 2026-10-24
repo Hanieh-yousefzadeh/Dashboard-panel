@@ -51,7 +51,7 @@ export default function VisitPage() {
                                     </div>
                                 </TableCell>
                                 <TableCell className="pr-20"> {product.views} </TableCell>
-                                <TableCell> {product.addedToWishlist}</TableCell>
+                                <TableCell className="pl-15"> {product.addedToWishlist}</TableCell>
                             </TableRow>
                         ))}
 

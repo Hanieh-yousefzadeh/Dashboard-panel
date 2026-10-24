@@ -1,10 +1,10 @@
 export const vendorMonthSales = [
   { month: "January", sales: 10 },
-  { month: "February", sales: 28 },
-  { month: "March", sales: 15 },
-  { month: "April", sales: 38 },
-  { month: "May", sales: 29 },
-  { month: "June", sales: 49 }
+  { month: "February", sales: 22 },
+  { month: "March", sales: 20 },
+  { month: "April", sales: 35 },
+  { month: "May", sales: 43 },
+  { month: "June", sales: 60 }
 ];
 
 export const vendorDashboardCard = [

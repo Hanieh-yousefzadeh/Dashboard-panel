@@ -200,7 +200,7 @@ export default function UsersPage() {
 
                         <TableBody >
                             {customers.map((customer) => (
-                                <TableRow key={customer.id}>
+                                <TableRow key={customer.id} className="h-14">
                                     <TableCell className="pl-10">{customer.id}</TableCell>
                                     <TableCell>{customer.name}</TableCell>
                                     <TableCell>{customer.email}</TableCell>

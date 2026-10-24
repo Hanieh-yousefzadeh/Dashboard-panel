@@ -221,7 +221,7 @@ export default function VendorsPage() {
                         </TableHeader>
                         <TableBody >
                             {vendors.map((vendor) => (
-                                <TableRow key={vendor.id}>
+                                <TableRow key={vendor.id} className="h-14">
                                     <TableCell className="pl-10">{vendor.id}</TableCell>
                                     <TableCell>{vendor.name}</TableCell>
                                     <TableCell>{vendor.email}</TableCell>

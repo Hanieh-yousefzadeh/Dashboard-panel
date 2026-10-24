@@ -151,7 +151,7 @@ export default function categoryPage() {
                         </TableHeader>
                         <TableBody >
                             {categories.map((item) => (
-                                <TableRow key={item.id}>
+                                <TableRow key={item.id} className="h-15">
                                     <TableCell className="pl-10">{item.id}</TableCell>
                                     <TableCell>  {item.name}</TableCell>
                                     <TableCell className="flex items-center justify-center">
