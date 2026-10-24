@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { stateType } from "@/lib/store";
 import { useState, useEffect } from "react";
 import AdminDashboard from "@/components/admin-dashbord"
+import VendorDashboard from "@/components/vendorDshbord";
 
 export default function DashboardPage() {
     const user = useSelector((state: stateType) => state.auth.user)
@@ -27,9 +28,7 @@ export default function DashboardPage() {
 
   if (user.role === "Vendor") {
     return (
-      <div>
-        <h1 className="text-2xl font-bold"> Seller Dashboard</h1>
-      </div>
+      <VendorDashboard/>
     );
   }
 
