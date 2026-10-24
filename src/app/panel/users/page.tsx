@@ -95,7 +95,7 @@ export default function UsersPage() {
             <div className="flex justify-between pb-12">
                 <div className="flex flex-col gap-3">
                     <h1 className="text-2xl font-bold"> Manage your customers</h1>
-                    <p className="text-sm text-[#7B29FB]"> Total customers: ({customers.length}) </p>
+                    <p className="text-sm text-[#7B29FB]">  Total customers: ({mounted ? customers.length : "..."}) </p>
                 </div>
                 <Dialog open={open} onOpenChange={setOpen}>
                     <DialogTrigger render={<Button className="text-base bg-[#7a3ffacb] py-4.5 pr-3.5 hover:bg-[#5409cd] cursor-pointer"><Plus strokeWidth={3} /> Add User</Button>} />

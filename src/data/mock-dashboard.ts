@@ -34,7 +34,7 @@ export const dashboardCard = [
   }, {
     title: "Total Comments",
     value: "35",
-    icon: "MessageSquare",
+    icon: "message-square",
     description: "This Month"
   },
 ] as const;

@@ -26,7 +26,7 @@ export default function Header() {
         return <p className="p-8">Loading...</p>;
     }
 
-    function handleLougout() {
+    function handleLogout() {
         dispatch(logout());
         router.replace("/");
     }
@@ -38,7 +38,7 @@ export default function Header() {
                <div className=" border-2 border-[#7a3ffa2d] flex items-center rounded-full p-1 cursor-pointer">
                 <Theme/>
                </div>
-                <button onClick={handleLougout} className="flex items-center gap-1 cursor-pointer"><LogOut  className="size-5.5"/> logout</button>
+                <button onClick={handleLogout} className="flex items-center gap-1 cursor-pointer"><LogOut  className="size-5.5"/> logout</button>
             </div>
         </header>
     )

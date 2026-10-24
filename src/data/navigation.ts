@@ -64,7 +64,7 @@ export const navigation = {
             icon: LayoutDashboard,
         },{
             title: "My Orders",
-            href: "/panel/orders",
+            href: "/panel/myorders",
             icon: ShoppingCart,
         },{
             title: "Favorite",

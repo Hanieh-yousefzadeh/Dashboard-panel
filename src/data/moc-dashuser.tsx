@@ -1,27 +1,27 @@
-import {ShoppingBag, Heart, MapPin, MessageSquare} from "lucide-react";
+import type { Card } from "@/components/dashboard-card";
 
-const userDashboardCard = [
+export const userDashboardCard : Card[] = [
   { title: "My Orders",
     value: 12,
-    icon: ShoppingBag,
+    icon: "package",
     description: "Total Number",
   },
   {
     title: "My Favorite",
     value: 8,
-    icon: Heart,
+    icon: "heart",
     description: "Saved products",
   },
   {
     title: "My Address",
     value: 3,
-    icon: MapPin,
+    icon: "map-pin",
     description: "Registered addresses",
   },
   {
     title: "My Opinions",
     value: 5,
-    icon: MessageSquare,
+    icon: "message-square",
     description: "Submitted comments",
   },
 ];

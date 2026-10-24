@@ -1,4 +1,4 @@
-import { Users, Package, ShoppingCart, Wallet, MessageSquare, Clock , Heart, MapPin } from "lucide-react";
+import { Users, Package, ShoppingCart, Wallet, MessageSquare, Clock, Heart, MapPin } from "lucide-react";
 
 
 
@@ -9,12 +9,12 @@ const icons = {
     wallet: Wallet,
     "message-square": MessageSquare,
     clock: Clock,
-    Heart,
-    MapPin,
+    heart: Heart,
+    "map-pin": MapPin,
 }
-type Card = {
+export type Card = {
     title: string
-    value: string
+    value: string | number
     description: string
     icon: keyof typeof icons
 };
@@ -22,7 +22,10 @@ type Card = {
 export default function DashboardCard({ title, value, icon, description }: Card) {
 
     const Icon = icons[icon]
-
+    if (!Icon) {
+        console.error("Invalid dashboard icon:", icon);
+        return null;
+    }
     return (
         <div className="rounded-2xl border  border-[#7a3ffa0b] bg-[#f1ebfe6a] p-5 shadow-sm flex flex-col justify-center items-center w-58 h-30">
             <div className="flex items-center justify-between">
