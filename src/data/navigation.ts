@@ -52,8 +52,8 @@ export const navigation = {
         href: "/panel/inventory",
         icon: Boxes,
     }, {
-        title: "Sales Report",
-        href: "/panel/reports",
+        title: "Visite",
+        href: "/panel/visit",
         icon: BarChart3,
     }
     ],
