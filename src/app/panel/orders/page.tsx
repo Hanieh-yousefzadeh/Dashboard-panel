@@ -59,7 +59,7 @@ export default function OrdersPage() {
                         <h1 className="text-2xl font-bold w-60">Orders Management</h1>
 
                         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
-                            <Card className="flex flex-row justify-between items-center w-45 h-18 border border-[#7a3ffa0b]">
+                            <Card className="flex flex-row justify-between items-center w-45 h-18 border border-[#7a3ffa0b] bg-[#f1ebfe6a]">
                                 <CardHeader>
                                     <CardTitle className=" w-30 text-[#031381]">Current Orders</CardTitle>
                                 </CardHeader>
@@ -68,7 +68,7 @@ export default function OrdersPage() {
                                 </CardContent>
                             </Card>
 
-                            <Card className="flex flex-row justify-between items-center w-45 h-18 border  border-[#7a3ffa0b]">
+                            <Card className="flex flex-row justify-between items-center w-45 h-18 border  border-[#7a3ffa0b] bg-[#f1ebfe6a]">
                                 <CardHeader>
                                     <CardTitle className="text-[#031381]">Delivered</CardTitle>
                                 </CardHeader>
@@ -77,7 +77,7 @@ export default function OrdersPage() {
                                 </CardContent>
                             </Card>
 
-                            <Card className="flex flex-row justify-between items-center w-45 h-18 border  border-[#7a3ffa0b]">
+                            <Card className="flex flex-row justify-between items-center w-45 h-18 border  border-[#7a3ffa0b] bg-[#f1ebfe6a]">
                                 <CardHeader>
                                     <CardTitle className="text-[#031381]">Cancelled</CardTitle>
                                 </CardHeader>
@@ -86,7 +86,7 @@ export default function OrdersPage() {
                                 </CardContent>
                             </Card>
 
-                            <Card className="flex flex-row justify-between items-center w-45 h-18 border  border-[#7a3ffa0b]">
+                            <Card className="flex flex-row justify-between items-center w-45 h-18 border  border-[#7a3ffa0b] bg-[#f1ebfe6a]">
                                 <CardHeader>
                                     <CardTitle className="text-[#031381]">Returned</CardTitle>
                                 </CardHeader>
