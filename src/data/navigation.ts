@@ -52,7 +52,7 @@ export const navigation = {
         href: "/panel/inventory",
         icon: Boxes,
     }, {
-        title: "Visite",
+        title: "Visit",
         href: "/panel/visit",
         icon: BarChart3,
     }

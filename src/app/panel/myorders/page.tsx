@@ -42,7 +42,7 @@ export default function MyOrdersPage() {
 
                     {orderStats.map((item) => {
                         const Icon = item.icon
-                        const count = mockMyOrders.filter((order) => order.status === item.status).length;
+                        const count = mockMyOrders.filter((order) => order.status === item.status).length
 
                         return (
                             <div key={item.status} className="rounded-2xl border border-[#7a3ffa0b] bg-[#f1ebfe6a] p-5 shadow-sm flex flex-col justify-center items-center md:w-58  w-45 md:h-30 ">
@@ -60,11 +60,11 @@ export default function MyOrdersPage() {
                 <Table>
                     <TableHeader className="h-15">
                         <TableRow className="bg-[#f1ebfe6a]">
-                            <TableHead className="font-bold text-base pl-16">Order ID</TableHead>
-                            <TableHead className="font-bold text-base">Product</TableHead>
-                            <TableHead className="font-bold text-base">Date</TableHead>
-                            <TableHead className="font-bold text-base">Price</TableHead>
-                            <TableHead className="font-bold text-base">Status</TableHead>
+                            <TableHead className="font-bold text-base pl-16 text-[#5409cd]">Order ID</TableHead>
+                            <TableHead className="font-bold text-base text-[#5409cd]">Product</TableHead>
+                            <TableHead className="font-bold text-base text-[#5409cd]">Date</TableHead>
+                            <TableHead className="font-bold text-base text-[#5409cd]">Price</TableHead>
+                            <TableHead className="font-bold text-base text-[#5409cd]">Status</TableHead>
                         </TableRow>
                     </TableHeader>
 

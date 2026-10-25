@@ -35,7 +35,7 @@ export default function MyFavoritePage() {
         const deletefav = favorites.filter((product) => product.id !== id)
         setFavorites(deletefav)
     }
-    
+
     if (!loaded) {
         return null
     }
@@ -47,9 +47,9 @@ export default function MyFavoritePage() {
                 <Table>
                     <TableHeader className="h-15">
                         <TableRow className="bg-[#f1ebfe6a]">
-                            <TableHead className="pl-10 text-base font-bold"> Product</TableHead>
-                            <TableHead className="text-base font-bold">Price </TableHead>
-                            <TableHead className="text-center text-base font-bold"> Action </TableHead>
+                            <TableHead className="pl-10 text-base font-bold text-[#5409cd]"> Product</TableHead>
+                            <TableHead className="text-base font-bold text-[#5409cd]">Price </TableHead>
+                            <TableHead className="text-center text-base font-bold text-[#5409cd]"> Action </TableHead>
                         </TableRow>
                     </TableHeader>
 
