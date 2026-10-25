@@ -95,10 +95,10 @@ export default function VendorsPage() {
         dispatch(deleteVendor(id))
     }
     return (
-        <div className="p-5 w-7xl">
+        <div className="p-5 pl-8 xl:w-316 md:w-3xl w-80 overflow-x-atuo">
             <div className="flex justify-between pb-12">
                 <div className="flex flex-col gap-3">
-                    <h1 className="text-2xl font-bold"> Vendors Management </h1>
+                    <h1 className="sm:text-2xl font-bold"> Vendors Management </h1>
                     <p className="text-sm text-[#7B29FB]"> Total Vendors: ({vendors.length}) </p>
                 </div>
                 <Dialog open={open} onOpenChange={setOpen}>

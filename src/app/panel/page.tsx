@@ -16,13 +16,14 @@ export default function DashboardPage() {
     setMounted(true);
   }, []);
 
+  if (!mounted) {
+    return <p className="sm:p-8">Loading...</p>;
+  }
   if (!user) {
     return null;
   }
 
-  if (!mounted) {
-    return <p className="p-8">Loading...</p>;
-  }
+
   if (user.role === "Admin") {
     return <AdminDashboard />;
   }

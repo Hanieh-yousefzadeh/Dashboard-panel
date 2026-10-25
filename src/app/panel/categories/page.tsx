@@ -77,10 +77,10 @@ export default function categoryPage() {
         dispatch(deleteCategory(id))
     }
     return (
-        <div className="p-5 w-7xl">
+        <div className="p-5 pl-8 xl:w-316  md:w-3xl w-80 overflow-x-atuo">
             <div className="flex justify-between pb-12">
                 <div className="flex flex-col gap-3">
-                    <p className="text-2xl font-bold"> Categories Management</p>
+                    <p className="lg:text-2xl font-bold"> Categories Management</p>
                     <p className="text-sm text-[#7B29FB]"> Total Categories: ({categories.length}) </p>
                 </div>
                 <Dialog open={open} onOpenChange={setOpen}>
@@ -144,7 +144,7 @@ export default function categoryPage() {
                     <Table className="">
                         <TableHeader className="h-12 text-base bg-[#f1ebfe6a]">
                             <TableRow>
-                                <TableHead className="pl-11 font-semibold text-[#5409cd]">ID</TableHead>
+                                <TableHead className="xl:pl-11 font-semibold text-[#5409cd]">ID</TableHead>
                                 <TableHead className=" font-semibold text-[#5409cd]">Category Name</TableHead>
                                 <TableHead className=" font-semibold text-[#5409cd] text-center">Actions</TableHead>
                             </TableRow>
@@ -152,7 +152,7 @@ export default function categoryPage() {
                         <TableBody >
                             {categories.map((item) => (
                                 <TableRow key={item.id} className="h-15">
-                                    <TableCell className="pl-10">{item.id}</TableCell>
+                                    <TableCell className="xl:pl-10">{item.id}</TableCell>
                                     <TableCell>  {item.name}</TableCell>
                                     <TableCell className="flex items-center justify-center">
                                         <button onClick={() => handleEditClick(item)} className="text-[#6e2dfab3] cursor-pointer ">

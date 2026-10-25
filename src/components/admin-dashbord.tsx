@@ -5,13 +5,13 @@ import StatusOrders from "@/components/statusOrders";
 
 export default function AdminDashboard() {
   return (
-    <div className="w-315 pl-5 pt-6">
-      {/* <div>
-        <p className="mt-2 text-lg "> Overview of the Store's Status </p>
-      </div> */}
+    <div className="xl:w-315 sm:pl-5 pt-2">
+      <div>
+        <p className="mt-2 text-lg sm:pb-2 sm:text-left text-center pb-5"> Overview of the Store's Status </p>
+      </div>
 
 
-      <div className="flex justify-between pb-5">
+      <div className="md:flex-row  flex flex-wrap xl:gap-0 gap-5  justify-center md:justify-start xl:justify-between pb-2">
         {dashboardCard.map((stat) => (
           <DashboardCard
             key={stat.title}
@@ -22,7 +22,7 @@ export default function AdminDashboard() {
           />
         ))}
       </div>
-      <div className="flex justify-between gap-5 w-full">
+      <div className="xl:flex-row flex flex-col justify-between p-2 gap-3 w-full">
         <SalesChart />
         <StatusOrders />
 
