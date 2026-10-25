@@ -1,10 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Trash } from "lucide-react";
 
-import { mockMyFavorites } from "@/data/mock-favorite";
+import { FavoriteProduct } from "@/data/mock-favorite";
 
 import {
     Table,
@@ -16,13 +16,29 @@ import {
 } from "@/components/ui/table";
 
 export default function MyFavoritePage() {
-    const [favorites, setFavorites] = useState(mockMyFavorites)
+    const [favorites, setFavorites] = useState<FavoriteProduct[]>([])
+    const [loaded, setLoaded] = useState(false)
+
+    useEffect(() => {
+        const savedFavorites = localStorage.getItem("myFavorites")
+        if (savedFavorites) {
+            setFavorites(JSON.parse(savedFavorites))
+        }
+        setLoaded(true)
+    }, [])
+
+    useEffect(() => {
+        if (loaded) { localStorage.setItem("myFavorites", JSON.stringify(favorites)) }
+    }, [favorites, loaded])
 
     function deleteFavorite(id: number) {
         const deletefav = favorites.filter((product) => product.id !== id)
         setFavorites(deletefav)
     }
-
+    
+    if (!loaded) {
+        return null
+    }
     return (
         <div className="p-6">
             <h1 className="mb-8 pl-3 text-2xl font-bold">My Favorite </h1>
