@@ -1,4 +1,4 @@
-import { userDashboardCard } from "@/data/moc-dashuser"
+import { userDashboardCard } from "@/data/mock-dashuser"
 import DashboardCard from "@/components/dashboard-card"
 
 export default function UserDashboard() {
