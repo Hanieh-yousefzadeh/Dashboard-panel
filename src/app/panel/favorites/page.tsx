@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Trash } from "lucide-react";
 
-import { FavoriteProduct } from "@/data/mock-favorite";
+import { FavoriteProduct, mockMyFavorites } from "@/data/mock-favorite";
 
 import {
     Table,
@@ -21,8 +21,10 @@ export default function MyFavoritePage() {
 
     useEffect(() => {
         const savedFavorites = localStorage.getItem("myFavorites")
-        if (savedFavorites) {
+        if (savedFavorites !== null) {
             setFavorites(JSON.parse(savedFavorites))
+        }else {
+            setFavorites(mockMyFavorites)
         }
         setLoaded(true)
     }, [])
