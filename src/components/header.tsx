@@ -23,22 +23,22 @@ export default function Header() {
 
 
     if (!mounted) {
-        return <p className="p-8">Loading...</p>;
+        return <p className="sm:p-8">Loading...</p>;
     }
 
-    function handleLougout() {
+    function handleLogout() {
         dispatch(logout());
         router.replace("/");
     }
 
     return (
-        <header className="flex justify-between pr-7 pl-4 border-b-2 border-[#7a3ffa2d]">
-            <img src="/Logo.png" className="h-20" />
+        <header className="w-5xl xl:w-full lg:flex hidden justify-between md:pr-7 sm:pl-4 border-b-2 border-[#7a3ffa2d]">
+            <img src="/Logo.png" className="md:h-20 w-40" />
             <div className="flex items-center gap-3">
                <div className=" border-2 border-[#7a3ffa2d] flex items-center rounded-full p-1 cursor-pointer">
                 <Theme/>
                </div>
-                <button onClick={handleLougout} className="flex items-center gap-1 cursor-pointer"><LogOut  className="size-5.5"/> logout</button>
+                <button onClick={handleLogout} className="flex items-center gap-1 cursor-pointer sm:text-base"><LogOut  className="sm:size-5.5"/> logout</button>
             </div>
         </header>
     )

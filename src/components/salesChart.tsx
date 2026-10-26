@@ -14,9 +14,9 @@ import { monthSales } from "@/data/mock-dashboard";
 
 export default function SalesChart() {
   return (
-    <section className="w-[50%] rounded-xl border border-[#7a3ffa1a] bg-card p-5 shadow-sm">
+    <section className="xl:w-1/2 rounded-xl border border-[#7a3ffa1a] bg-card sm:p-5 p-2 shadow-sm">
       <div className="mb-6">
-        <h2 className="text-lg font-semibold">
+        <h2 className="sm:text-lg font-semibold">
           Sales Statistics
         </h2>
 
@@ -25,9 +25,9 @@ export default function SalesChart() {
         </p>
       </div>
 
-      <div className="h-75 w-full">
+      <div className="sm:h-75 h-50 w-full">
         <ResponsiveContainer width="100%" height="100%">
-          <AreaChart
+          <AreaChart className="-ml-4"
             data={monthSales}
             margin={{
               top: 10,
@@ -90,7 +90,7 @@ export default function SalesChart() {
               stroke="#7B29FB"
               strokeWidth={3}
               fill="url(#salesGradient)"
-                activeDot={{ r: 6, fill: "#7B29FB" }}
+              activeDot={{ r: 6, fill: "#7B29FB" }}
             />
           </AreaChart>
         </ResponsiveContainer>

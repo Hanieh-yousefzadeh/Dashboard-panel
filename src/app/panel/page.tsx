@@ -5,37 +5,36 @@ import { stateType } from "@/lib/store";
 import { useState, useEffect } from "react";
 import AdminDashboard from "@/components/admin-dashbord"
 import VendorDashboard from "@/components/vendorDshbord";
+import UserDashboard from "@/components/userDshboard";
 
 export default function DashboardPage() {
-    const user = useSelector((state: stateType) => state.auth.user)
-    if (!user) {
-        return null;
-    }
+  const user = useSelector((state: stateType) => state.auth.user)
 
-    const [mounted, setMounted] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
-    useEffect(() => {
-        setMounted(true);
-    }, []);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return <p className="sm:p-8">Loading...</p>;
+  }
+  if (!user) {
+    return null;
+  }
 
 
-    if (!mounted) {
-        return <p className="p-8">Loading...</p>;
-    }
- if (user.role === "Admin") {
+  if (user.role === "Admin") {
     return <AdminDashboard />;
   }
 
   if (user.role === "Vendor") {
     return (
-      <VendorDashboard/>
+      <VendorDashboard />
     );
   }
 
   return (
-    <div>
-      <h1 className="text-2xl font-bold">User Dashboard</h1>
-     
-    </div>
+    <UserDashboard />
   );
 }

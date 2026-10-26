@@ -52,7 +52,7 @@ export const navigation = {
         href: "/panel/inventory",
         icon: Boxes,
     }, {
-        title: "Visite",
+        title: "Visit",
         href: "/panel/visit",
         icon: BarChart3,
     }
@@ -64,7 +64,7 @@ export const navigation = {
             icon: LayoutDashboard,
         },{
             title: "My Orders",
-            href: "/panel/orders",
+            href: "/panel/myorders",
             icon: ShoppingCart,
         },{
             title: "Favorite",

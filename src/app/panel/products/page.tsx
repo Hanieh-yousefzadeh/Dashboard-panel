@@ -101,10 +101,10 @@ export default function ProductsPage() {
     }
 
     return (
-        <div className="p-5">
+        <div className="p-5 pl-8 xl:w-316 md:w-3xl w-80 overflow-x-atuo">
             <div className="pb-12 flex items-center justify-between">
                 <div className="flex flex-col gap-3">
-                    <h1 className="text-2xl font-bold">Products Management </h1>
+                    <h1 className="sm:text-2xl font-bold">Products Management </h1>
                     <p className="text-sm text-[#7B29FB]"> Total Products: ({products.length}) </p>
                 </div>
                 <Dialog open={open} onOpenChange={setOpen}>
@@ -182,7 +182,7 @@ export default function ProductsPage() {
                                 const category = mockCategories.find((item) => item.id === product.categoryId)
                                 return (
                                     <TableRow key={product.id}>
-                                        <TableCell className="pl-8 pr-30">{product.id} </TableCell>
+                                        <TableCell className="pl-8 pr-20">{product.id} </TableCell>
                                         <TableCell>
                                             <div className="flex items-center gap-3 min-w-40">
                                                 <Image src={product.image} alt={product.name} width={48} height={48}

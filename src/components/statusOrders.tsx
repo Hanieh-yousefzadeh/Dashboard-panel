@@ -3,7 +3,7 @@ import {statusorders} from "@/data/mock-dashboard"
 export default function StatusOrders(){
 
     return (
-    <section className="w-[50%] rounded-xl border  border-[#7a3ffa1a] bg-card p-5 shadow-sm ">
+    <section className="xl:w-1/2 rounded-xl border  border-[#7a3ffa1a] bg-card p-5 shadow-sm ">
       <h2 className="mb-7 text-lg font-semibold">Latest Orders</h2>
 
       <div className="">

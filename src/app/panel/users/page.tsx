@@ -91,11 +91,11 @@ export default function UsersPage() {
         dispatch(deletecustomer(id))
     }
     return (
-        <div className="p-5 w-7xl">
+        <div className="p-5 pl-8 xl:w-316 md:w-3xl w-80 overflow-x-atuo ">
             <div className="flex justify-between pb-12">
                 <div className="flex flex-col gap-3">
-                    <h1 className="text-2xl font-bold"> Manage your customers</h1>
-                    <p className="text-sm text-[#7B29FB]"> Total customers: ({customers.length}) </p>
+                    <h1 className="lg:text-2xl font-bold"> Manage your customers</h1>
+                    <p className="text-sm text-[#7B29FB]">  Total customers: ({mounted ? customers.length : "..."}) </p>
                 </div>
                 <Dialog open={open} onOpenChange={setOpen}>
                     <DialogTrigger render={<Button className="text-base bg-[#7a3ffacb] py-4.5 pr-3.5 hover:bg-[#5409cd] cursor-pointer"><Plus strokeWidth={3} /> Add User</Button>} />
@@ -190,7 +190,7 @@ export default function UsersPage() {
                     <Table className="">
                         <TableHeader className="h-12 text-base bg-[#f1ebfe6a]">
                             <TableRow>
-                                <TableHead className="pl-11 font-semibold text-[#5409cd]">ID</TableHead>
+                                <TableHead className="xl:pl-11 font-semibold text-[#5409cd]">ID</TableHead>
                                 <TableHead className=" font-semibold text-[#5409cd]">Name</TableHead>
                                 <TableHead className=" font-semibold text-[#5409cd]">Email</TableHead>
                                 <TableHead className=" font-semibold text-[#5409cd]">Created</TableHead>
@@ -200,7 +200,7 @@ export default function UsersPage() {
 
                         <TableBody >
                             {customers.map((customer) => (
-                                <TableRow key={customer.id}>
+                                <TableRow key={customer.id} className="h-14">
                                     <TableCell className="pl-10">{customer.id}</TableCell>
                                     <TableCell>{customer.name}</TableCell>
                                     <TableCell>{customer.email}</TableCell>
