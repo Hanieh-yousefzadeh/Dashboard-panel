@@ -45,10 +45,10 @@ export default function MyFavoritePage() {
         <div className="p-6">
             <h1 className="mb-8 pl-3 text-2xl font-bold">My Favorite </h1>
 
-            <div className="mt-4  ml-3 w-300 rounded-2xl border border-[#7a3ffa1a] p-5 shadow-sm">
+            <div className="mt-4  ml-3 w-300 rounded-md border border-[#7a3ffa1a] shadow-sm">
                 <Table>
-                    <TableHeader className="h-15">
-                        <TableRow className="bg-[#f1ebfe6a]">
+                    <TableHeader className="h-15 bg-[#f1ebfe6a]">
+                        <TableRow>
                             <TableHead className="pl-10 text-base font-bold text-[#5409cd]"> Product</TableHead>
                             <TableHead className="text-base font-bold text-[#5409cd]">Price </TableHead>
                             <TableHead className="text-center text-base font-bold text-[#5409cd]"> Action </TableHead>

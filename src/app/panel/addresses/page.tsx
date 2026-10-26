@@ -211,13 +211,13 @@ export default function MyAddressesPage() {
             {mounted && (
                 <div className="rounded-md border-2 border-[#7a3ffa1a]">
                     <Table>
-                        <TableHeader className="h-12 bg-[#f1ebfe6a]">
+                        <TableHeader className="h-15 bg-[#f1ebfe6a]">
                             <TableRow>
-                                <TableHead className="font-semibold text-[#5409cd] pl-12"> Province / City  </TableHead>
-                                <TableHead className="font-semibold text-[#5409cd]"> Address </TableHead>
-                                <TableHead className="font-semibold text-[#5409cd]"> Plaque </TableHead>
-                                <TableHead className="font-semibold text-[#5409cd]">  Postal Code </TableHead>
-                                <TableHead className="text-center font-semibold text-[#5409cd]"> Actions </TableHead>
+                                <TableHead className="font-semibold text-base text-[#5409cd] pl-12"> Province / City  </TableHead>
+                                <TableHead className="font-semibold text-base text-[#5409cd]"> Address </TableHead>
+                                <TableHead className="font-semibold text-base text-[#5409cd]"> Plaque </TableHead>
+                                <TableHead className="font-semibold text-base text-[#5409cd]">  Postal Code </TableHead>
+                                <TableHead className="text-center text-base font-semibold text-[#5409cd]"> Actions </TableHead>
                             </TableRow>
                         </TableHeader>
 

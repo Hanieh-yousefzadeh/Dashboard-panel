@@ -56,10 +56,10 @@ export default function MyOrdersPage() {
                     })}
                 </div>
             </div>
-            <div className="rounded-2xl border border-[#7a3ffa1a] mt-4 p-5 shadow-sm">
+            <div className="rounded-md border border-[#7a3ffa1a] mt-8 shadow-sm">
                 <Table>
-                    <TableHeader className="h-15">
-                        <TableRow className="bg-[#f1ebfe6a]">
+                    <TableHeader className="h-15 bg-[#f1ebfe6a]">
+                        <TableRow>
                             <TableHead className="font-bold text-base pl-16 text-[#5409cd]">Order ID</TableHead>
                             <TableHead className="font-bold text-base text-[#5409cd]">Product</TableHead>
                             <TableHead className="font-bold text-base text-[#5409cd]">Date</TableHead>
@@ -85,7 +85,7 @@ export default function MyOrdersPage() {
 
                                 <TableCell>
                                     <span
-                                        className={`rounded-full px-3 py-1 text-xs font-medium  ${order.status === "pendding" ? "bg-[#ede8fd] text-[#031381] py-2"
+                                        className={`rounded-full px-3 py-2 text-xs font-medium  ${order.status === "pendding" ? "bg-[#ede8fd] text-[#031381] py-2"
                                             : order.status === "delivered"
                                                 ? "bg-green-100 text-green-700 py-2"
                                                 : order.status === "cancelled"
