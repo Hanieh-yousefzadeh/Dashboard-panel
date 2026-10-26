@@ -47,11 +47,7 @@ export const navigation = {
         title: "Orders",
         href: "/panel/orders",
         icon: ShoppingCart,
-    }, {
-        title: "Inventory",
-        href: "/panel/inventory",
-        icon: Boxes,
-    }, {
+    },{
         title: "Visit",
         href: "/panel/visit",
         icon: BarChart3,

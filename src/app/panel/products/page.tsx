@@ -17,6 +17,7 @@ import { Button } from "@/components/ui/button"
 
 export default function ProductsPage() {
 
+    const [imageName, setImageName] = useState("")
     const [mounted, setMounted] = useState(false)
     useEffect(() => {
         setMounted(true)
@@ -76,8 +77,9 @@ export default function ProductsPage() {
             price: String(product.price),
             stock: String(product.stock),
         })
+        setImageName("")
     }
-    function handleEditSubmit(e: React.FormEvent<HTMLFormElement>) {
+    function handleEditSubmit(e: React.SubmitEvent<HTMLFormElement>) {
         e.preventDefault()
 
         if (!editingProduct) return
@@ -98,6 +100,56 @@ export default function ProductsPage() {
     }
     function handleDeleteProduct(id: number) {
         dispatch(deleteProduct(id))
+    }
+    function handleImageChange(e: React.ChangeEvent<HTMLInputElement>) {
+        // const file = e.target.files?.[0]
+        // if (file) {
+        //     const imageUrl = URL.createObjectURL(file)
+        //     setForm({
+        //         ...form,
+        //         image: imageUrl,
+        //     })
+        //     setImageName(file.name)
+        // }
+        const file = e.target.files?.[0]
+
+        if (file) {
+            const reader = new FileReader()
+            reader.onload = () => {
+                const imageData = reader.result as string
+                setForm({
+                    ...form,
+                    image: imageData,
+                })
+                setImageName(file.name)
+            }
+            reader.readAsDataURL(file)
+        }
+    }
+    function handleEditImageChange(e: React.ChangeEvent<HTMLInputElement>) {
+        // const file = e.target.files?.[0]
+        // if (file) {
+        //     const imageUrl = URL.createObjectURL(file)
+        //     setEditForm({
+        //         ...editForm,
+        //         image: imageUrl,
+        //     })
+        //     setImageName(file.name)
+        // }
+        const file = e.target.files?.[0]
+
+        if (file) {
+        const reader = new FileReader()
+        reader.onload = () => {
+            const imageData = reader.result as string
+            setEditForm({
+                ...editForm,
+                image: imageData,
+            })
+            setImageName(file.name)
+        }
+        reader.readAsDataURL(file)
+    }
     }
 
     return (
@@ -124,13 +176,23 @@ export default function ProductsPage() {
                             </div>
 
                             <div className="flex flex-col gap-2">
-                                <Label>Image Path</Label>
-                                <Input value={form.image} onChange={(e) => setForm({ ...form, image: e.target.value })}
-                                    placeholder="/products/product.jpg"
-                                    required className="border-[#7a3ffa1a] text-[#4104a2] placeholder:text-[#6315e16e] focus-visible:ring-0"
-                                />
-                            </div>
+                                <Label>Product Image</Label>
 
+                                <div className="flex h-10 items-center rounded-md border border-[#7a3ffa1a] px-3 text-sm text-[#4104a2ba]">
+                                    {imageName || "No file chosen"}
+                                </div>
+
+                                <Input id="productImage" type="file" accept="image/*" required
+                                    onChange={handleImageChange}
+                                    className="hidden"
+                                />
+
+                                <label htmlFor="productImage"
+                                    className="flex w-fit cursor-pointer items-center rounded-md bg-[#7a3ffa] px-4 py-2 text-white hover:bg-[#5409cd]"
+                                >
+                                    Choose File
+                                </label>
+                            </div>
                             <div className="flex flex-col gap-2">
                                 <Label>Category</Label>
                                 <select value={form.categoryId} onChange={(e) => setForm({ ...form, categoryId: e.target.value })}
@@ -219,14 +281,35 @@ export default function ProductsPage() {
                                                             </div>
 
                                                             <div className="flex flex-col gap-2">
-                                                                <Label>Image Path</Label>
-                                                                <Input value={editForm.image}
-                                                                    onChange={(e) => setEditForm({ ...editForm, image: e.target.value })
-                                                                    }
-                                                                    required className="border-[#7a3ffa1a] text-[#4104a2] placeholder:text-[#6315e16e] focus-visible:ring-0"
-                                                                />
-                                                            </div>
+                                                                <Label>Product Image</Label>
+                                                                <div className="flex items-center gap-3">
+                                                                    <Image
+                                                                        src={editForm.image}
+                                                                        alt={editForm.name}
+                                                                        width={48}
+                                                                        height={48}
+                                                                        className="size-12 rounded-md object-cover"
+                                                                    />
 
+                                                                    <div className="flex h-10 flex-1 items-center rounded-md border border-[#7a3ffa1a] px-3 text-sm text-[#4104a2]">
+                                                                        {imageName || "Current product image"}
+                                                                    </div>
+                                                                </div>
+
+                                                                <Input
+                                                                    id="editProductImage"
+                                                                    type="file"
+                                                                    accept="image/*"
+                                                                    onChange={handleEditImageChange}
+                                                                    className="hidden"
+                                                                />
+
+                                                                <label htmlFor="editProductImage"
+                                                                    className="flex w-fit cursor-pointer items-center rounded-md bg-[#7a3ffa] px-4 py-2 text-white hover:bg-[#5409cd]"
+                                                                >
+                                                                    Choose File
+                                                                </label>
+                                                            </div>
                                                             <div className="flex flex-col gap-2">
                                                                 <Label>Category</Label>
                                                                 <select value={editForm.categoryId}
