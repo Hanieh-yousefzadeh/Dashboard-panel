@@ -1,0 +1,13 @@
+{
+  "Login": {
+    "title": "Welcome Back 👋",
+    "description": "Log in to your account and continue your shopping journey with E-commerce.",
+    "email": "Email",
+    "emailPlaceholder": "Email Address",
+    "password": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "submit": "Login",
+    "loading": "Logging in...",
+    "error": "Incorrect email or password"
+  }
+}

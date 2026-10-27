@@ -1,11 +1,13 @@
 "use client"
 
+import { useTranslations } from "next-intl"
+import { useLocale } from "next-intl"
 import { mockUsers } from "@/data/mock-users"
-import { dispatchType} from "@/lib/store"
+import { dispatchType } from "@/lib/store"
 import { login } from "@/redux/authSlice"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
-import {LockKeyhole ,Mail} from "lucide-react"
+import { LockKeyhole, Mail } from "lucide-react"
 import { useDispatch } from "react-redux"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -21,6 +23,9 @@ export default function LoginPage() {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [error, setError] = useState("")
+
+    const t = useTranslations("Login")
+    const locale = useLocale()
 
     function handleSubmit(e: React.SubmitEvent<HTMLFormElement>) {
         e.preventDefault()
@@ -41,7 +46,7 @@ export default function LoginPage() {
             role: currentUser.role
         }))
 
-        router.replace("/panel")
+       router.replace(`/${locale}/panel`)
     }
 
     return (
@@ -52,18 +57,18 @@ export default function LoginPage() {
                 <img src="/Logo.png" className="md:hidden  h-26" />
                 <Card className="w-full max-w-md md:p-7 px-5 xl:pt-30  border-0 ring-0 shadow-none xl:h-130">
                     <CardHeader className="text-center pb-9">
-                        <CardTitle className="lg:text-3xl text-xl font-extrabold md:text-start pb-3">   Welcome Back 👋</CardTitle>
-                        <CardDescription className="md:text-start lg:w-70 md:text-base text-sm">Login to your acount and continue your shopping journey with Ecomrace. </CardDescription>
+                        <CardTitle className="lg:text-3xl text-xl font-extrabold md:text-start pb-3">   {t("title")} 👋</CardTitle>
+                        <CardDescription className="md:text-start lg:w-70 md:text-base text-sm"> {t("description")} </CardDescription>
                     </CardHeader>
 
                     <CardContent>
                         <form onSubmit={handleSubmit} className="flex flex-col gap-5" >
                             <div className="flex items-center  border rounded-lg px-3 py-1.5 w-full">
-                               <Mail className="text-gray-500" size={16}/>
+                                <Mail className="text-gray-500" size={16} />
                                 <Input
                                     id="email"
                                     type="email"
-                                    placeholder="Email Address"
+                                    placeholder={t("emailPlaceholder")}
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
                                     required
@@ -72,11 +77,11 @@ export default function LoginPage() {
                             </div>
 
                             <div className="flex items-center  border rounded-lg px-3 py-1.5 w-full">
-                               <LockKeyhole className="text-gray-500" size={16}/>
+                                <LockKeyhole className="text-gray-500" size={16} />
                                 <Input
                                     id="password"
                                     type="password"
-                                    placeholder="password"
+                                    placeholder={t("passwordPlaceholder")}
                                     value={password}
                                     onChange={(e) => setPassword(e.target.value)}
                                     required
@@ -85,10 +90,10 @@ export default function LoginPage() {
                             </div>
 
                             {error && (
-                                <p className="text-sm text-red-600">{error}</p>
+                                <p className="text-sm text-red-600">{t("error")}</p>
                             )}
 
-                            <Button type="submit" className="w-full bg-[#7925FF] py-5.5 text-lg cursor-pointer hover:bg-[#071499]"> login </Button>
+                            <Button type="submit" className="w-full bg-[#7925FF] py-5.5 text-lg cursor-pointer hover:bg-[#071499]"> {t("submit")} </Button>
                         </form>
                     </CardContent>
                 </Card>
