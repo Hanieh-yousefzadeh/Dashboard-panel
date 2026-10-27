@@ -12,6 +12,7 @@ import { useDispatch } from "react-redux"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card, CardHeader, CardDescription, CardContent, CardTitle } from "@/components/ui/card"
+import LanguageSwitch from "@/components/lang-switch";
 
 
 
@@ -46,18 +47,20 @@ export default function LoginPage() {
             role: currentUser.role
         }))
 
-       router.replace(`/${locale}/panel`)
+        router.replace(`/${locale}/panel`)
     }
 
     return (
 
-        <main className="flex w-full">
+        <main className="flex w-full ">
+            
 
-            <div className="flex flex-col md:flex-row lg:w-[36%] sm:w-[45%]  w-full items-center justify-center bg-white md:p-10">
+            <div className="flex relative flex-col md:flex-row lg:w-[36%] sm:w-[45%]  w-full items-center justify-center bg-white md:p-10">
+                 <div className="absolute top-4 right-4"> <LanguageSwitch /> </div>
                 <img src="/Logo.png" className="md:hidden  h-26" />
                 <Card className="w-full max-w-md md:p-7 px-5 xl:pt-30  border-0 ring-0 shadow-none xl:h-130">
                     <CardHeader className="text-center pb-9">
-                        <CardTitle className="lg:text-3xl text-xl font-extrabold md:text-start pb-3">   {t("title")} 👋</CardTitle>
+                        <CardTitle className="lg:text-3xl text-xl font-extrabold md:text-start pb-3">   {t("title")} </CardTitle>
                         <CardDescription className="md:text-start lg:w-70 md:text-base text-sm"> {t("description")} </CardDescription>
                     </CardHeader>
 

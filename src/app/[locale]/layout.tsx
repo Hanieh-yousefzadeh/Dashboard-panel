@@ -1,9 +1,8 @@
-import type { Metadata } from "next";
+
 import { Geist, Geist_Mono } from "next/font/google";
-import "../globals.css";
 
 import { NextIntlClientProvider, hasLocale } from "next-intl";
-import { getMessages} from "next-intl/server";
+import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 
@@ -17,60 +16,64 @@ import CategoriesStorage from "@/lib/categoryStorage";
 import OrderStorage from "@/lib/orderStorage";
 
 const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-})
+    variable: "--font-geist-sans",
+    subsets: ["latin"],
+});
 
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-})
+    variable: "--font-geist-mono",
+    subsets: ["latin"],
+});
 
-export const metadata: Metadata = {
-  title: "Dashboard Panel",
-  description: "Dashboard Panel",
-}
+
+export const instant = false;
 
 export function generateStaticParams() {
-  return routing.locales.map((locale) => ({
-    locale: locale,
-  }));
+    return routing.locales.map((locale) => ({
+        locale: locale,
+    }));
 }
 
-export default async function RootLayout({children, params}: {
-   children: React.ReactNode 
-   params: Promise<{ locale: string }>
+export default async function RootLayout({
+    children,
+    params,
+}: {
+    children: React.ReactNode;
+    params: Promise<{ locale: string }>;
 }) {
-  const { locale } = await params;
+    const { locale } = await params;
 
-  if (!hasLocale(routing.locales, locale)) {
-    notFound()
-  }
+    console.log("Current locale:", locale);
 
-  const messages = await getMessages();
+    if (!hasLocale(routing.locales, locale)) {
+        notFound();
+    }
 
-  return (
-    <html
-      lang={locale}
-      dir={locale === "fa" ? "rtl" : "ltr"}
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-      suppressHydrationWarning
+   const messages = await getMessages({ locale });
+
+    console.log("Login messages:", messages.Login);
+
+   return (
+    <NextIntlClientProvider
+        locale={locale}
+        messages={messages}
     >
-      <body className="min-h-full flex flex-col">
-        <NextIntlClientProvider messages={messages}>
-          <StoreProvider>
+        <StoreProvider>
             <ThemeProvider>
-              <AuthStorage />
-              <CustomersStorage />
-              <VendorsStorage />
-              <ProductStorage />
-              <CategoriesStorage />
-              <OrderStorage />
-              {children}
+                <div
+                    dir={locale === "fa" ? "rtl" : "ltr"}
+                    className="min-h-screen flex flex-col"
+                >
+                    <AuthStorage />
+                    <CustomersStorage />
+                    <VendorsStorage />
+                    <ProductStorage />
+                    <CategoriesStorage />
+                    <OrderStorage />
+                    {children}
+                </div>
             </ThemeProvider>
-          </StoreProvider>
-        </NextIntlClientProvider>
-      </body>
-    </html>
-  );
+        </StoreProvider>
+    </NextIntlClientProvider>
+);
 }
