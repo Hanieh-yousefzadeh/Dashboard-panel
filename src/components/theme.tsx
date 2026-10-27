@@ -3,6 +3,7 @@
 import { useTheme } from "next-themes"
 import { useEffect, useState } from "react"
 import { SunMedium, Moon, Monitor } from "lucide-react"
+import { useTranslations } from "next-intl"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -12,6 +13,7 @@ import {
 } from "@/components/ui/dropdown-menu"
 
 export default function Theme() {
+  const t = useTranslations("AdminDashboard.theme")
   const { theme, setTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
 
@@ -50,17 +52,17 @@ export default function Theme() {
         >
           <DropdownMenuRadioItem value="light"  className="focus:bg-[#F1EBFE] text-[#031381]">
             <SunMedium />
-            Light
+            {t("light")}
           </DropdownMenuRadioItem>
 
           <DropdownMenuRadioItem value="dark" className="focus:bg-[#F1EBFE] text-[#031381]">
             <Moon />
-            Dark
+            {t("dark")}
           </DropdownMenuRadioItem>
 
           <DropdownMenuRadioItem value="system" className="focus:bg-[#F1EBFE] text-[#031381]">
             <Monitor />
-            System
+             {t("system")}
           </DropdownMenuRadioItem>
         </DropdownMenuRadioGroup>
       </DropdownMenuContent>

@@ -43,6 +43,28 @@
   "customer": "مشتری",
   "amount": "مبلغ",
   "status": "وضعیت"
+},"sidebar": {
+  "dashboard": "داشبورد",
+  "users": "کاربران",
+  "vendors": "فروشندگان",
+  "products": "محصولات",
+  "categories": "دسته‌بندی‌ها",
+  "orders": "سفارش‌ها",
+  "myProducts": "محصولات من",
+  "visit": "آمار بازدید",
+  "myOrders": "سفارش‌های من",
+  "favorite": "علاقه‌مندی‌ها",
+  "addresses": "آدرس‌ها",
+  "reviews": "نظرات و پرسش‌ها",
+  "admin": "مدیر",
+  "vendor": "فروشنده",
+  "user": "کاربر"
+},"header": {
+  "logout": "خروج"
+},"theme": {
+  "light": "روشن",
+  "dark": "تاریک",
+  "system": "حالت سیستم"
 }
 }
 }

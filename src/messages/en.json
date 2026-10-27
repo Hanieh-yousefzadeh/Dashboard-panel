@@ -43,6 +43,28 @@
   "customer": "Customer",
   "amount": "Amount",
   "status": "Status"
+},"sidebar": {
+  "dashboard": "Dashboard",
+  "users": "Users",
+  "vendors": "Vendors",
+  "products": "Products",
+  "categories": "Categories",
+  "orders": "Orders",
+  "myProducts": "My Products",
+  "visit": "Visit",
+  "myOrders": "My Orders",
+  "favorite": "Favorite",
+  "addresses": "Addresses",
+  "reviews": "Reviews & Questions",
+  "admin": "Admin",
+  "vendor": "Vendor",
+  "user": "User"
+},"header": {
+  "logout": "Logout"
+},"theme": {
+  "light": "Light",
+  "dark": "Dark",
+  "system": "System"
 }
 }
 }

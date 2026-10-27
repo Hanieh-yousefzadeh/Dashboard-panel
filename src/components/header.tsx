@@ -8,12 +8,14 @@ import { logout } from "@/redux/authSlice"
 import { LogOut} from "lucide-react"
 import Theme from "./theme"
 import LanguageSwitch from "@/components/lang-switch"
+import { useTranslations } from "next-intl"
 
 
 
 
 
 export default function Header() {
+    const t = useTranslations("AdminDashboard.header")
     const user = useSelector((state: stateType) => state.auth.user)
     const dispatch = useDispatch<dispatchType>()
     const router = useRouter()
@@ -41,7 +43,7 @@ export default function Header() {
                <div className=" border-2 border-[#7a3ffa2d] flex items-center rounded-full p-1 cursor-pointer">
                 <Theme/>
                </div>
-                <button onClick={handleLogout} className="flex items-center gap-1 cursor-pointer sm:text-base"><LogOut  className="sm:size-5.5"/> logout</button>
+                <button onClick={handleLogout} className="flex items-center gap-1 cursor-pointer sm:text-base"><LogOut  className="sm:size-5.5"/> {t("logout")}</button>
             </div>
         </header>
     )
