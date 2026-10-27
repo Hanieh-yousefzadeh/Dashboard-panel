@@ -7,6 +7,8 @@ import { useDispatch, useSelector } from "react-redux"
 import { logout } from "@/redux/authSlice"
 import { LogOut} from "lucide-react"
 import Theme from "./theme"
+import LanguageSwitch from "@/components/lang-switch"
+
 
 
 
@@ -35,6 +37,7 @@ export default function Header() {
         <header className="w-5xl xl:w-full lg:flex hidden justify-between md:pr-7 sm:pl-4 border-b-2 border-[#7a3ffa2d]">
             <img src="/Logo.png" className="md:h-20 w-40" />
             <div className="flex items-center gap-3">
+                <LanguageSwitch />
                <div className=" border-2 border-[#7a3ffa2d] flex items-center rounded-full p-1 cursor-pointer">
                 <Theme/>
                </div>

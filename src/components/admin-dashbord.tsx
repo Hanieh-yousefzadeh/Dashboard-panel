@@ -2,12 +2,14 @@ import { dashboardCard } from "@/data/mock-dashboard";
 import DashboardCard from "@/components/dashboard-card";
 import SalesChart from "@/components/salesChart";
 import StatusOrders from "@/components/statusOrders";
+import { useTranslations } from "next-intl";
 
 export default function AdminDashboard() {
+  const t = useTranslations("AdminDashboard")
   return (
     <div className="xl:w-315 sm:pl-5 pt-2">
       <div>
-        <p className="mt-2 text-lg sm:pb-2 sm:text-left text-center pb-5"> Overview of the Store's Status </p>
+        <p className="mt-2 text-lg sm:pb-2 sm:text-left text-center pb-5">  {t("overview")}</p>
       </div>
 
 
@@ -15,10 +17,17 @@ export default function AdminDashboard() {
         {dashboardCard.map((stat) => (
           <DashboardCard
             key={stat.title}
-            title={stat.title}
+            title={t(`cards.${{
+              "Total Users": "users",
+              "Total Products": "products",
+              "Total Orders": "orders",
+              "Total Sales": "sales",
+              "Total Comments": "comments",
+            }[stat.title]}`
+            )}
             value={stat.value}
             icon={stat.icon}
-            description={stat.description}
+            description={t("cards.thisMonth")}
           />
         ))}
       </div>

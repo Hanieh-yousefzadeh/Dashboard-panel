@@ -54,16 +54,10 @@ export default async function RootLayout({
     console.log("Login messages:", messages.Login);
 
    return (
-    <NextIntlClientProvider
-        locale={locale}
-        messages={messages}
-    >
+    <NextIntlClientProvider locale={locale} messages={messages} >
         <StoreProvider>
             <ThemeProvider>
-                <div
-                    dir={locale === "fa" ? "rtl" : "ltr"}
-                    className="min-h-screen flex flex-col"
-                >
+                <div dir={locale === "fa" ? "rtl" : "ltr"} className="min-h-screen flex flex-col" >
                     <AuthStorage />
                     <CustomersStorage />
                     <VendorsStorage />

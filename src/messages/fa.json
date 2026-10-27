@@ -9,5 +9,40 @@
     "submit": "ورود",
     "loading": "در حال ورود...",
     "error": "ایمیل یا رمز عبور اشتباه است"
-  }
+  },
+  "AdminDashboard": {
+  "overview": "نمای کلی وضعیت فروشگاه",
+  "cards": {
+    "users": "مجموع کاربران",
+    "products": "مجموع محصولات",
+    "orders": "مجموع سفارش‌ها",
+    "sales": "مجموع فروش",
+    "comments": "مجموع نظرات",
+    "thisMonth": "این ماه"
+  },
+  "months": {
+    "january": "ژانویه",
+    "february": "فوریه",
+    "march": "مارس",
+    "april": "آوریل",
+    "may": "مه",
+    "june": "ژوئن"
+  },
+  "orderStatus": {
+    "paid": "پرداخت‌شده",
+    "waiting": "در انتظار",
+    "sent": "ارسال‌شده"
+  },"salesChart": {
+  "title": "آمار فروش",
+  "subtitle": "فروش ماهانه",
+  "millionDollars": "میلیون دلار",
+  "sales": "فروش"
+},"latestOrders": {
+  "title": "آخرین سفارش‌ها",
+  "orderNumber": "شماره سفارش",
+  "customer": "مشتری",
+  "amount": "مبلغ",
+  "status": "وضعیت"
+}
+}
 }

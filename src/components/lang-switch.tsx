@@ -18,9 +18,9 @@ export default function LanguageSwitch() {
         <button
             type="button"
             onClick={handleLanguageChange}
-            className="rounded-lg border text-base px-5 py-2 font-medium bg-[#E2EFFE] text-[#0318A1] hover:bg-[#8049FD] hover:text-[#FFFFFF]"
+            className=" cursor-pointer  border-2 border-[#7a3ffa2d] rounded-full  py-1 px-2 text-base  font-medium  text-[#0318A1] hover:bg-[#8049FD] hover:text-[#FFFFFF]"
         >
-            {locale === "fa" ? "English" : "فارسی"}
+            {locale === "fa" ? "En" : "Fa"}
         </button>
     );
 }

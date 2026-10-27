@@ -9,5 +9,40 @@
     "submit": "Login",
     "loading": "Logging in...",
     "error": "Incorrect email or password"
-  }
+  },
+  "AdminDashboard": {
+  "overview": "Overview of the Store's Status",
+  "cards": {
+    "users": "Total Users",
+    "products": "Total Products",
+    "orders": "Total Orders",
+    "sales": "Total Sales",
+    "comments": "Total Comments",
+    "thisMonth": "This Month"
+  },
+  "months": {
+    "january": "January",
+    "february": "February",
+    "march": "March",
+    "april": "April",
+    "may": "May",
+    "june": "June"
+  },
+  "orderStatus": {
+    "paid": "Paid",
+    "waiting": "Waiting",
+    "sent": "Sent"
+  },"salesChart": {
+  "title": "Sales Statistics",
+  "subtitle": "Monthly Sales",
+  "millionDollars": "Million dollars",
+  "sales": "Sales"
+},"latestOrders": {
+  "title": "Latest Orders",
+  "orderNumber": "Order Number",
+  "customer": "Customer",
+  "amount": "Amount",
+  "status": "Status"
+}
+}
 }
