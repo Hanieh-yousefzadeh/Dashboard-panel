@@ -1,7 +1,7 @@
 "use client"
 
 import { mockUsers } from "@/data/mock-users"
-import { dispatchType, stateType } from "@/lib/store"
+import { dispatchType} from "@/lib/store"
 import { login } from "@/redux/authSlice"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
