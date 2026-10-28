@@ -81,5 +81,20 @@
     "id": "شناسه",
     "created": "تاریخ ایجاد",
     "actions": "عملیات"
-  }
+  },"VendorsPage": {
+    "title": "مدیریت فروشندگان",
+    "totalVendors": "تعداد کل فروشندگان: ({count})",
+    "addVendor": "افزودن فروشنده",
+    "addNewVendor": "افزودن فروشنده جدید",
+    "editVendor": "ویرایش فروشنده",
+    "name": "نام",
+    "email": "ایمیل",
+    "address": "آدرس",
+    "enterName": "نام را وارد کنید",
+    "enterEmail": "ایمیل را وارد کنید",
+    "enterAddress": "آدرس را وارد کنید",
+    "saveChanges": "ذخیره تغییرات",
+    "id": "شناسه",
+    "actions": "عملیات"
+}
 }

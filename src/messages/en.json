@@ -87,5 +87,20 @@
     "id": "ID",
     "created": "Created",
     "actions": "Actions"
-  }
+  },"VendorsPage": {
+    "title": "Vendors Management",
+    "totalVendors": "Total Vendors: ({count})",
+    "addVendor": "Add Vendor",
+    "addNewVendor": "Add New Vendor",
+    "editVendor": "Edit Vendor",
+    "name": "Name",
+    "email": "Email",
+    "address": "Address",
+    "enterName": "Enter name",
+    "enterEmail": "Enter email",
+    "enterAddress": "Enter address",
+    "saveChanges": "Save Changes",
+    "id": "ID",
+    "actions": "Actions"
+}
 }

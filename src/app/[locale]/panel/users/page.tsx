@@ -194,10 +194,10 @@ export default function UsersPage() {
                         <TableHeader className="h-12 text-base bg-[#f1ebfe6a]">
                             <TableRow>
                                 <TableHead className={` font-semibold text-[#5409cd] ${locale === "fa" ? "text-right xl:pr-15" :"text-left xl:pl-11" }`}>{t("id")}</TableHead>
-                                <TableHead className={`font-semibold text-[#5409cd]" ${locale === "fa" ? "text-right" :"text-left" }`}>{t("name")}</TableHead>
-                                <TableHead className={`font-semibold text-[#5409cd]" ${locale === "fa" ? "text-right" :"text-left" }`}>{t("email")}</TableHead>
-                                <TableHead className={`font-semibold text-[#5409cd]" ${locale === "fa" ? "text-right" :"text-left" }`}>{t("created")}</TableHead>
-                                <TableHead className={`font-semibold text-[#5409cd]" ${locale === "fa" ? "text-center pl-8" :"text-left" }`}>	{t("actions")}</TableHead>
+                                <TableHead className={`font-semibold text-[#5409cd] ${locale === "fa" ? "text-right" :"text-left" }`}>{t("name")}</TableHead>
+                                <TableHead className={`font-semibold text-[#5409cd] ${locale === "fa" ? "text-right" :"text-left" }`}>{t("email")}</TableHead>
+                                <TableHead className={`font-semibold text-[#5409cd] ${locale === "fa" ? "text-right" :"text-left" }`}>{t("created")}</TableHead>
+                                <TableHead className={`font-semibold text-[#5409cd] ${locale === "fa" ? "text-center pl-8" :"text-left" }`}>{t("actions")}</TableHead>
                             </TableRow>
                         </TableHeader>
 
