@@ -7,6 +7,7 @@ import type { Category } from "@/data/mock-categoris"
 import { PencilSparkles, Trash } from "lucide-react"
 import { useState, useEffect } from "react"
 import { Plus } from "lucide-react"
+import { useTranslations, useLocale } from "next-intl"
 
 import {
     Table,
@@ -76,19 +77,30 @@ export default function categoryPage() {
     function handleDeleteCategory(id: number) {
         dispatch(deleteCategory(id))
     }
+    const t = useTranslations("CategoriesPage")
+    const tCategories = useTranslations("Categories")
+
+    const categoryTranslationKeys = {
+        "Cosmetics & Personal Care": "cosmetics",
+        "Digital Products": "digitalProducts",
+        Books: "books",
+        "Home & Kitchen": "homeKitchen",
+        Clothing: "clothing",
+    } as const
+    const locale = useLocale()
     return (
         <div className="p-5 pl-8 xl:w-316  md:w-3xl w-80 overflow-x-atuo">
             <div className="flex justify-between pb-12">
                 <div className="flex flex-col gap-3">
-                    <p className="lg:text-2xl font-bold"> Categories Management</p>
-                    <p className="text-sm text-[#7B29FB]"> Total Categories: ({categories.length}) </p>
+                    <p className="lg:text-2xl font-bold"> {t("title")}</p>
+                    <p className="text-sm text-[#7B29FB]"> {t("totalCategories")}: ({categories.length}) </p>
                 </div>
                 <Dialog open={open} onOpenChange={setOpen}>
                     <DialogTrigger render={<Button className="text-base bg-[#7a3ffacb] py-4.5 pr-3.5 hover:bg-[#5409cd] cursor-pointer"><Plus strokeWidth={3} />  Add Category</Button>} />
 
                     <DialogContent className="border-[#7a3ffa1a] text-[#5409cd]">
                         <DialogHeader>
-                            <DialogTitle className="text-[#5409cd] font-bold">Add New Category</DialogTitle>
+                            <DialogTitle className="text-[#5409cd] font-bold">	{t("addNewCategory")}</DialogTitle>
                         </DialogHeader>
 
                         <form
@@ -96,7 +108,7 @@ export default function categoryPage() {
                             className=" flex flex-col gap-5 pt-5 text-[#6200ff]"
                         >
                             <div className="flex flex-col gap-2">
-                                <Label htmlFor="name">Category Name</Label>
+                                <Label htmlFor="name">	{t("categoryName")}</Label>
                                 <Input
                                     id="category-name"
                                     value={category}
@@ -106,7 +118,7 @@ export default function categoryPage() {
                                     className="border-[#7a3ffa1a] text-[#4104a2] placeholder:text-[#6315e16e] focus-visible:ring-0"
                                 />
                             </div>
-                            <Button type="submit" className=" cursor-pointer w-full py-5 mt-3 bg-[#7a3ffacb] hover:bg-[#5409cd]"> Add Category</Button>
+                            <Button type="submit" className=" cursor-pointer w-full py-5 mt-3 bg-[#7a3ffacb] hover:bg-[#5409cd]">{t("addCategory")}</Button>
                         </form>
                     </DialogContent>
                 </Dialog>
@@ -118,11 +130,11 @@ export default function categoryPage() {
                 >
                     <DialogContent className="border-[#7a3ffa1a] text-[#5409cd]">
                         <DialogHeader>
-                            <DialogTitle className="text-[#5409cd] font-bold">Edit Category</DialogTitle>
+                            <DialogTitle className="text-[#5409cd] font-bold">	{t("editCategory")}</DialogTitle>
                         </DialogHeader>
                         <form onSubmit={handleEditSubmit} className="flex flex-col gap-5 pt-5">
                             <div className="flex flex-col gap-2">
-                                <Label htmlFor="editName">  Category Name</Label>
+                                <Label htmlFor="editName"> {t("categoryName")}</Label>
                                 <Input
                                     id="edit-category-name"
                                     value={editingCategory?.name}
@@ -130,10 +142,11 @@ export default function categoryPage() {
                                     )
                                     }
                                     required
+                                    placeholder={t("enterCategoryName")}
                                     className="border-[#7a3ffa1a] text-[#4104a2] placeholder:text-[#6315e16e] focus-visible:ring-0"
                                 />
                             </div>
-                            <Button type="submit" className="w-full py-5 bg-[#7a3ffacb] hover:bg-[#5409cd]" > Save Changes  </Button>
+                            <Button type="submit" className="w-full py-5 bg-[#7a3ffacb] hover:bg-[#5409cd]" > {t("saveChanges")}  </Button>
                         </form>
                     </DialogContent>
                 </Dialog>
@@ -144,21 +157,21 @@ export default function categoryPage() {
                     <Table className="">
                         <TableHeader className="h-12 text-base bg-[#f1ebfe6a]">
                             <TableRow>
-                                <TableHead className="xl:pl-11 font-semibold text-[#5409cd]">ID</TableHead>
-                                <TableHead className=" font-semibold text-[#5409cd]">Category Name</TableHead>
-                                <TableHead className=" font-semibold text-[#5409cd] text-center">Actions</TableHead>
+                                <TableHead className={`${locale === "fa" ? "text-right pr-18" : "xl:pl-11"} font-semibold text-[#5409cd]`}>{t("id")}</TableHead>
+                                <TableHead className={`${locale === "fa" ? "text-right" : "text-left xl:pl-3"} font-semibold text-[#5409cd]`}>{t("categoryName")}</TableHead>
+                                <TableHead className={` font-semibold text-[#5409cd]  ${locale === "fa" ? "text-center pl-10" : "text-center pr-5"}`}>{t("actions")}</TableHead>
                             </TableRow>
                         </TableHeader>
                         <TableBody >
                             {categories.map((item) => (
                                 <TableRow key={item.id} className="h-15">
-                                    <TableCell className="xl:pl-10">{item.id}</TableCell>
-                                    <TableCell>  {item.name}</TableCell>
+                                    <TableCell className={`${locale === "fa" ? "pr-16" : "xl:pl-10"}`}>{item.id}</TableCell>
+                                    <TableCell> {tCategories(categoryTranslationKeys[item.name as keyof typeof categoryTranslationKeys])}</TableCell>
                                     <TableCell className="flex items-center justify-center">
                                         <button onClick={() => handleEditClick(item)} className="text-[#6e2dfab3] cursor-pointer ">
                                             <PencilSparkles className=" size-5" />
                                         </button>
-                                        <button onClick={() => handleDeleteCategory(item.id)} className="ml-3 text-red-600 cursor-pointer">
+                                        <button onClick={() => handleDeleteCategory(item.id)} className="m-3 text-red-600 cursor-pointer">
                                             <Trash className="size-5" />
                                         </button>
                                     </TableCell>

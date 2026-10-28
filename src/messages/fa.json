@@ -122,5 +122,16 @@
   "books": "کتاب‌ها",
   "homeKitchen": "خانه و آشپزخانه",
   "clothing": "پوشاک"
+},"CategoriesPage": {
+  "title": "مدیریت دسته‌بندی‌ها",
+  "totalCategories": "تعداد کل دسته‌بندی‌ها",
+  "addCategory": "افزودن دسته‌بندی",
+  "addNewCategory": "افزودن دسته‌بندی جدید",
+  "categoryName": "نام دسته‌بندی",
+  "enterCategoryName": "نام دسته‌بندی را وارد کنید",
+  "editCategory": "ویرایش دسته‌بندی",
+  "saveChanges": "ذخیره تغییرات",
+  "id": "شناسه",
+  "actions": "عملیات"
 }
 }

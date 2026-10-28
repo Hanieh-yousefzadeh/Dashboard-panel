@@ -128,5 +128,16 @@
   "books": "Books",
   "homeKitchen": "Home & Kitchen",
   "clothing": "Clothing"
+},"CategoriesPage": {
+  "title": "Categories Management",
+  "totalCategories": "Total Categories",
+  "addCategory": "Add Category",
+  "addNewCategory": "Add New Category",
+  "categoryName": "Category Name",
+  "enterCategoryName": "Enter category name",
+  "editCategory": "Edit Category",
+  "saveChanges": "Save Changes",
+  "id": "ID",
+  "actions": "Actions"
 }
 }
