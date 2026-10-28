@@ -1,9 +1,24 @@
 import DashboardCard from "@/components/dashboard-card";
 import VendorSalesChart from "@/components/vendorcahrt"
 import VendorOrders from "@/components/vendorOrdere"
-import { vendorDashboardCard } from "@/data/mock-vendorpanel";
+import { vendorDashboardCard } from "@/data/mock-vendorpanel"
+import { useTranslations } from "next-intl"
 
 export default function VendorDashboard() {
+  const t = useTranslations("VendorDashboard");
+
+  const cardTranslationKeys = {
+    "My Products": "myProducts",
+    "Total Products": "totalProducts",
+    "Total Orders": "totalOrders",
+    "All Orders": "allOrders",
+    "Total Sales": "totalSales",
+    "Total Revenue": "totalRevenue",
+    "Pending Orders": "pendingOrders",
+    "Need Attention": "needAttention",
+    "Total Reviews": "totalReviews",
+    "Customer Reviews": "customerReviews",
+  } as const
   return (
     <div className="w-315 pl-5 pt-6">
       {/* <div>
@@ -14,10 +29,10 @@ export default function VendorDashboard() {
         {vendorDashboardCard.map((card) => (
           <DashboardCard
             key={card.title}
-            title={card.title}
+            title={t(cardTranslationKeys[card.title])}
             value={card.value}
             icon={card.icon}
-            description={card.description}
+            description={t(cardTranslationKeys[card.description])}
           />
         ))}
       </div>

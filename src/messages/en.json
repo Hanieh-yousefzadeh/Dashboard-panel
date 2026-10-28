@@ -1,0 +1,221 @@
+{
+  "Login": {
+    "title": "Welcome Back 👋",
+    "description": "Log in to your account and continue your shopping journey with E-commerce.",
+    "email": "Email",
+    "emailPlaceholder": "Email Address",
+    "password": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "submit": "Login",
+    "loading": "Logging in...",
+    "error": "Incorrect email or password"
+  },
+  "AdminDashboard": {
+    "overview": "Overview of the Store's Status",
+    "cards": {
+      "users": "Total Users",
+      "products": "Total Products",
+      "orders": "Total Orders",
+      "sales": "Total Sales",
+      "comments": "Total Comments",
+      "thisMonth": "This Month"
+    },
+    "months": {
+      "january": "January",
+      "february": "February",
+      "march": "March",
+      "april": "April",
+      "may": "May",
+      "june": "June"
+    },
+    "orderStatus": {
+      "paid": "Paid",
+      "waiting": "Waiting",
+      "sent": "Sent"
+    },
+    "salesChart": {
+      "title": "Sales Statistics",
+      "subtitle": "Monthly Sales",
+      "millionDollars": "Million dollars",
+      "sales": "Sales"
+    },
+    "latestOrders": {
+      "title": "Latest Orders",
+      "orderNumber": "Order Number",
+      "customer": "Customer",
+      "amount": "Amount",
+      "status": "Status"
+    },
+    "sidebar": {
+      "dashboard": "Dashboard",
+      "users": "Users",
+      "vendors": "Vendors",
+      "products": "Products",
+      "categories": "Categories",
+      "orders": "Orders",
+      "myProducts": "My Products",
+      "visit": "Visit",
+      "myOrders": "My Orders",
+      "favorite": "Favorite",
+      "addresses": "Addresses",
+      "reviews": "Reviews & Questions",
+      "admin": "Admin",
+      "vendor": "Vendor",
+      "user": "User"
+    },
+    "header": {
+      "logout": "Logout"
+    },
+    "theme": {
+      "light": "Light",
+      "dark": "Dark",
+      "system": "System"
+    }
+  },
+  "UsersPage": {
+    "title": "Manage your customers",
+    "totalCustomers": "Total customers: ({count})",
+    "addUser": "Add User",
+    "addNewUser": "Add New User",
+    "editCustomer": "Edit Customer",
+    "name": "Name",
+    "email": "Email",
+    "enterName": "Enter name",
+    "enterEmail": "Enter email",
+    "addCustomer": "Add Customer",
+    "saveChanges": "Save Changes",
+    "id": "ID",
+    "created": "Created",
+    "actions": "Actions"
+  },
+  "VendorsPage": {
+    "title": "Vendors Management",
+    "totalVendors": "Total Vendors: ({count})",
+    "addVendor": "Add Vendor",
+    "addNewVendor": "Add New Vendor",
+    "editVendor": "Edit Vendor",
+    "name": "Name",
+    "email": "Email",
+    "address": "Address",
+    "enterName": "Enter name",
+    "enterEmail": "Enter email",
+    "enterAddress": "Enter address",
+    "saveChanges": "Save Changes",
+    "id": "ID",
+    "actions": "Actions"
+  },
+  "ProductsPage": {
+    "title": "Products Management",
+    "totalProducts": "Total Products: ({count})",
+    "addProduct": "Add Product",
+    "addNewProduct": "Add New Product",
+    "editProduct": "Edit Product",
+    "productName": "Product Name",
+    "productImage": "Product Image",
+    "noFileChosen": "No file chosen",
+    "currentProductImage": "Current product image",
+    "chooseFile": "Choose File",
+    "category": "Category",
+    "selectCategory": "Select category",
+    "price": "Price",
+    "stock": "Stock",
+    "saveChanges": "Save Changes",
+    "id": "ID",
+    "product": "Product",
+    "actions": "Actions",
+    "noProductsFound": "No products found.",
+    "productNames": {
+      "sunscreen": "Sunscreen",
+      "smartWatch": "Smart Watch",
+      "tShirt": "T-Shirt",
+      "englishTutorial": "English Language Tutorial",
+      "steelPot": "Stainless steel pot"
+    }
+  },
+  "Categories": {
+    "cosmetics": "Cosmetics & Personal Care",
+    "digitalProducts": "Digital Products",
+    "books": "Books",
+    "homeKitchen": "Home & Kitchen",
+    "clothing": "Clothing"
+  },
+  "CategoriesPage": {
+    "title": "Categories Management",
+    "totalCategories": "Total Categories",
+    "addCategory": "Add Category",
+    "addNewCategory": "Add New Category",
+    "categoryName": "Category Name",
+    "enterCategoryName": "Enter category name",
+    "editCategory": "Edit Category",
+    "saveChanges": "Save Changes",
+    "id": "ID",
+    "actions": "Actions"
+  },
+  "OrdersPage": {
+    "title": "Orders Management",
+    "currentOrders": "Current Orders",
+    "delivered": "Delivered",
+    "cancelled": "Cancelled",
+    "returned": "Returned",
+    "orderList": "Order List",
+    "allOrders": "All Orders",
+    "pending": "Pending",
+    "orderNumber": "Order Number",
+    "customerName": "Customer Name",
+    "date": "Date",
+    "amount": "Amount",
+    "status": "Status",
+    "changeStatus": "Change Status",
+    "noOrders": "There are no orders."
+  },
+  "VendorDashboard": {
+    "overview": "Overview of the Store's Status",
+    "myProducts": "My Products",
+    "totalProducts": "Total Products",
+    "totalOrders": "Total Orders",
+    "allOrders": "All Orders",
+    "totalSales": "Total Sales",
+    "totalRevenue": "Total Revenue",
+    "pendingOrders": "Pending Orders",
+    "needAttention": "Need Attention",
+    "totalReviews": "Total Reviews",
+    "customerReviews": "Customer Reviews",
+    "salesOverview": "Sales Overview",
+    "recentOrders": "Recent Orders",
+    "orderId": "Order ID",
+    "product": "Product",
+    "customer": "Customer",
+    "amount": "Amount",
+    "status": "Status",
+    "pending": "Pending",
+    "processing": "Processing",
+    "delivered": "Delivered",
+    "cancelled": "Cancelled",
+    "salesStatistics": "Sales Statistics",
+    "monthlySales": "Monthly Sales",
+    "millionDollars": "Million dollars",
+    "latestOrders": "Latest Orders",
+    "orderNumber": "Order Number",
+    "sales": "Sales",
+    "months": {
+      "January": "January",
+      "February": "February",
+      "March": "March",
+      "April": "April",
+      "May": "May",
+      "June": "June"
+    },
+    "products": {
+      "Running Shoes": "Running Shoes",
+      "Wireless Headphones": "Wireless Headphones",
+      "Classic Watch": "Classic Watch",
+      "Cotton T-Shirt": "Cotton T-Shirt",
+      "Sunscreen": "Sunscreen"
+    }
+  },"VisitPage": {
+  "product": "Product",
+  "views": "Views",
+  "addedToWishlist": "Added to Wishlist",
+  "noProductsFound": "No products found."
+}
+}

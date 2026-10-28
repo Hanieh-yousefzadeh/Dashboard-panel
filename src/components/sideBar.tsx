@@ -3,14 +3,16 @@
 import { navigation } from "@/data/navigation"
 import { useState, useEffect } from "react"
 import { stateType } from "@/lib/store"
-import { usePathname } from "next/navigation"
 import { useSelector } from "react-redux"
 import { CircleUserRound } from "lucide-react"
-import Link from "next/link"
+import { Link, usePathname } from "@/i18n/nav"
+import { useTranslations , useLocale} from "next-intl"
 
 
 
 export default function SideBar() {
+    const t = useTranslations("AdminDashboard.sidebar")
+    const locale = useLocale()
     const pathName = usePathname()
     const user = useSelector((state: stateType) => state.auth.user)
     const [mounted, setMounted] = useState(false);
@@ -30,10 +32,10 @@ export default function SideBar() {
 
     const menu = navigation[user.role]
     return (
-        <aside className="hidden lg:flex h-153 w-64 shrink-0 flex-col border-r-2 border-[#7a3ffa2d] p-4  ">
+        <aside className={`hidden lg:flex h-153 w-64 shrink-0 flex-col ${ locale === "fa" ? "border-l-2" : " border-r-2"} border-[#7a3ffa2d] p-4  `}>
             <div className="flex items-center pl-1 pb-8 gap-1">
                 <CircleUserRound className="text-[#5d16f76f] size-9" />
-                <h2 className=" font-bold">{user.role} Dashboard </h2>
+                <h2 className=" font-bold">  {t("dashboard")} {t(user.role.toLowerCase())} </h2>
             </div>
             <div className="">
                 {menu.map((item) => {
@@ -48,7 +50,21 @@ export default function SideBar() {
                                 }`}
                         >
                             <Icon size={20} />
-                            <span>{item.title}</span>
+                            <span> {t(({
+                                    Dashboard: "dashboard",
+                                    Users: "users",
+                                    Vendors: "vendors",
+                                    Products: "products",
+                                    Categories: "categories",
+                                    Orders: "orders",
+                                    "My Products": "myProducts",
+                                    Visit: "visit",
+                                    "My Orders": "myOrders",
+                                    Favorite: "favorite",
+                                    Addresses: "addresses",
+                                    "Reviews & Questions": "reviews",
+                                }[item.title] || item.title)
+                            )}</span>
                         </Link>
                     );
                 })}

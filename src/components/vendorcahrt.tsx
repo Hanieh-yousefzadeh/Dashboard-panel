@@ -10,18 +10,20 @@ import {
   YAxis,
 } from "recharts";
 
-import { vendorMonthSales } from "@/data/mock-vendorpanel";
+import { vendorMonthSales } from "@/data/mock-vendorpanel"
+import { useTranslations } from "next-intl"
 
 export default function VendorSalesChart() {
+  const t = useTranslations("VendorDashboard")
   return (
     <section className="w-[50%] rounded-xl border border-[#7a3ffa1a] bg-card p-5 shadow-sm">
       <div className="mb-6">
         <h2 className="text-lg font-semibold">
-          Sales Statistics
+          {t("salesStatistics")}
         </h2>
 
         <p className="mt-1 text-sm text-[#7B29FB]">
-          Monthly Sales
+          {t("monthlySales")}
         </p>
       </div>
 
@@ -41,6 +43,7 @@ export default function VendorSalesChart() {
             <XAxis
               dataKey="month"
               tick={{ fontSize: 12 }}
+              tickFormatter={(month) => t(`months.${month}`)}
             />
 
             <YAxis
@@ -49,10 +52,7 @@ export default function VendorSalesChart() {
             />
 
             <Tooltip
-              formatter={(value) => [
-                `${value} Million dollars`,
-                "Sales",
-              ]}
+              formatter={(value) => [`${value} ${t("millionDollars")}`, t("sales")]}
             />
 
             <defs>
@@ -80,7 +80,7 @@ export default function VendorSalesChart() {
             <Area
               type="monotone"
               dataKey="sales"
-              name="Sales"
+              name={t("sales")}
               stroke="#7B29FB"
               strokeWidth={3}
               fill="url(#vendorSalesGradient)"

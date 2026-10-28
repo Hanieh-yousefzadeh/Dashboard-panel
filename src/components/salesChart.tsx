@@ -11,17 +11,20 @@ import {
 } from "recharts";
 
 import { monthSales } from "@/data/mock-dashboard";
+import { useTranslations } from "next-intl"
 
 export default function SalesChart() {
+  const t = useTranslations("AdminDashboard.salesChart")
+  const tMonth = useTranslations("AdminDashboard.months")
   return (
     <section className="xl:w-1/2 rounded-xl border border-[#7a3ffa1a] bg-card sm:p-5 p-2 shadow-sm">
       <div className="mb-6">
         <h2 className="sm:text-lg font-semibold">
-          Sales Statistics
+          {t("title")}
         </h2>
 
         <p className="mt-1 text-sm text-[#7B29FB]">
-          Monthly Sales
+          {t("subtitle")}
         </p>
       </div>
 
@@ -43,6 +46,7 @@ export default function SalesChart() {
             <XAxis
               dataKey="month"
               tick={{ fontSize: 12 }}
+                tickFormatter={(month) =>tMonth(month.toLowerCase())}
             />
 
             {/* مقدار فروش */}
@@ -53,10 +57,7 @@ export default function SalesChart() {
 
             {/* اطلاعات هنگام حرکت موس */}
             <Tooltip
-              formatter={(value) => [
-                `${value} Million dollars`,
-                "Sales",
-              ]}
+             formatter={(value) => [ `${value} ${t("millionDollars")}`,  t("sales")]}
             />
 
             {/* گرادیان رنگ زیر نمودار */}

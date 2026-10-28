@@ -1,0 +1,221 @@
+{
+  "Login": {
+    "title": "خوش آمدید",
+    "description": "وارد حساب کاربری خود شوید و به خریدتان ادامه دهید.",
+    "email": "ایمیل",
+    "emailPlaceholder": "آدرس ایمیل خود را وارد کنید",
+    "password": "رمز عبور",
+    "passwordPlaceholder": "رمز عبور خود را وارد کنید",
+    "submit": "ورود",
+    "loading": "در حال ورود...",
+    "error": "ایمیل یا رمز عبور اشتباه است"
+  },
+  "AdminDashboard": {
+    "overview": "نمای کلی وضعیت فروشگاه",
+    "cards": {
+      "users": "مجموع کاربران",
+      "products": "مجموع محصولات",
+      "orders": "مجموع سفارش‌ها",
+      "sales": "مجموع فروش",
+      "comments": "مجموع نظرات",
+      "thisMonth": "این ماه"
+    },
+    "months": {
+      "January": "فروردین",
+      "February": "اردیبهشت",
+      "March": "خرداد",
+      "April": "تیر",
+      "May": "مرداد",
+      "June": "شهریور"
+    },
+    "orderStatus": {
+      "paid": "پرداخت‌شده",
+      "waiting": "در انتظار",
+      "sent": "ارسال‌شده"
+    },
+    "salesChart": {
+      "title": "آمار فروش",
+      "subtitle": "فروش ماهانه",
+      "millionDollars": "میلیون دلار",
+      "sales": "فروش"
+    },
+    "latestOrders": {
+      "title": "آخرین سفارش‌ها",
+      "orderNumber": "شماره سفارش",
+      "customer": "مشتری",
+      "amount": "مبلغ",
+      "status": "وضعیت"
+    },
+    "sidebar": {
+      "dashboard": "داشبورد",
+      "users": "کاربران",
+      "vendors": "فروشندگان",
+      "products": "محصولات",
+      "categories": "دسته‌بندی‌ها",
+      "orders": "سفارش‌ها",
+      "myProducts": "محصولات من",
+      "visit": "آمار بازدید",
+      "myOrders": "سفارش‌های من",
+      "favorite": "علاقه‌مندی‌ها",
+      "addresses": "آدرس‌ها",
+      "reviews": "نظرات و پرسش‌ها",
+      "admin": "مدیر",
+      "vendor": "فروشنده",
+      "user": "کاربر"
+    },
+    "header": {
+      "logout": "خروج"
+    },
+    "theme": {
+      "light": "روشن",
+      "dark": "تاریک",
+      "system": "حالت سیستم"
+    }
+  },
+  "UsersPage": {
+    "title": "مدیریت مشتریان",
+    "totalCustomers": "تعداد کل مشتریان: ({count})",
+    "addUser": "افزودن کاربر",
+    "addNewUser": "افزودن کاربر جدید",
+    "editCustomer": "ویرایش مشتری",
+    "name": "نام",
+    "email": "ایمیل",
+    "enterName": "نام را وارد کنید",
+    "enterEmail": "ایمیل را وارد کنید",
+    "addCustomer": "افزودن مشتری",
+    "saveChanges": "ذخیره تغییرات",
+    "id": "شناسه",
+    "created": "تاریخ ایجاد",
+    "actions": "عملیات"
+  },
+  "VendorsPage": {
+    "title": "مدیریت فروشندگان",
+    "totalVendors": "تعداد کل فروشندگان: ({count})",
+    "addVendor": "افزودن فروشنده",
+    "addNewVendor": "افزودن فروشنده جدید",
+    "editVendor": "ویرایش فروشنده",
+    "name": "نام",
+    "email": "ایمیل",
+    "address": "آدرس",
+    "enterName": "نام را وارد کنید",
+    "enterEmail": "ایمیل را وارد کنید",
+    "enterAddress": "آدرس را وارد کنید",
+    "saveChanges": "ذخیره تغییرات",
+    "id": "شناسه",
+    "actions": "عملیات"
+  },
+  "ProductsPage": {
+    "title": "مدیریت محصولات",
+    "totalProducts": "تعداد کل محصولات: ({count})",
+    "addProduct": "افزودن محصول",
+    "addNewProduct": "افزودن محصول جدید",
+    "editProduct": "ویرایش محصول",
+    "productName": "نام محصول",
+    "productImage": "تصویر محصول",
+    "noFileChosen": "فایلی انتخاب نشده",
+    "currentProductImage": "تصویر فعلی محصول",
+    "chooseFile": "انتخاب فایل",
+    "category": "دسته‌بندی",
+    "selectCategory": "انتخاب دسته‌بندی",
+    "price": "قیمت",
+    "stock": "موجودی",
+    "saveChanges": "ذخیره تغییرات",
+    "id": "شناسه",
+    "product": "محصول",
+    "actions": "عملیات",
+    "noProductsFound": "محصولی یافت نشد.",
+    "productNames": {
+      "sunscreen": "ضدآفتاب",
+      "smartWatch": "ساعت هوشمند",
+      "tShirt": "تی‌شرت",
+      "englishTutorial": "آموزش زبان انگلیسی",
+      "steelPot": "قابلمه استیل"
+    }
+  },
+  "Categories": {
+    "cosmetics": "لوازم آرایشی و مراقبت شخصی",
+    "digitalProducts": "محصولات دیجیتال",
+    "books": "کتاب‌ها",
+    "homeKitchen": "خانه و آشپزخانه",
+    "clothing": "پوشاک"
+  },
+  "CategoriesPage": {
+    "title": "مدیریت دسته‌بندی‌ها",
+    "totalCategories": "تعداد کل دسته‌بندی‌ها",
+    "addCategory": "افزودن دسته‌بندی",
+    "addNewCategory": "افزودن دسته‌بندی جدید",
+    "categoryName": "نام دسته‌بندی",
+    "enterCategoryName": "نام دسته‌بندی را وارد کنید",
+    "editCategory": "ویرایش دسته‌بندی",
+    "saveChanges": "ذخیره تغییرات",
+    "id": "شناسه",
+    "actions": "عملیات"
+  },
+  "OrdersPage": {
+    "title": "مدیریت سفارش‌ها",
+    "currentOrders": "سفارش‌های جاری",
+    "delivered": "تحویل‌شده",
+    "cancelled": "لغوشده",
+    "returned": "مرجوع‌شده",
+    "orderList": "فهرست سفارش‌ها",
+    "allOrders": "همه سفارش‌ها",
+    "pending": "در انتظار",
+    "orderNumber": "شماره سفارش",
+    "customerName": "نام مشتری",
+    "date": "تاریخ",
+    "amount": "مبلغ",
+    "status": "وضعیت",
+    "changeStatus": "تغییر وضعیت",
+    "noOrders": "هیچ سفارشی وجود ندارد."
+  },
+  "VendorDashboard": {
+    "overview": "نمای کلی وضعیت فروشگاه",
+    "myProducts": "محصولات من",
+    "totalProducts": "تعداد کل محصولات",
+    "totalOrders": "تعداد کل سفارش‌ها",
+    "allOrders": "همه سفارش‌ها",
+    "totalSales": "مجموع فروش",
+    "totalRevenue": "کل درآمد",
+    "pendingOrders": "سفارش‌های در انتظار",
+    "needAttention": "نیازمند بررسی",
+    "totalReviews": "تعداد کل نظرات",
+    "customerReviews": "نظرات مشتریان",
+    "salesOverview": "گزارش فروش",
+    "recentOrders": "سفارش‌های اخیر",
+    "orderId": "شماره سفارش",
+    "product": "محصول",
+    "customer": "مشتری",
+    "amount": "مبلغ",
+    "status": "وضعیت",
+    "pending": "در انتظار",
+    "processing": "در حال پردازش",
+    "delivered": "تحویل‌شده",
+    "cancelled": "لغوشده",
+    "latestOrders": "آخرین سفارش‌ها",
+    "orderNumber": "شماره سفارش",
+    "salesStatistics": "آمار فروش",
+    "monthlySales": "فروش ماهانه",
+    "millionDollars": "میلیون دلار",
+    "sales": "فروش",
+    "months": {
+      "January": "فروردین",
+      "February": "اردیبهشت",
+      "March": "خرداد",
+      "April": "تیر",
+      "May": "مرداد",
+      "June": "شهریور"
+    },
+    "products": {
+      "Running Shoes": "کفش مخصوص دویدن",
+      "Wireless Headphones": "هدفون بی‌سیم",
+      "Classic Watch": "ساعت کلاسیک",
+      "Cotton T-Shirt": "تی‌شرت نخی",
+      "Sunscreen": "ضدآفتاب"
+    }
+  },"VisitPage": {
+  "product": "محصول",
+  "views": "بازدیدها",
+  "addedToWishlist": "افزوده‌شده به علاقه‌مندی‌ها",
+  "noProductsFound": "محصولی یافت نشد."
+}
+}
