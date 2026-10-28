@@ -211,13 +211,11 @@
       "Classic Watch": "ساعت کلاسیک",
       "Cotton T-Shirt": "تی‌شرت نخی",
       "Sunscreen": "ضدآفتاب"
-    },
-    "customers": {
-      "Sara Nori": "سارا نوری",
-      "Qazal esfandi": "غزل اسفندی",
-      "Mehdi Ekram": "مهدی اکرام",
-      "Narges Habibi": "نرگس حبیبی",
-      "Sara Heydari": "سارا حیدری"
     }
-  }
+  },"VisitPage": {
+  "product": "محصول",
+  "views": "بازدیدها",
+  "addedToWishlist": "افزوده‌شده به علاقه‌مندی‌ها",
+  "noProductsFound": "محصولی یافت نشد."
+}
 }

@@ -2,6 +2,7 @@
 import { mockProducts } from "@/data/mock-products"
 import { mockProductStats } from "@/data/mock-prostats"
 import Image from "next/image"
+import {useLocale, useTranslations} from "next-intl"
 
 import {
     Table,
@@ -13,6 +14,17 @@ import {
 } from "@/components/ui/table"
 
 export default function VisitPage() {
+    const t = useTranslations("VisitPage")
+    const locale = useLocale()
+   console.log("Current locale:", locale)
+    console.log("Translations" , t("product"))
+    const productTranslationKeys = {
+        "Sunscreen": "sunscreen",
+        "Smart Watch": "smartWatch",
+        "T-Shirt": "tShirt",
+        "English Language Tutorial": "englishTutorial",
+        "Stainless steel pot": "steelPot",
+    } as const
 
     const productsWithStats = mockProducts.map((product) => {
         const stats = mockProductStats.find((item) => item.productId === product.id)
@@ -28,9 +40,9 @@ export default function VisitPage() {
                 <Table className="w-307">
                     <TableHeader className="h-15 bg-[#f1ebfe6a]">
                         <TableRow>
-                            <TableHead className=" font-semibold text-[#5409cd] pl-19">Product </TableHead>
-                            <TableHead className="font-semibold text-[#5409cd]"> Views </TableHead>
-                            <TableHead className="font-semibold text-[#5409cd]"> Added to Wishlist</TableHead>
+                            <TableHead className=" font-semibold text-[#5409cd] pl-19">{t("product")}</TableHead>
+                            <TableHead className="font-semibold text-[#5409cd]">{t("views")}</TableHead>
+                            <TableHead className="font-semibold text-[#5409cd]"> {t( "addedToWishlist")}</TableHead>
                         </TableRow>
                     </TableHeader>
 
@@ -47,7 +59,7 @@ export default function VisitPage() {
                                             className="size-12 shrink-0 rounded-md object-cover"
                                         />
 
-                                        <span className="line-clamp-1">{product.name}</span>
+                                        <span className={`line-clamp-1`}>{product.name}</span>
                                     </div>
                                 </TableCell>
                                 <TableCell className="pr-20"> {product.views} </TableCell>
@@ -57,7 +69,7 @@ export default function VisitPage() {
 
                         {productsWithStats.length === 0 && (
                             <TableRow>
-                                <TableCell colSpan={3} className="py-8 text-center"> No products found.</TableCell>
+                                <TableCell colSpan={3} className="py-8 text-center"> {t("noProductsFound")}</TableCell>
                             </TableRow>
                         )}
                     </TableBody>

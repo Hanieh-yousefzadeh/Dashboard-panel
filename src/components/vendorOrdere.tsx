@@ -37,7 +37,7 @@ export default function VendorOrders() {
                   | "products.Cotton T-Shirt"
                   | "products.Sunscreen"
                 )} </td>
-                <td className="py-4 pl-4 text-center"> {t(`customers.${order.customer}`)}</td>
+                <td className="py-4 pl-4 text-center"> {order.customer}</td>
                 <td className="py-4 pl-4 text-center"> ${order.amount.toFixed(2)} </td>
 
                 <td className="py-4 pl-4 text-center">
