@@ -11,62 +11,68 @@
     "error": "ایمیل یا رمز عبور اشتباه است"
   },
   "AdminDashboard": {
-  "overview": "نمای کلی وضعیت فروشگاه",
-  "cards": {
-    "users": "مجموع کاربران",
-    "products": "مجموع محصولات",
-    "orders": "مجموع سفارش‌ها",
-    "sales": "مجموع فروش",
-    "comments": "مجموع نظرات",
-    "thisMonth": "این ماه"
+    "overview": "نمای کلی وضعیت فروشگاه",
+    "cards": {
+      "users": "مجموع کاربران",
+      "products": "مجموع محصولات",
+      "orders": "مجموع سفارش‌ها",
+      "sales": "مجموع فروش",
+      "comments": "مجموع نظرات",
+      "thisMonth": "این ماه"
+    },
+    "months": {
+      "January": "فروردین",
+      "February": "اردیبهشت",
+      "March": "خرداد",
+      "April": "تیر",
+      "May": "مرداد",
+      "June": "شهریور"
+    },
+    "orderStatus": {
+      "paid": "پرداخت‌شده",
+      "waiting": "در انتظار",
+      "sent": "ارسال‌شده"
+    },
+    "salesChart": {
+      "title": "آمار فروش",
+      "subtitle": "فروش ماهانه",
+      "millionDollars": "میلیون دلار",
+      "sales": "فروش"
+    },
+    "latestOrders": {
+      "title": "آخرین سفارش‌ها",
+      "orderNumber": "شماره سفارش",
+      "customer": "مشتری",
+      "amount": "مبلغ",
+      "status": "وضعیت"
+    },
+    "sidebar": {
+      "dashboard": "داشبورد",
+      "users": "کاربران",
+      "vendors": "فروشندگان",
+      "products": "محصولات",
+      "categories": "دسته‌بندی‌ها",
+      "orders": "سفارش‌ها",
+      "myProducts": "محصولات من",
+      "visit": "آمار بازدید",
+      "myOrders": "سفارش‌های من",
+      "favorite": "علاقه‌مندی‌ها",
+      "addresses": "آدرس‌ها",
+      "reviews": "نظرات و پرسش‌ها",
+      "admin": "مدیر",
+      "vendor": "فروشنده",
+      "user": "کاربر"
+    },
+    "header": {
+      "logout": "خروج"
+    },
+    "theme": {
+      "light": "روشن",
+      "dark": "تاریک",
+      "system": "حالت سیستم"
+    }
   },
-  "months": {
-    "january": "ژانویه",
-    "february": "فوریه",
-    "march": "مارس",
-    "april": "آوریل",
-    "may": "مه",
-    "june": "ژوئن"
-  },
-  "orderStatus": {
-    "paid": "پرداخت‌شده",
-    "waiting": "در انتظار",
-    "sent": "ارسال‌شده"
-  },"salesChart": {
-  "title": "آمار فروش",
-  "subtitle": "فروش ماهانه",
-  "millionDollars": "میلیون دلار",
-  "sales": "فروش"
-},"latestOrders": {
-  "title": "آخرین سفارش‌ها",
-  "orderNumber": "شماره سفارش",
-  "customer": "مشتری",
-  "amount": "مبلغ",
-  "status": "وضعیت"
-},"sidebar": {
-  "dashboard": "داشبورد",
-  "users": "کاربران",
-  "vendors": "فروشندگان",
-  "products": "محصولات",
-  "categories": "دسته‌بندی‌ها",
-  "orders": "سفارش‌ها",
-  "myProducts": "محصولات من",
-  "visit": "آمار بازدید",
-  "myOrders": "سفارش‌های من",
-  "favorite": "علاقه‌مندی‌ها",
-  "addresses": "آدرس‌ها",
-  "reviews": "نظرات و پرسش‌ها",
-  "admin": "مدیر",
-  "vendor": "فروشنده",
-  "user": "کاربر"
-},"header": {
-  "logout": "خروج"
-},"theme": {
-  "light": "روشن",
-  "dark": "تاریک",
-  "system": "حالت سیستم"
-}
-}, "UsersPage": {
+  "UsersPage": {
     "title": "مدیریت مشتریان",
     "totalCustomers": "تعداد کل مشتریان: ({count})",
     "addUser": "افزودن کاربر",
@@ -81,7 +87,8 @@
     "id": "شناسه",
     "created": "تاریخ ایجاد",
     "actions": "عملیات"
-  },"VendorsPage": {
+  },
+  "VendorsPage": {
     "title": "مدیریت فروشندگان",
     "totalVendors": "تعداد کل فروشندگان: ({count})",
     "addVendor": "افزودن فروشنده",
@@ -96,7 +103,8 @@
     "saveChanges": "ذخیره تغییرات",
     "id": "شناسه",
     "actions": "عملیات"
-},"ProductsPage": {
+  },
+  "ProductsPage": {
     "title": "مدیریت محصولات",
     "totalProducts": "تعداد کل محصولات: ({count})",
     "addProduct": "افزودن محصول",
@@ -117,44 +125,99 @@
     "actions": "عملیات",
     "noProductsFound": "محصولی یافت نشد.",
     "productNames": {
-  "sunscreen": "ضدآفتاب",
-  "smartWatch": "ساعت هوشمند",
-  "tShirt": "تی‌شرت",
-  "englishTutorial": "آموزش زبان انگلیسی",
-  "steelPot": "قابلمه استیل"
-}
-},"Categories": {
-  "cosmetics": "لوازم آرایشی و مراقبت شخصی",
-  "digitalProducts": "محصولات دیجیتال",
-  "books": "کتاب‌ها",
-  "homeKitchen": "خانه و آشپزخانه",
-  "clothing": "پوشاک"
-},"CategoriesPage": {
-  "title": "مدیریت دسته‌بندی‌ها",
-  "totalCategories": "تعداد کل دسته‌بندی‌ها",
-  "addCategory": "افزودن دسته‌بندی",
-  "addNewCategory": "افزودن دسته‌بندی جدید",
-  "categoryName": "نام دسته‌بندی",
-  "enterCategoryName": "نام دسته‌بندی را وارد کنید",
-  "editCategory": "ویرایش دسته‌بندی",
-  "saveChanges": "ذخیره تغییرات",
-  "id": "شناسه",
-  "actions": "عملیات"
-},"OrdersPage": {
-  "title": "مدیریت سفارش‌ها",
-  "currentOrders": "سفارش‌های جاری",
-  "delivered": "تحویل‌شده",
-  "cancelled": "لغوشده",
-  "returned": "مرجوع‌شده",
-  "orderList": "فهرست سفارش‌ها",
-  "allOrders": "همه سفارش‌ها",
-  "pending": "در انتظار",
-  "orderNumber": "شماره سفارش",
-  "customerName": "نام مشتری",
-  "date": "تاریخ",
-  "amount": "مبلغ",
-  "status": "وضعیت",
-  "changeStatus": "تغییر وضعیت",
-  "noOrders": "هیچ سفارشی وجود ندارد."
-}
+      "sunscreen": "ضدآفتاب",
+      "smartWatch": "ساعت هوشمند",
+      "tShirt": "تی‌شرت",
+      "englishTutorial": "آموزش زبان انگلیسی",
+      "steelPot": "قابلمه استیل"
+    }
+  },
+  "Categories": {
+    "cosmetics": "لوازم آرایشی و مراقبت شخصی",
+    "digitalProducts": "محصولات دیجیتال",
+    "books": "کتاب‌ها",
+    "homeKitchen": "خانه و آشپزخانه",
+    "clothing": "پوشاک"
+  },
+  "CategoriesPage": {
+    "title": "مدیریت دسته‌بندی‌ها",
+    "totalCategories": "تعداد کل دسته‌بندی‌ها",
+    "addCategory": "افزودن دسته‌بندی",
+    "addNewCategory": "افزودن دسته‌بندی جدید",
+    "categoryName": "نام دسته‌بندی",
+    "enterCategoryName": "نام دسته‌بندی را وارد کنید",
+    "editCategory": "ویرایش دسته‌بندی",
+    "saveChanges": "ذخیره تغییرات",
+    "id": "شناسه",
+    "actions": "عملیات"
+  },
+  "OrdersPage": {
+    "title": "مدیریت سفارش‌ها",
+    "currentOrders": "سفارش‌های جاری",
+    "delivered": "تحویل‌شده",
+    "cancelled": "لغوشده",
+    "returned": "مرجوع‌شده",
+    "orderList": "فهرست سفارش‌ها",
+    "allOrders": "همه سفارش‌ها",
+    "pending": "در انتظار",
+    "orderNumber": "شماره سفارش",
+    "customerName": "نام مشتری",
+    "date": "تاریخ",
+    "amount": "مبلغ",
+    "status": "وضعیت",
+    "changeStatus": "تغییر وضعیت",
+    "noOrders": "هیچ سفارشی وجود ندارد."
+  },
+  "VendorDashboard": {
+    "overview": "نمای کلی وضعیت فروشگاه",
+    "myProducts": "محصولات من",
+    "totalProducts": "تعداد کل محصولات",
+    "totalOrders": "تعداد کل سفارش‌ها",
+    "allOrders": "همه سفارش‌ها",
+    "totalSales": "مجموع فروش",
+    "totalRevenue": "کل درآمد",
+    "pendingOrders": "سفارش‌های در انتظار",
+    "needAttention": "نیازمند بررسی",
+    "totalReviews": "تعداد کل نظرات",
+    "customerReviews": "نظرات مشتریان",
+    "salesOverview": "گزارش فروش",
+    "recentOrders": "سفارش‌های اخیر",
+    "orderId": "شماره سفارش",
+    "product": "محصول",
+    "customer": "مشتری",
+    "amount": "مبلغ",
+    "status": "وضعیت",
+    "pending": "در انتظار",
+    "processing": "در حال پردازش",
+    "delivered": "تحویل‌شده",
+    "cancelled": "لغوشده",
+    "latestOrders": "آخرین سفارش‌ها",
+    "orderNumber": "شماره سفارش",
+    "salesStatistics": "آمار فروش",
+    "monthlySales": "فروش ماهانه",
+    "millionDollars": "میلیون دلار",
+    "sales": "فروش",
+    "months": {
+      "January": "فروردین",
+      "February": "اردیبهشت",
+      "March": "خرداد",
+      "April": "تیر",
+      "May": "مرداد",
+      "June": "شهریور"
+    },
+    "products": {
+      "Running Shoes": "کفش مخصوص دویدن",
+      "Wireless Headphones": "هدفون بی‌سیم",
+      "Classic Watch": "ساعت کلاسیک",
+      "Cotton T-Shirt": "تی‌شرت نخی",
+      "Sunscreen": "ضدآفتاب"
+    },
+    "customers": {
+      "Sara Nori": "سارا نوری",
+      "Qazal esfandi": "غزل اسفندی",
+      "Mehdi Ekram": "مهدی اکرام",
+      "Narges Habibi": "نرگس حبیبی",
+      "Sara Heydari": "سارا حیدری"
+    }
+  }
 }

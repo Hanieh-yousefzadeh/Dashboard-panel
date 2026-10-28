@@ -2,14 +2,15 @@ import { dashboardCard } from "@/data/mock-dashboard";
 import DashboardCard from "@/components/dashboard-card";
 import SalesChart from "@/components/salesChart";
 import StatusOrders from "@/components/statusOrders";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 export default function AdminDashboard() {
   const t = useTranslations("AdminDashboard")
+  const locale = useLocale()
   return (
-    <div className="xl:w-315 sm:pl-5 pt-2">
+    <div className={`xl:w-315  pt-2 ${locale === "fa" ? "sm:pr-5" : "sm:pl-5"}`}>
       <div>
-        <p className="mt-2 text-lg sm:pb-2 sm:text-left text-center pb-5">  {t("overview")}</p>
+        <p className={`mt-2 text-lg sm:pb-2  ${locale === "fa" ? "sm:text-right" : "text-center sm:text-left"}  pb-5`}>  {t("overview")}</p>
       </div>
 
 

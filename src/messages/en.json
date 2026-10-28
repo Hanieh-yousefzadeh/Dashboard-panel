@@ -167,5 +167,56 @@
     "status": "Status",
     "changeStatus": "Change Status",
     "noOrders": "There are no orders."
+  },
+  "VendorDashboard": {
+    "overview": "Overview of the Store's Status",
+    "myProducts": "My Products",
+    "totalProducts": "Total Products",
+    "totalOrders": "Total Orders",
+    "allOrders": "All Orders",
+    "totalSales": "Total Sales",
+    "totalRevenue": "Total Revenue",
+    "pendingOrders": "Pending Orders",
+    "needAttention": "Need Attention",
+    "totalReviews": "Total Reviews",
+    "customerReviews": "Customer Reviews",
+    "salesOverview": "Sales Overview",
+    "recentOrders": "Recent Orders",
+    "orderId": "Order ID",
+    "product": "Product",
+    "customer": "Customer",
+    "amount": "Amount",
+    "status": "Status",
+    "pending": "Pending",
+    "processing": "Processing",
+    "delivered": "Delivered",
+    "cancelled": "Cancelled",
+    "salesStatistics": "Sales Statistics",
+    "monthlySales": "Monthly Sales",
+    "millionDollars": "Million dollars",
+    "latestOrders": "Latest Orders",
+    "orderNumber": "Order Number",
+    "sales": "Sales",
+    "months": {
+      "January": "January",
+      "February": "February",
+      "March": "March",
+      "April": "April",
+      "May": "May",
+      "June": "June"
+    },
+    "products": {
+      "Running Shoes": "Running Shoes",
+      "Wireless Headphones": "Wireless Headphones",
+      "Classic Watch": "Classic Watch",
+      "Cotton T-Shirt": "Cotton T-Shirt",
+      "Sunscreen": "Sunscreen"
+    },"customers": {
+  "Sara Nori": "Sara Nori",
+  "Qazal esfandi": "Qazal esfandi",
+  "Mehdi Ekram": "Mehdi Ekram",
+  "Narges Habibi": "Narges Habibi",
+  "Sara Heydari": "Sara Heydari"
+}
   }
 }
