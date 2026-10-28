@@ -115,7 +115,14 @@
     "id": "شناسه",
     "product": "محصول",
     "actions": "عملیات",
-    "noProductsFound": "محصولی یافت نشد."
+    "noProductsFound": "محصولی یافت نشد.",
+    "productNames": {
+  "sunscreen": "ضدآفتاب",
+  "smartWatch": "ساعت هوشمند",
+  "tShirt": "تی‌شرت",
+  "englishTutorial": "آموزش زبان انگلیسی",
+  "steelPot": "قابلمه استیل"
+}
 },"Categories": {
   "cosmetics": "لوازم آرایشی و مراقبت شخصی",
   "digitalProducts": "محصولات دیجیتال",

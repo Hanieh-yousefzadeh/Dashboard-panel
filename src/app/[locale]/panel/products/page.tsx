@@ -14,7 +14,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger, } from
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Button } from "@/components/ui/button"
-import { useTranslations  , useLocale } from "next-intl"
+import { useTranslations, useLocale } from "next-intl"
 
 export default function ProductsPage() {
 
@@ -161,7 +161,15 @@ export default function ProductsPage() {
         "Home & Kitchen": "homeKitchen",
         Clothing: "clothing",
     } as const
-    const locale = useLocale()
+    const locale = useLocale();
+    const n = useTranslations("ProductsPage")
+    const productTranslationKeys = {
+        "Sunscreen": "sunscreen",
+        "Smart Watch": "smartWatch",
+        "T-Shirt": "tShirt",
+        "English Language Tutorial": "englishTutorial",
+        "Stainless steel pot": "steelPot",
+    } as const
 
     return (
         <div className="p-5 pl-8 xl:w-316 md:w-3xl w-80 overflow-x-atuo">
@@ -245,7 +253,7 @@ export default function ProductsPage() {
                     <Table>
                         <TableHeader className="h-15 text-base bg-[#f1ebfe6a]">
                             <TableRow>
-                                <TableHead className={`font-semibold text-[#5409cd] ${locale === "fa" ? "text-right xl:pr-15" :"text-left xl:pl-8" }`}>{t("id")} </TableHead>
+                                <TableHead className={`font-semibold text-[#5409cd] ${locale === "fa" ? "text-right xl:pr-15" : "text-left xl:pl-8"}`}>{t("id")} </TableHead>
                                 <TableHead className={`font-semibold text-[#5409cd] ${locale === "fa" ? "text-right" : "text-left"}`}> {t("product")} </TableHead>
                                 <TableHead className={`font-semibold text-[#5409cd] ${locale === "fa" ? "text-right" : "text-left"}`}> {t("category")}  </TableHead>
                                 <TableHead className={`font-semibold text-[#5409cd] ${locale === "fa" ? "text-center pl-7" : "text-left"}`}> {t("price")} </TableHead>
@@ -263,12 +271,18 @@ export default function ProductsPage() {
                                             <div className={"flex items-center gap-3  min-w-40"}>
                                                 <Image src={product.image} alt={product.name} width={48} height={48}
                                                     className="size-12 shrink-0 rounded-md object-cover" />
-                                                <span className={`line-clamp-1 ${ locale === "fa" ? "" : "pr-25"} `}> {product.name}</span>
+                                                <span className={`line-clamp-1 ${locale === "fa" ? "" : "pr-25"} `}>
+                                                    {n(`productNames.${productTranslationKeys[product.name as keyof typeof productTranslationKeys]}`
+                                                    )}</span>
                                             </div>
                                         </TableCell>
-                                        <TableCell className={` ${locale === "fa" ? "" : "pr-30"}`}> {category?.name}</TableCell>
-                                        <TableCell className={`${locale === "fa" ? "pr-10 pl-6" :"pr-28"}`}>  ${product.price} </TableCell>
-                                        <TableCell className={`${locale === "fa" ? "pr-8 pl-8" :"pr-28"}`}> {product.stock}</TableCell>
+                                        <TableCell className={` ${locale === "fa" ? "" : "pr-30"}`}>
+                                            {category ?
+                                                tCategories(categoryTranslationKeys[category.name as keyof typeof categoryTranslationKeys])
+                                                : "-"}
+                                        </TableCell>
+                                        <TableCell className={`${locale === "fa" ? "pr-10 pl-6" : "pr-28"}`}>  ${product.price} </TableCell>
+                                        <TableCell className={`${locale === "fa" ? "pr-8 pl-8" : "pr-28"}`}> {product.stock}</TableCell>
 
                                         <TableCell>
                                             <div className={`flex items-center justify-center gap-3 ${locale === "fa" ? "pl-5" : "pr-8"}`}>
@@ -337,7 +351,7 @@ export default function ProductsPage() {
                                                                     <option value="">{t("selectCategory")}</option>
                                                                     {mockCategories.map((category) => (
                                                                         <option key={category.id} value={category.id} >
-                                                                            {category.name}
+                                                                            {tCategories(categoryTranslationKeys[category.name as keyof typeof categoryTranslationKeys])}
                                                                         </option>
                                                                     ))}
                                                                 </select>

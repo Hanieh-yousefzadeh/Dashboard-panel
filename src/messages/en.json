@@ -87,7 +87,8 @@
     "id": "ID",
     "created": "Created",
     "actions": "Actions"
-  },"VendorsPage": {
+  },
+  "VendorsPage": {
     "title": "Vendors Management",
     "totalVendors": "Total Vendors: ({count})",
     "addVendor": "Add Vendor",
@@ -102,7 +103,8 @@
     "saveChanges": "Save Changes",
     "id": "ID",
     "actions": "Actions"
-},"ProductsPage": {
+  },
+  "ProductsPage": {
     "title": "Products Management",
     "totalProducts": "Total Products: ({count})",
     "addProduct": "Add Product",
@@ -121,39 +123,49 @@
     "id": "ID",
     "product": "Product",
     "actions": "Actions",
-    "noProductsFound": "No products found."
-},"Categories": {
-  "cosmetics": "Cosmetics & Personal Care",
-  "digitalProducts": "Digital Products",
-  "books": "Books",
-  "homeKitchen": "Home & Kitchen",
-  "clothing": "Clothing"
-},"CategoriesPage": {
-  "title": "Categories Management",
-  "totalCategories": "Total Categories",
-  "addCategory": "Add Category",
-  "addNewCategory": "Add New Category",
-  "categoryName": "Category Name",
-  "enterCategoryName": "Enter category name",
-  "editCategory": "Edit Category",
-  "saveChanges": "Save Changes",
-  "id": "ID",
-  "actions": "Actions"
-},"OrdersPage": {
-  "title": "Orders Management",
-  "currentOrders": "Current Orders",
-  "delivered": "Delivered",
-  "cancelled": "Cancelled",
-  "returned": "Returned",
-  "orderList": "Order List",
-  "allOrders": "All Orders",
-  "pending": "Pending",
-  "orderNumber": "Order Number",
-  "customerName": "Customer Name",
-  "date": "Date",
-  "amount": "Amount",
-  "status": "Status",
-  "changeStatus": "Change Status",
-  "noOrders": "There are no orders."
-}
+    "noProductsFound": "No products found.",
+    "productNames": {
+      "sunscreen": "Sunscreen",
+      "smartWatch": "Smart Watch",
+      "tShirt": "T-Shirt",
+      "englishTutorial": "English Language Tutorial",
+      "steelPot": "Stainless steel pot"
+    }
+  },
+  "Categories": {
+    "cosmetics": "Cosmetics & Personal Care",
+    "digitalProducts": "Digital Products",
+    "books": "Books",
+    "homeKitchen": "Home & Kitchen",
+    "clothing": "Clothing"
+  },
+  "CategoriesPage": {
+    "title": "Categories Management",
+    "totalCategories": "Total Categories",
+    "addCategory": "Add Category",
+    "addNewCategory": "Add New Category",
+    "categoryName": "Category Name",
+    "enterCategoryName": "Enter category name",
+    "editCategory": "Edit Category",
+    "saveChanges": "Save Changes",
+    "id": "ID",
+    "actions": "Actions"
+  },
+  "OrdersPage": {
+    "title": "Orders Management",
+    "currentOrders": "Current Orders",
+    "delivered": "Delivered",
+    "cancelled": "Cancelled",
+    "returned": "Returned",
+    "orderList": "Order List",
+    "allOrders": "All Orders",
+    "pending": "Pending",
+    "orderNumber": "Order Number",
+    "customerName": "Customer Name",
+    "date": "Date",
+    "amount": "Amount",
+    "status": "Status",
+    "changeStatus": "Change Status",
+    "noOrders": "There are no orders."
+  }
 }
