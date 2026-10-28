@@ -133,5 +133,21 @@
   "saveChanges": "ذخیره تغییرات",
   "id": "شناسه",
   "actions": "عملیات"
+},"OrdersPage": {
+  "title": "مدیریت سفارش‌ها",
+  "currentOrders": "سفارش‌های جاری",
+  "delivered": "تحویل‌شده",
+  "cancelled": "لغوشده",
+  "returned": "مرجوع‌شده",
+  "orderList": "فهرست سفارش‌ها",
+  "allOrders": "همه سفارش‌ها",
+  "pending": "در انتظار",
+  "orderNumber": "شماره سفارش",
+  "customerName": "نام مشتری",
+  "date": "تاریخ",
+  "amount": "مبلغ",
+  "status": "وضعیت",
+  "changeStatus": "تغییر وضعیت",
+  "noOrders": "هیچ سفارشی وجود ندارد."
 }
 }

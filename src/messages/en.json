@@ -139,5 +139,21 @@
   "saveChanges": "Save Changes",
   "id": "ID",
   "actions": "Actions"
+},"OrdersPage": {
+  "title": "Orders Management",
+  "currentOrders": "Current Orders",
+  "delivered": "Delivered",
+  "cancelled": "Cancelled",
+  "returned": "Returned",
+  "orderList": "Order List",
+  "allOrders": "All Orders",
+  "pending": "Pending",
+  "orderNumber": "Order Number",
+  "customerName": "Customer Name",
+  "date": "Date",
+  "amount": "Amount",
+  "status": "Status",
+  "changeStatus": "Change Status",
+  "noOrders": "There are no orders."
 }
 }
