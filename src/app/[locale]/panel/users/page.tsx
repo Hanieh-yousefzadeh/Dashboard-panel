@@ -27,6 +27,7 @@ import {
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Button } from "@/components/ui/button"
+import { useTranslations  , useLocale} from "next-intl"
 
 export default function UsersPage() {
 
@@ -90,19 +91,21 @@ export default function UsersPage() {
     function handleDeleteCustomer(id: number) {
         dispatch(deletecustomer(id))
     }
+    const t = useTranslations("UsersPage")
+    const locale = useLocale()
     return (
         <div className="p-5 pl-8 xl:w-316 md:w-3xl w-80 overflow-x-atuo ">
             <div className="flex justify-between pb-12">
                 <div className="flex flex-col gap-3">
-                    <h1 className="lg:text-2xl font-bold"> Manage your customers</h1>
-                    <p className="text-sm text-[#7B29FB]">  Total customers: ({mounted ? customers.length : "..."}) </p>
+                    <h1 className="lg:text-2xl font-bold"> 	{t("title")}</h1>
+                    <p className="text-sm text-[#7B29FB]">  {t("totalCustomers", {count: mounted ? customers.length : "..."})} </p>
                 </div>
                 <Dialog open={open} onOpenChange={setOpen}>
-                    <DialogTrigger render={<Button className="text-base bg-[#7a3ffacb] py-4.5 pr-3.5 hover:bg-[#5409cd] cursor-pointer"><Plus strokeWidth={3} /> Add User</Button>} />
+                    <DialogTrigger render={<Button className="text-base bg-[#7a3ffacb] py-4.5 pr-3.5 hover:bg-[#5409cd] cursor-pointer"><Plus strokeWidth={3} />	{t("addUser")}</Button>} />
 
                     <DialogContent className="border-[#7a3ffa1a] text-[#5409cd]">
                         <DialogHeader>
-                            <DialogTitle className="text-[#5409cd] font-bold">Add New User</DialogTitle>
+                            <DialogTitle className="text-[#5409cd] font-bold">	{t("addNewUser")}</DialogTitle>
                         </DialogHeader>
 
                         <form
@@ -110,31 +113,31 @@ export default function UsersPage() {
                             className=" flex flex-col gap-5 pt-5 text-[#6200ff]"
                         >
                             <div className="flex flex-col gap-2">
-                                <Label htmlFor="name">Name</Label>
+                                <Label htmlFor="name">{t("name")}</Label>
                                 <Input
                                     id="name"
                                     value={name}
                                     onChange={(e) => setName(e.target.value)}
-                                    placeholder="Enter name"
+                                    placeholder={t("enterName")}
                                     required
                                     className="border-[#7a3ffa1a] text-[#4104a2] placeholder:text-[#6315e16e] focus-visible:ring-0"
                                 />
                             </div>
 
                             <div className="flex flex-col gap-2">
-                                <Label htmlFor="email">Email</Label>
+                                <Label htmlFor="email">	{t("email")}</Label>
                                 <Input
                                     id="email"
                                     type="email"
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
-                                    placeholder="Enter email"
+                                    placeholder={t("enterEmail")}
                                     required
                                     className="border-[#7a3ffa1a] text-[#4104a2] placeholder:text-[#6315e16e] focus-visible:ring-0 "
                                 />
                             </div>
 
-                            <Button type="submit" className=" cursor-pointer w-full py-5 mt-3 bg-[#7a3ffacb] hover:bg-[#5409cd]"> Add Customer</Button>
+                            <Button type="submit" className=" cursor-pointer w-full py-5 mt-3 bg-[#7a3ffacb] hover:bg-[#5409cd]"> {t("addCustomer")}</Button>
                         </form>
                     </DialogContent>
                 </Dialog>
@@ -148,12 +151,12 @@ export default function UsersPage() {
                 >
                     <DialogContent className="border-[#7a3ffa1a] text-[#5409cd]">
                         <DialogHeader>
-                            <DialogTitle className="text-[#5409cd] font-bold"> Edit Customer </DialogTitle>
+                            <DialogTitle className="text-[#5409cd] font-bold"> {t("editCustomer")} </DialogTitle>
                         </DialogHeader>
 
                         <form onSubmit={handleEditSubmit} className="flex flex-col gap-5 pt-5">
                             <div className="flex flex-col gap-2">
-                                <Label htmlFor="editName">Name</Label>
+                                <Label htmlFor="editName">{t("name")}</Label>
                                 <Input
                                     id="editName"
                                     value={editName}
@@ -164,7 +167,7 @@ export default function UsersPage() {
                             </div>
 
                             <div className="flex flex-col gap-2">
-                                <Label htmlFor="editEmail">Email</Label>
+                                <Label htmlFor="editEmail">{t("email")}</Label>
                                 <Input
                                     id="editEmail"
                                     type="email"
@@ -176,7 +179,7 @@ export default function UsersPage() {
                             </div>
 
                             <Button type="submit" className="w-full py-5 bg-[#7a3ffacb] hover:bg-[#5409cd]" >
-                                Save Changes
+                               	{t("saveChanges")}
                             </Button>
                         </form>
                     </DialogContent>
@@ -190,23 +193,23 @@ export default function UsersPage() {
                     <Table className="">
                         <TableHeader className="h-12 text-base bg-[#f1ebfe6a]">
                             <TableRow>
-                                <TableHead className="xl:pl-11 font-semibold text-[#5409cd]">ID</TableHead>
-                                <TableHead className=" font-semibold text-[#5409cd]">Name</TableHead>
-                                <TableHead className=" font-semibold text-[#5409cd]">Email</TableHead>
-                                <TableHead className=" font-semibold text-[#5409cd]">Created</TableHead>
-                                <TableHead className=" font-semibold text-[#4e07c2] text-center">Actions</TableHead>
+                                <TableHead className={` font-semibold text-[#5409cd] ${locale === "fa" ? "text-right xl:pr-15" :"text-left xl:pl-11" }`}>{t("id")}</TableHead>
+                                <TableHead className={`font-semibold text-[#5409cd]" ${locale === "fa" ? "text-right" :"text-left" }`}>{t("name")}</TableHead>
+                                <TableHead className={`font-semibold text-[#5409cd]" ${locale === "fa" ? "text-right" :"text-left" }`}>{t("email")}</TableHead>
+                                <TableHead className={`font-semibold text-[#5409cd]" ${locale === "fa" ? "text-right" :"text-left" }`}>{t("created")}</TableHead>
+                                <TableHead className={`font-semibold text-[#5409cd]" ${locale === "fa" ? "text-center pl-8" :"text-left" }`}>	{t("actions")}</TableHead>
                             </TableRow>
                         </TableHeader>
 
                         <TableBody >
                             {customers.map((customer) => (
                                 <TableRow key={customer.id} className="h-14">
-                                    <TableCell className="pl-10">{customer.id}</TableCell>
+                                    <TableCell className={`${locale === "fa" ? "pr-15" :  "pl-10"}`}>{customer.id}</TableCell>
                                     <TableCell>{customer.name}</TableCell>
                                     <TableCell>{customer.email}</TableCell>
                                     <TableCell>{customer.created}</TableCell>
 
-                                    <TableCell className="flex items-center justify-center">
+                                    <TableCell className={`flex items-center justify-center ${ locale === "fa" ? "gap-2" : "gap-0"}`}>
                                         <button onClick={() => handleEditClick(customer)} className="text-[#6e2dfab3] cursor-pointer ">
                                             <PencilSparkles className=" size-5" />
                                         </button>

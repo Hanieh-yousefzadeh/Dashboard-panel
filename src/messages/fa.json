@@ -66,5 +66,20 @@
   "dark": "تاریک",
   "system": "حالت سیستم"
 }
-}
+}, "UsersPage": {
+    "title": "مدیریت مشتریان",
+    "totalCustomers": "تعداد کل مشتریان: ({count})",
+    "addUser": "افزودن کاربر",
+    "addNewUser": "افزودن کاربر جدید",
+    "editCustomer": "ویرایش مشتری",
+    "name": "نام",
+    "email": "ایمیل",
+    "enterName": "نام را وارد کنید",
+    "enterEmail": "ایمیل را وارد کنید",
+    "addCustomer": "افزودن مشتری",
+    "saveChanges": "ذخیره تغییرات",
+    "id": "شناسه",
+    "created": "تاریخ ایجاد",
+    "actions": "عملیات"
+  }
 }
