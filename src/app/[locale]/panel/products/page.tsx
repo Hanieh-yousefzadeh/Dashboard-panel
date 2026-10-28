@@ -2,7 +2,7 @@
 
 import { useDispatch, useSelector } from "react-redux"
 import type { stateType, dispatchType } from "@/lib/store"
-import { mockProducts, type Product } from "@/data/mock-products"
+import type { Product } from "@/data/mock-products"
 import { addProduct, editProduct, deleteProduct } from "@/redux/productSlice"
 import { PencilSparkles, Trash } from "lucide-react"
 import { useState, useEffect } from "react"
@@ -14,6 +14,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger, } from
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Button } from "@/components/ui/button"
+import { useTranslations  , useLocale } from "next-intl"
 
 export default function ProductsPage() {
 
@@ -139,36 +140,46 @@ export default function ProductsPage() {
         const file = e.target.files?.[0]
 
         if (file) {
-        const reader = new FileReader()
-        reader.onload = () => {
-            const imageData = reader.result as string
-            setEditForm({
-                ...editForm,
-                image: imageData,
-            })
-            setImageName(file.name)
+            const reader = new FileReader()
+            reader.onload = () => {
+                const imageData = reader.result as string
+                setEditForm({
+                    ...editForm,
+                    image: imageData,
+                })
+                setImageName(file.name)
+            }
+            reader.readAsDataURL(file)
         }
-        reader.readAsDataURL(file)
     }
-    }
+    const t = useTranslations("ProductsPage")
+    const tCategories = useTranslations("Categories")
+    const categoryTranslationKeys = {
+        "Cosmetics & Personal Care": "cosmetics",
+        "Digital Products": "digitalProducts",
+        Books: "books",
+        "Home & Kitchen": "homeKitchen",
+        Clothing: "clothing",
+    } as const
+    const locale = useLocale()
 
     return (
         <div className="p-5 pl-8 xl:w-316 md:w-3xl w-80 overflow-x-atuo">
             <div className="pb-12 flex items-center justify-between">
                 <div className="flex flex-col gap-3">
-                    <h1 className="sm:text-2xl font-bold">Products Management </h1>
-                    <p className="text-sm text-[#7B29FB]"> Total Products: ({products.length}) </p>
+                    <h1 className="sm:text-2xl font-bold"> {t("title")}</h1>
+                    <p className="text-sm text-[#7B29FB]"> {t("totalProducts", { count: mounted ? products.length : "..." })} </p>
                 </div>
                 <Dialog open={open} onOpenChange={setOpen}>
                     <DialogTrigger render={<Button className="text-base bg-[#7a3ffacb] py-4.5 pr-3.5 hover:bg-[#5409cd] cursor-pointer">
-                        <Plus strokeWidth={3} /> Add Product </Button>} />
+                        <Plus strokeWidth={3} /> {t("addProduct")} </Button>} />
                     <DialogContent className="border-[#7a3ffa1a] text-[#5409cd]">
                         <DialogHeader>
-                            <DialogTitle className="text-[#5409cd] font-bold">Add New Product</DialogTitle>
+                            <DialogTitle className="text-[#5409cd] font-bold">	{t("addNewProduct")}</DialogTitle>
                         </DialogHeader>
                         <form onSubmit={handleSubmit} className="flex flex-col gap-5 pt-5 text-[#6200ff]">
                             <div className="flex flex-col gap-2">
-                                <Label>Product Name</Label>
+                                <Label>	{t("productName")}</Label>
                                 <Input value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })}
                                     placeholder="Product name"
                                     required className="border-[#7a3ffa1a] text-[#4104a2] placeholder:text-[#6315e16e] focus-visible:ring-0"
@@ -176,10 +187,10 @@ export default function ProductsPage() {
                             </div>
 
                             <div className="flex flex-col gap-2">
-                                <Label>Product Image</Label>
+                                <Label>	{t("productImage")}</Label>
 
                                 <div className="flex h-10 items-center rounded-md border border-[#7a3ffa1a] px-3 text-sm text-[#4104a2ba]">
-                                    {imageName || "No file chosen"}
+                                    {imageName || t("noFileChosen")}
                                 </div>
 
                                 <Input id="productImage" type="file" accept="image/*" required
@@ -190,23 +201,26 @@ export default function ProductsPage() {
                                 <label htmlFor="productImage"
                                     className="flex w-fit cursor-pointer items-center rounded-md bg-[#7a3ffa] px-4 py-2 text-white hover:bg-[#5409cd]"
                                 >
-                                    Choose File
+                                    {t("chooseFile")}
                                 </label>
                             </div>
                             <div className="flex flex-col gap-2">
-                                <Label>Category</Label>
+                                <Label>	{t("category")}</Label>
                                 <select value={form.categoryId} onChange={(e) => setForm({ ...form, categoryId: e.target.value })}
                                     required className="w-full rounded-md border bg-transparent p-2 text-sm"
                                 >
-                                    <option value="">Select category</option>
+                                    <option value="">{t("selectCategory")}</option>
                                     {mockCategories.map((category) => (
-                                        <option key={category.id} value={category.id}> {category.name} </option>
+                                        <option key={category.id} value={category.id}>
+                                            {tCategories(categoryTranslationKeys[category.name as keyof typeof categoryTranslationKeys]
+                                            )}
+                                        </option>
                                     ))}
                                 </select>
                             </div>
 
                             <div className="flex flex-col gap-2">
-                                <Label>Price</Label>
+                                <Label>	{t("price")}</Label>
                                 <Input type="number" value={form.price} onChange={(e) => setForm({ ...form, price: e.target.value })}
                                     placeholder="Price"
                                     required className="border-[#7a3ffa1a] text-[#4104a2] placeholder:text-[#6315e16e] focus-visible:ring-0"
@@ -214,14 +228,14 @@ export default function ProductsPage() {
                             </div>
 
                             <div className="flex flex-col gap-2">
-                                <Label>Stock</Label>
+                                <Label>	{t("stock")}</Label>
                                 <Input type="number" value={form.stock}
                                     onChange={(e) => setForm({ ...form, stock: e.target.value })}
                                     placeholder="Stock"
                                     required className="border-[#7a3ffa1a] text-[#4104a2] placeholder:text-[#6315e16e] focus-visible:ring-0"
                                 />
                             </div>
-                            <Button type="submit" className="w-full bg-[#7a3ffa] hover:bg-[#5409cd]"  >Add Product </Button>
+                            <Button type="submit" className="w-full bg-[#7a3ffa] hover:bg-[#5409cd]">	{t("addProduct")}</Button>
                         </form>
                     </DialogContent>
                 </Dialog>
@@ -231,12 +245,12 @@ export default function ProductsPage() {
                     <Table>
                         <TableHeader className="h-15 text-base bg-[#f1ebfe6a]">
                             <TableRow>
-                                <TableHead className="pl-8 font-semibold text-[#5409cd]"> ID </TableHead>
-                                <TableHead className="font-semibold text-[#5409cd]">  Product </TableHead>
-                                <TableHead className="font-semibold text-[#5409cd]"> Category  </TableHead>
-                                <TableHead className="font-semibold text-[#5409cd]"> Price </TableHead>
-                                <TableHead className="font-semibold text-[#5409cd]"> Stock </TableHead>
-                                <TableHead className=" font-semibold text-[#5409cd]"> Actions </TableHead>
+                                <TableHead className={`font-semibold text-[#5409cd] ${locale === "fa" ? "text-right xl:pr-15" :"text-left xl:pl-8" }`}>{t("id")} </TableHead>
+                                <TableHead className={`font-semibold text-[#5409cd] ${locale === "fa" ? "text-right" : "text-left"}`}> {t("product")} </TableHead>
+                                <TableHead className={`font-semibold text-[#5409cd] ${locale === "fa" ? "text-right" : "text-left"}`}> {t("category")}  </TableHead>
+                                <TableHead className={`font-semibold text-[#5409cd] ${locale === "fa" ? "text-center pl-7" : "text-left"}`}> {t("price")} </TableHead>
+                                <TableHead className={`font-semibold text-[#5409cd] ${locale === "fa" ? "text-center pl-5" : "text-left"}`}> {t("stock")} </TableHead>
+                                <TableHead className={`font-semibold text-[#5409cd] ${locale === "fa" ? "text-center pl-10" : "text-left"}`}> {t("actions")} </TableHead>
                             </TableRow>
                         </TableHeader>
                         <TableBody>
@@ -244,20 +258,20 @@ export default function ProductsPage() {
                                 const category = mockCategories.find((item) => item.id === product.categoryId)
                                 return (
                                     <TableRow key={product.id}>
-                                        <TableCell className="pl-8 pr-20">{product.id} </TableCell>
+                                        <TableCell className={`${locale === "fa" ? "pr-15 pl-16" : "pl-8 pr-20"}`}>{product.id} </TableCell>
                                         <TableCell>
-                                            <div className="flex items-center gap-3 min-w-40">
+                                            <div className={"flex items-center gap-3  min-w-40"}>
                                                 <Image src={product.image} alt={product.name} width={48} height={48}
                                                     className="size-12 shrink-0 rounded-md object-cover" />
-                                                <span className="line-clamp-1 pr-25"> {product.name}</span>
+                                                <span className={`line-clamp-1 ${ locale === "fa" ? "" : "pr-25"} `}> {product.name}</span>
                                             </div>
                                         </TableCell>
-                                        <TableCell className="pr-30"> {category?.name}</TableCell>
-                                        <TableCell className="pr-28">  ${product.price} </TableCell>
-                                        <TableCell className="pr-28"> {product.stock}</TableCell>
+                                        <TableCell className={` ${locale === "fa" ? "" : "pr-30"}`}> {category?.name}</TableCell>
+                                        <TableCell className={`${locale === "fa" ? "pr-10 pl-6" :"pr-28"}`}>  ${product.price} </TableCell>
+                                        <TableCell className={`${locale === "fa" ? "pr-8 pl-8" :"pr-28"}`}> {product.stock}</TableCell>
 
                                         <TableCell>
-                                            <div className="flex items-center justify-center gap-3 pr-8">
+                                            <div className={`flex items-center justify-center gap-3 ${locale === "fa" ? "pl-5" : "pr-8"}`}>
                                                 <Dialog open={editingProduct?.id === product.id}
                                                     onOpenChange={(isOpen) => { if (!isOpen) setEditingProduct(null) }}
                                                 >
@@ -268,12 +282,12 @@ export default function ProductsPage() {
                                                     } />
                                                     <DialogContent className="border-[#7a3ffa1a] text-[#5409cd]">
                                                         <DialogHeader>
-                                                            <DialogTitle className="text-[#5409cd] font-bold">Edit Product</DialogTitle>
+                                                            <DialogTitle className="text-[#5409cd] font-bold">	{t("editProduct")}</DialogTitle>
                                                         </DialogHeader>
 
                                                         <form onSubmit={handleEditSubmit} className="flex flex-col gap-5 pt-5">
                                                             <div className="flex flex-col gap-2">
-                                                                <Label>Product Name</Label>
+                                                                <Label>	{t("productName")}</Label>
                                                                 <Input value={editForm.name}
                                                                     onChange={(e) => setEditForm({ ...editForm, name: e.target.value })}
                                                                     required className="border-[#7a3ffa1a] text-[#4104a2] placeholder:text-[#6315e16e] focus-visible:ring-0"
@@ -281,7 +295,7 @@ export default function ProductsPage() {
                                                             </div>
 
                                                             <div className="flex flex-col gap-2">
-                                                                <Label>Product Image</Label>
+                                                                <Label>	{t("productImage")}</Label>
                                                                 <div className="flex items-center gap-3">
                                                                     <Image
                                                                         src={editForm.image}
@@ -292,7 +306,7 @@ export default function ProductsPage() {
                                                                     />
 
                                                                     <div className="flex h-10 flex-1 items-center rounded-md border border-[#7a3ffa1a] px-3 text-sm text-[#4104a2]">
-                                                                        {imageName || "Current product image"}
+                                                                        {imageName || t("currentProductImage")}
                                                                     </div>
                                                                 </div>
 
@@ -307,11 +321,11 @@ export default function ProductsPage() {
                                                                 <label htmlFor="editProductImage"
                                                                     className="flex w-fit cursor-pointer items-center rounded-md bg-[#7a3ffa] px-4 py-2 text-white hover:bg-[#5409cd]"
                                                                 >
-                                                                    Choose File
+                                                                    {t("chooseFile")}
                                                                 </label>
                                                             </div>
                                                             <div className="flex flex-col gap-2">
-                                                                <Label>Category</Label>
+                                                                <Label>{t("category")}</Label>
                                                                 <select value={editForm.categoryId}
                                                                     onChange={(e) => setEditForm({
                                                                         ...editForm,
@@ -320,7 +334,7 @@ export default function ProductsPage() {
                                                                     }
                                                                     required className="w-full rounded-md border bg-transparent p-2 text-sm"
                                                                 >
-                                                                    <option value="">Select category</option>
+                                                                    <option value="">{t("selectCategory")}</option>
                                                                     {mockCategories.map((category) => (
                                                                         <option key={category.id} value={category.id} >
                                                                             {category.name}
@@ -330,7 +344,7 @@ export default function ProductsPage() {
                                                             </div>
 
                                                             <div className="flex flex-col gap-2">
-                                                                <Label>Price</Label>
+                                                                <Label>	{t("price")}</Label>
                                                                 <Input type="number" value={editForm.price}
                                                                     onChange={(e) => setEditForm({
                                                                         ...editForm,
@@ -342,7 +356,7 @@ export default function ProductsPage() {
                                                             </div>
 
                                                             <div className="flex flex-col gap-2">
-                                                                <Label>Stock</Label>
+                                                                <Label>	{t("stock")}</Label>
                                                                 <Input type="number" value={editForm.stock}
                                                                     onChange={(e) => setEditForm({
                                                                         ...editForm,
@@ -352,7 +366,7 @@ export default function ProductsPage() {
                                                                     required className="border-[#7a3ffa1a] text-[#4104a2] placeholder:text-[#6315e16e] focus-visible:ring-0"
                                                                 />
                                                             </div>
-                                                            <Button type="submit" className="w-full py-5 bg-[#7a3ffacb] hover:bg-[#5409cd]"> Save Changes  </Button>
+                                                            <Button type="submit" className="w-full py-5 bg-[#7a3ffacb] hover:bg-[#5409cd]"> {t("saveChanges")}  </Button>
                                                         </form>
                                                     </DialogContent>
                                                 </Dialog>
@@ -367,7 +381,7 @@ export default function ProductsPage() {
                             })}
                             {products.length === 0 && (
                                 <TableRow>
-                                    <TableCell colSpan={6} className="py-8 text-center"> No products found.</TableCell>
+                                    <TableCell colSpan={6} className="py-8 text-center"> {t("noProductsFound")}</TableCell>
                                 </TableRow>
                             )}
                         </TableBody>

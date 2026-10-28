@@ -219,7 +219,7 @@ export default function VendorsPage() {
                                 <TableHead className={`font-semibold text-[#5409cd] ${locale === "fa" ? "text-right" :"text-left" }`}>{t("name")}</TableHead>
                                 <TableHead className={`font-semibold text-[#5409cd] ${locale === "fa" ? "text-right" :"text-left" }`}>{t("email")}</TableHead>
                                 <TableHead className={`font-semibold text-[#5409cd] ${locale === "fa" ? "text-right" :"text-left" }`}>{t("address")}</TableHead>
-                                <TableHead className={`font-semibold text-[#5409cd] ${locale === "fa" ? "text-center pl-8 " :"text-center" }`}>{t("actions")}</TableHead>
+                                <TableHead className={`font-semibold text-[#5409cd] ${locale === "fa" ? "text-center  " :"text-center" }`}>{t("actions")}</TableHead>
                             </TableRow>
                         </TableHeader>
                         <TableBody >
@@ -229,7 +229,7 @@ export default function VendorsPage() {
                                     <TableCell>{vendor.name}</TableCell>
                                     <TableCell>{vendor.email}</TableCell>
                                     <TableCell>{vendor.address}</TableCell>
-                                    <TableCell className="flex items-center justify-center">
+                                    <TableCell className="flex items-center justify-center ">
                                         <button onClick={() => handleEditClick(vendor)} className="text-[#6e2dfab3] cursor-pointer ">
                                             <PencilSparkles className=" size-5" />
                                         </button>

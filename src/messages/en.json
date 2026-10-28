@@ -102,5 +102,31 @@
     "saveChanges": "Save Changes",
     "id": "ID",
     "actions": "Actions"
+},"ProductsPage": {
+    "title": "Products Management",
+    "totalProducts": "Total Products: ({count})",
+    "addProduct": "Add Product",
+    "addNewProduct": "Add New Product",
+    "editProduct": "Edit Product",
+    "productName": "Product Name",
+    "productImage": "Product Image",
+    "noFileChosen": "No file chosen",
+    "currentProductImage": "Current product image",
+    "chooseFile": "Choose File",
+    "category": "Category",
+    "selectCategory": "Select category",
+    "price": "Price",
+    "stock": "Stock",
+    "saveChanges": "Save Changes",
+    "id": "ID",
+    "product": "Product",
+    "actions": "Actions",
+    "noProductsFound": "No products found."
+},"Categories": {
+  "cosmetics": "Cosmetics & Personal Care",
+  "digitalProducts": "Digital Products",
+  "books": "Books",
+  "homeKitchen": "Home & Kitchen",
+  "clothing": "Clothing"
 }
 }

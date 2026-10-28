@@ -96,5 +96,31 @@
     "saveChanges": "ذخیره تغییرات",
     "id": "شناسه",
     "actions": "عملیات"
+},"ProductsPage": {
+    "title": "مدیریت محصولات",
+    "totalProducts": "تعداد کل محصولات: ({count})",
+    "addProduct": "افزودن محصول",
+    "addNewProduct": "افزودن محصول جدید",
+    "editProduct": "ویرایش محصول",
+    "productName": "نام محصول",
+    "productImage": "تصویر محصول",
+    "noFileChosen": "فایلی انتخاب نشده",
+    "currentProductImage": "تصویر فعلی محصول",
+    "chooseFile": "انتخاب فایل",
+    "category": "دسته‌بندی",
+    "selectCategory": "انتخاب دسته‌بندی",
+    "price": "قیمت",
+    "stock": "موجودی",
+    "saveChanges": "ذخیره تغییرات",
+    "id": "شناسه",
+    "product": "محصول",
+    "actions": "عملیات",
+    "noProductsFound": "محصولی یافت نشد."
+},"Categories": {
+  "cosmetics": "لوازم آرایشی و مراقبت شخصی",
+  "digitalProducts": "محصولات دیجیتال",
+  "books": "کتاب‌ها",
+  "homeKitchen": "خانه و آشپزخانه",
+  "clothing": "پوشاک"
 }
 }
