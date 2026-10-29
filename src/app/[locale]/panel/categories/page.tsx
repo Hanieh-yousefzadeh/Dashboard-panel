@@ -89,14 +89,14 @@ export default function categoryPage() {
     } as const
     const locale = useLocale()
     return (
-        <div className="p-5 pl-8 xl:w-316  md:w-3xl w-80 overflow-x-atuo">
+        <div className={`p-5 ${locale === "fa" ? "xl:pr-8" : "xl:pl-8"}  xl:w-316  md:w-3xl w-80 overflow-x-atuo`}>
             <div className="flex justify-between pb-12">
                 <div className="flex flex-col gap-3">
                     <p className="lg:text-2xl font-bold"> {t("title")}</p>
                     <p className="text-base text-[#7B29FB] dark:text-[#decaf9]"> {t("totalCategories")}: ({categories.length}) </p>
                 </div>
                 <Dialog open={open} onOpenChange={setOpen}>
-                    <DialogTrigger render={<Button className="text-base bg-[#7a3ffacb] py-4.5  pr-3.5 dark:hover:text-[#d1ccd5] dark:bg-[#261666] dark:text-[#d1ccd5]  hover:bg-[#5409cd] cursor-pointer"><Plus strokeWidth={3} />  Add Category</Button>} />
+                    <DialogTrigger render={<Button className="text-base bg-[#7a3ffacb] py-4.5  pr-3.5 dark:hover:text-[#d1ccd5] dark:bg-[#261666] dark:text-[#d1ccd5]  hover:bg-[#5409cd] cursor-pointer"><Plus strokeWidth={3} /> {t("addCategory")}</Button>} />
 
                     <DialogContent className="border-[#7a3ffa1a] text-[#5409cd] dark:text-[#dbc8f9] dark:border-[#b392fbab]   dark:bg-[#0a0220]">
                         <DialogHeader>

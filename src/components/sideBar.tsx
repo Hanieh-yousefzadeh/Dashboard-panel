@@ -32,7 +32,7 @@ export default function SideBar() {
 
     const menu = navigation[user.role]
     return (
-        <aside className={`hidden lg:flex h-153 w-64 shrink-0 flex-col ${ locale === "fa" ? "border-l-2" : " border-r-2"} border-[#7a3ffa2d] dark:border-[#7a3ffa51] p-4  `}>
+        <aside className={`hidden lg:flex min-h-153 w-64 shrink-0 flex-col ${ locale === "fa" ? "border-l-2" : " border-r-2"} border-[#7a3ffa2d] dark:border-[#7a3ffa51] p-4  `}>
             <div className="flex items-center pl-1 pb-8 gap-1">
                 <CircleUserRound className="text-[#5d16f76f] dark:text-[#9a70fc] size-9" />
                 <h2 className=" font-bold">  {t("dashboard")} {t(user.role.toLowerCase())} </h2>

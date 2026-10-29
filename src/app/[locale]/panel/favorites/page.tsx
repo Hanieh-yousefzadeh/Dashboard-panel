@@ -47,11 +47,11 @@ export default function MyFavoritePage() {
         <div className="p-6">
             <h1 className={`mb-8 ${locale === "fa" ? "pr-3" : "pl-3"}  text-2xl font-bold`}>{t("title")} </h1>
 
-            <div className={`mt-4 ${locale === "fa" ? "mr-3" : "ml-3 "}  w-300 rounded-md border border-[#7a3ffa1a] shadow-sm dark:bg-[#0E0B2F]`}>
+            <div className={`mt-4 ${locale === "fa" ? "mr-3" : "ml-3 "}  rounded-md border border-[#7a3ffa1a] shadow-sm dark:bg-[#0E0B2F] xl:w-300 w-80 lg:w-180 sm:w-170 overflow-x-auto`}>
                 <Table>
                     <TableHeader className="h-15 text-lg bg-[#f1ebfe6a] dark:bg-[#7a3ffa23]">
                         <TableRow className="hover:bg-transparent dark:hover:bg-transparent">
-                            <TableHead className={` ${locale === "fa" ? "text-right pr-20" : "pl-10"} font-semibold text-[#5409cd] dark:text-[#bd8efb]`}> {t("product")}</TableHead>
+                            <TableHead className={` ${locale === "fa" ? "text-right pr-20" : "xl:pl-10 pl-5"} font-semibold text-[#5409cd] dark:text-[#bd8efb]`}> {t("product")}</TableHead>
                             <TableHead className={` ${locale == "fa" ? "text-right" : ""} font-semibold text-[#5409cd] dark:text-[#bd8efb]`}>{t("price")} </TableHead>
                             <TableHead className="text-center  font-semibold text-[#5409cd] dark:text-[#bd8efb]"> {t("action")}</TableHead>
                         </TableRow>
@@ -61,7 +61,7 @@ export default function MyFavoritePage() {
                         {favorites.map((product) => (
                             <TableRow key={product.id} className="h-16">
                                 <TableCell>
-                                    <div className={`flex min-w-40 items-center gap-3  ${locale === "fa" ? "pr-15" : "pl-8"}`}>
+                                    <div className={`flex min-w-40 items-center gap-3  ${locale === "fa" ? "pr-15" : "xl:pl-8"}`}>
                                         <Image src={product.image} alt={product.name} width={48} height={48}
                                             className="size-12 shrink-0 rounded-md object-cover"
                                         />
