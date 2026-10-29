@@ -289,5 +289,27 @@
     "isfahan": "Isfahan",
     "valiasrStreet": "Valiasr Street",
     "chaharbaghStreet": "Chaharbagh Street"
+  },
+  "MyOpinionsPage": {
+    "title": "My Opinions & Questions",
+    "editTitle": "Edit Opinion or Question",
+    "yourMessage": "Your Message",
+    "messagePlaceholder": "Enter your message",
+    "saveChanges": "Save Changes",
+    "product": "Product",
+    "type": "Type",
+    "message": "Message",
+    "status": "Status",
+    "adminReply": "Reply",
+    "actions": "Actions",
+    "opinion": "Opinion",
+    "question": "Question",
+    "answered": "Answered",
+    "pending": "Pending",
+    "sunscreen": "Sunscreen",
+    "englishTutorial": "English Language Tutorial",
+    "goodQualityMessage": "The product quality was good.",
+    "printedVersionQuestion": "Does this book have a printed version?",
+    "thankYouReply": "Thank you for your comment"
   }
 }

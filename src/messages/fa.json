@@ -289,5 +289,27 @@
     "isfahan": "اصفهان",
     "valiasrStreet": "خیابان ولیعصر",
     "chaharbaghStreet": "خیابان چهارباغ"
+  },
+  "MyOpinionsPage": {
+    "title": "نظرات و پرسش‌های من",
+    "editTitle": "ویرایش نظر یا پرسش",
+    "yourMessage": "پیام شما",
+    "messagePlaceholder": "پیام خود را وارد کنید",
+    "saveChanges": "ذخیره تغییرات",
+    "product": "محصول",
+    "type": "نوع",
+    "message": "پیام",
+    "status": "وضعیت",
+    "adminReply": "پاسخ ",
+    "actions": "عملیات",
+    "opinion": "نظر",
+    "question": "پرسش",
+    "answered": "پاسخ داده‌شده",
+    "pending": "در انتظار پاسخ",
+    "sunscreen": "ضد آفتاب",
+    "englishTutorial": "آموزش زبان انگلیسی",
+    "goodQualityMessage": "کیفیت محصول خوب بود.",
+    "printedVersionQuestion": "آیا این کتاب نسخه چاپی دارد؟",
+    "thankYouReply": "از ثبت نظر شما متشکریم"
   }
 }

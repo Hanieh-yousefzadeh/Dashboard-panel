@@ -111,9 +111,9 @@ export default function MyAddressesPage() {
                         id="province"
                         value={form.province}
                         onChange={(e) => setForm({ ...form, province: e.target.value })}
-                        placeholder="Enter province"
+                        placeholder={t("enterProvince")}
                         required
-                        className="border-[#7a3ffa1a] h-10 focus-visible:ring-0 dark:placeholder:text-[#b098d6bd] dark:text-[#bea2eba1]"
+                        className="border-[#7a3ffa1a] h-10 focus-visible:ring-0 text-[#1e0547] dark:placeholder:text-[#b098d6bd] dark:text-[#bea2eba1]"
                     />
                 </div>
 
@@ -123,9 +123,9 @@ export default function MyAddressesPage() {
                         id="city"
                         value={form.city}
                         onChange={(e) => setForm({ ...form, city: e.target.value })}
-                        placeholder="Enter city"
+                        placeholder={t("enterCity")}
                         required
-                        className="border-[#7a3ffa1a] h-10 focus-visible:ring-0 dark:placeholder:text-[#b098d6bd] dark:text-[#bea2eba1]"
+                        className="border-[#7a3ffa1a] h-10 focus-visible:ring-0 text-[#1e0547] dark:placeholder:text-[#b098d6bd] dark:text-[#bea2eba1]"
                     />
                 </div>
 
@@ -135,9 +135,9 @@ export default function MyAddressesPage() {
                         id="address"
                         value={form.address}
                         onChange={(e) => setForm({ ...form, address: e.target.value })}
-                        placeholder="Street, alley, building..."
+                        placeholder={t("addressPlaceholder")}
                         required
-                        className="border-[#7a3ffa1a] h-10 focus-visible:ring-0 dark:placeholder:text-[#b098d6bd] dark:text-[#bea2eba1]"
+                        className="border-[#7a3ffa1a] h-10 focus-visible:ring-0 text-[#1e0547] dark:placeholder:text-[#b098d6bd] dark:text-[#bea2eba1]"
                     />
                 </div>
 
@@ -147,9 +147,9 @@ export default function MyAddressesPage() {
                         id="plaque"
                         value={form.plaque}
                         onChange={(e) => setForm({ ...form, plaque: e.target.value })}
-                        placeholder="Enter plaque number"
+                        placeholder={t("addressPlaceholder")}
                         required
-                        className="border-[#7a3ffa1a] h-10 dark:placeholder:text-[#b098d6bd] dark:text-[#bea2eba1] focus-visible:ring-0"
+                        className="border-[#7a3ffa1a] h-10 dark:placeholder:text-[#b098d6bd] text-[#1e0547] dark:text-[#bea2eba1] focus-visible:ring-0"
                     />
                 </div>
 
@@ -159,10 +159,10 @@ export default function MyAddressesPage() {
                         id="postalCode"
                         value={form.postalCode}
                         onChange={(e) => setForm({ ...form, postalCode: e.target.value })}
-                        placeholder="10-digit postal code"
+                        placeholder={t("postalCodePlaceholder")}
                         maxLength={10}
                         required
-                        className="border-[#7a3ffa1a] h-10 dark:placeholder:text-[#b098d6bd] dark:text-[#bea2eba1] focus-visible:ring-0"
+                        className="border-[#7a3ffa1a] h-10 dark:placeholder:text-[#b098d6bd] text-[#1e0547] dark:text-[#bea2eba1] focus-visible:ring-0"
                     />
                 </div>
 
