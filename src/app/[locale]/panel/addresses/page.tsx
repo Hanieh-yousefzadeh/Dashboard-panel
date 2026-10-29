@@ -100,7 +100,7 @@ export default function MyAddressesPage() {
     function renderAddressForm(isEditing: boolean) {
         return (
             <form onSubmit={isEditing ? handleEditSubmit : handleSubmit}
-                className="flex flex-col gap-5 pt-5 text-[#6200ff]">
+                className="flex flex-col gap-7 pt-5 text-[#6200ff] dark:border-[#b392fbab] dark:text-[#dbc8f9] dark:bg-[#0a0220]">
                 <div className="flex flex-col gap-2">
                     <Label htmlFor="province">Province</Label>
                     <Input
@@ -109,7 +109,7 @@ export default function MyAddressesPage() {
                         onChange={(e) => setForm({ ...form, province: e.target.value }) }
                         placeholder="Enter province"
                         required
-                        className="border-[#7a3ffa1a] focus-visible:ring-0"
+                        className="border-[#7a3ffa1a] h-10 focus-visible:ring-0 dark:placeholder:text-[#b098d6bd] dark:text-[#bea2eba1]"
                     />
                 </div>
 
@@ -121,7 +121,7 @@ export default function MyAddressesPage() {
                         onChange={(e) =>setForm({ ...form, city: e.target.value })}
                         placeholder="Enter city"
                         required
-                        className="border-[#7a3ffa1a] focus-visible:ring-0"
+                        className="border-[#7a3ffa1a] h-10 focus-visible:ring-0 dark:placeholder:text-[#b098d6bd] dark:text-[#bea2eba1]"
                     />
                 </div>
 
@@ -133,7 +133,7 @@ export default function MyAddressesPage() {
                         onChange={(e) => setForm({ ...form, address: e.target.value }) }
                         placeholder="Street, alley, building..."
                         required
-                        className="border-[#7a3ffa1a] focus-visible:ring-0"
+                        className="border-[#7a3ffa1a] h-10 focus-visible:ring-0 dark:placeholder:text-[#b098d6bd] dark:text-[#bea2eba1]"
                     />
                 </div>
 
@@ -145,7 +145,7 @@ export default function MyAddressesPage() {
                         onChange={(e) => setForm({ ...form, plaque: e.target.value })}
                         placeholder="Enter plaque number"
                         required
-                        className="border-[#7a3ffa1a] focus-visible:ring-0"
+                        className="border-[#7a3ffa1a] h-10 dark:placeholder:text-[#b098d6bd] dark:text-[#bea2eba1] focus-visible:ring-0"
                     />
                 </div>
 
@@ -158,11 +158,11 @@ export default function MyAddressesPage() {
                         placeholder="10-digit postal code"
                         maxLength={10}
                         required
-                        className="border-[#7a3ffa1a] focus-visible:ring-0"
+                        className="border-[#7a3ffa1a] h-10 dark:placeholder:text-[#b098d6bd] dark:text-[#bea2eba1] focus-visible:ring-0"
                     />
                 </div>
 
-                <Button type="submit" className="w-full bg-[#7a3ffa] hover:bg-[#5409cd]">
+                <Button type="submit" className="w-full bg-[#7a3ffa] hover:bg-[#5409cd] py-5 mt-2 dark:text-[#d1ccd5] dark:bg-[#3b0b87]">
                     {isEditing ? "Save Changes" : "Add Address"}
                 </Button>
             </form>
@@ -174,7 +174,7 @@ export default function MyAddressesPage() {
             <div className="pb-12 flex items-center justify-between gap-4">
                 <div className="flex flex-col gap-3">
                     <h1 className="sm:text-2xl font-bold"> My Addresses </h1>
-                    <p className="text-sm text-[#7B29FB]">Total Addresses: ({addresses.length})</p>
+                    <p className="text-base text-[#7B29FB] dark:text-[#decaf9]">Total Addresses: ({addresses.length})</p>
                 </div>
 
                 <Dialog
@@ -189,16 +189,16 @@ export default function MyAddressesPage() {
                 >
                     <DialogTrigger
                         render={
-                            <Button className="bg-[#7a3ffacb] hover:bg-[#5409cd] cursor-pointer h-11">
+                            <Button className="bg-[#7a3ffacb] hover:bg-[#5409cd] cursor-pointer py-4.5 pr-3.5 dark:hover:text-[#d1ccd5] dark:bg-[#261666] dark:text-[#d1ccd5]">
                                 <Plus strokeWidth={3} />
                                 Add Address
                             </Button>
                         }
                     />
 
-                    <DialogContent className="border-[#7a3ffa1a] text-[#5409cd]">
+                    <DialogContent className="border-[#7a3ffa1a] text-[#5409cd] dark:border-[#b392fbab] dark:text-[#dbc8f9] dark:bg-[#0a0220]">
                         <DialogHeader>
-                            <DialogTitle className="font-bold text-[#5409cd]">
+                            <DialogTitle className="font-bold text-[#5409cd] dark:text-[#d1ccd5] ">
                                 Add New Address
                             </DialogTitle>
                         </DialogHeader>
@@ -209,15 +209,15 @@ export default function MyAddressesPage() {
             </div>
 
             {mounted && (
-                <div className="rounded-md border-2 border-[#7a3ffa1a]">
+                <div className="rounded-md border-2 border-[#7a3ffa1a] dark:bg-[#0E0B2F]">
                     <Table>
-                        <TableHeader className="h-15 bg-[#f1ebfe6a]">
-                            <TableRow>
-                                <TableHead className="font-semibold text-base text-[#5409cd] pl-12"> Province / City  </TableHead>
-                                <TableHead className="font-semibold text-base text-[#5409cd]"> Address </TableHead>
-                                <TableHead className="font-semibold text-base text-[#5409cd]"> Plaque </TableHead>
-                                <TableHead className="font-semibold text-base text-[#5409cd]">  Postal Code </TableHead>
-                                <TableHead className="text-center text-base font-semibold text-[#5409cd]"> Actions </TableHead>
+                        <TableHeader className="h-15 text-lg bg-[#f1ebfe6a] dark:bg-[#7a3ffa23]">
+                            <TableRow className="hover:bg-transparent dark:hover:bg-transparent">
+                                <TableHead className="font-semibold  text-[#5409cd] dark:text-[#bd8efb]  pl-12"> Province / City  </TableHead>
+                                <TableHead className="font-semibold  text-[#5409cd] dark:text-[#bd8efb] "> Address </TableHead>
+                                <TableHead className="font-semibold  text-[#5409cd] dark:text-[#bd8efb] "> Plaque </TableHead>
+                                <TableHead className="font-semibold  text-[#5409cd] dark:text-[#bd8efb] ">  Postal Code </TableHead>
+                                <TableHead className="text-center font-semibold text-[#5409cd] dark:text-[#bd8efb] "> Actions </TableHead>
                             </TableRow>
                         </TableHeader>
 
@@ -225,18 +225,18 @@ export default function MyAddressesPage() {
                             {addresses.map((item) => (
                                 <TableRow key={item.id} className="h-15">
                                     <TableCell className="pl-12"> {item.province}, {item.city}</TableCell>
-                                    <TableCell className="w-30 pr-20"> {item.address} </TableCell>
-                                    <TableCell>{item.plaque}</TableCell>
+                                    <TableCell className="w-90 pr-10"> {item.address} </TableCell>
+                                    <TableCell className="pl-3 pr-15">{item.plaque}</TableCell>
                                     <TableCell>{item.postalCode}</TableCell>
                                     <TableCell>
                                         <div className="flex items-center justify-center">
                                             <button onClick={() => handleEditClick(item)}
-                                                className="text-[#6e2dfab3] cursor-pointer" >
+                                                className="text-[#6e2dfab3] dark:text-[#6e2dfae0] cursor-pointer" >
                                                 <PencilSparkles className="size-5" />
                                             </button>
 
                                             <button onClick={() => handleDeleteAddress(item.id) }
-                                                className="ml-3 text-red-600 cursor-pointer">
+                                                className="ml-3 text-red-600 dark:text-red-900 cursor-pointer">
                                                 <Trash className="size-5" />
                                             </button>
                                         </div>
@@ -265,9 +265,9 @@ export default function MyAddressesPage() {
                     }
                 }}
             >
-                <DialogContent className="border-[#7a3ffa1a] text-[#5409cd]">
+                <DialogContent className="border-[#7a3ffa1a] text-[#5409cd] dark:text-[#dbc8f9] dark:bg-[#0a0220] ">
                     <DialogHeader>
-                        <DialogTitle className="font-bold text-[#5409cd]">
+                        <DialogTitle className="font-bold text-[#5409cd] dark:text-[#d1ccd5]">
                             Edit Address
                         </DialogTitle>
                     </DialogHeader>

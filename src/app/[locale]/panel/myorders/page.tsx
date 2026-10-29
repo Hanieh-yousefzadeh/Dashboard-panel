@@ -45,10 +45,10 @@ export default function MyOrdersPage() {
                         const count = mockMyOrders.filter((order) => order.status === item.status).length
 
                         return (
-                            <div key={item.status} className="rounded-2xl border border-[#7a3ffa0b] bg-[#f1ebfe6a] p-5 shadow-sm flex flex-col justify-center items-center md:w-58  w-45 md:h-30 ">
+                            <div key={item.status} className="rounded-2xl border border-[#7a3ffa0b] dark:bg-[#0E0B2F] bg-[#f1ebfe6a] p-5 shadow-sm flex flex-col justify-center items-center md:w-58  w-45 md:h-30 ">
                                 <div className="flex items-center justify-between gap-3">
                                     <Icon className="h-6 w-6 text-[#7a3ffa]" />
-                                    <p className="text-sm text-[#031481a6]"> {item.title} </p>
+                                    <p className="text-sm text-[#031481a6] dark:text-[#FAFAFA]"> {item.title} </p>
                                 </div>
                                 <p className="mt-4 text-3xl font-bold">{count}</p>
                             </div>
@@ -56,15 +56,15 @@ export default function MyOrdersPage() {
                     })}
                 </div>
             </div>
-            <div className="rounded-md border border-[#7a3ffa1a] mt-8 shadow-sm">
+            <div className="rounded-md border-2 border-[#7a3ffa1a] mt-8  dark:bg-[#0E0B2F]">
                 <Table>
-                    <TableHeader className="h-15 bg-[#f1ebfe6a]">
-                        <TableRow>
-                            <TableHead className="font-bold text-base pl-16 text-[#5409cd]">Order ID</TableHead>
-                            <TableHead className="font-bold text-base text-[#5409cd]">Product</TableHead>
-                            <TableHead className="font-bold text-base text-[#5409cd]">Date</TableHead>
-                            <TableHead className="font-bold text-base text-[#5409cd]">Price</TableHead>
-                            <TableHead className="font-bold text-base text-[#5409cd]">Status</TableHead>
+                    <TableHeader className="h-15 text-lg bg-[#f1ebfe6a] dark:bg-[#7a3ffa23]">
+                        <TableRow className="hover:bg-transparent dark:hover:bg-transparent">
+                            <TableHead className="font-bold pl-16 text-[#5409cd] dark:text-[#bd8efb] ">Order ID</TableHead>
+                            <TableHead className="font-bold  text-[#5409cd] dark:text-[#bd8efb] ">Product</TableHead>
+                            <TableHead className="font-bold  text-[#5409cd] dark:text-[#bd8efb] ">Date</TableHead>
+                            <TableHead className="font-bold  text-[#5409cd] dark:text-[#bd8efb] ">Price</TableHead>
+                            <TableHead className="font-bold  text-[#5409cd] dark:text-[#bd8efb] ">Status</TableHead>
                         </TableRow>
                     </TableHeader>
 
@@ -85,15 +85,15 @@ export default function MyOrdersPage() {
 
                                 <TableCell>
                                     <span
-                                        className={`rounded-full px-3 py-2 text-xs font-medium  ${order.status === "pendding" ? "bg-[#ede8fd] text-[#031381] py-2"
+                                        className={`rounded-lg px-4 py-2.5 text-sm font-semibold  ${order.status === "pending" ? "bg-[#F9F7FF] dark:bg-[#f1ebfeac] dark:text-[#6219d6] text-[#7B29FB] px-5"
                                             : order.status === "delivered"
-                                                ? "bg-green-100 text-green-700 py-2"
+                                                ?"bg-green-50 dark:bg-[#dbfce7a3] dark:text-green-900 text-green-700"
                                                 : order.status === "cancelled"
-                                                    ? "bg-red-100 text-red-700 py-2"
-                                                    : "bg-orange-100 text-orange-700 py-2"
+                                                    ? "bg-red-50 dark:bg-[#ffe2e29a] dark:text-red-900 text-red-700"
+                                                    : "bg-blue-50 dark:bg-[#dbeafea6] dark:text-blue-900 text-[#031381]"
                                             }`}
                                     >
-                                        {order.status === "pendding" ? "pendding"
+                                        {order.status === "pending" ? "Pending"
                                             : order.status === "delivered" ? "Delivered"
                                                 : order.status === "cancelled" ? "Cancelled"
                                                     : "Returned"}

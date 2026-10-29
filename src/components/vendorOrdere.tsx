@@ -42,12 +42,12 @@ export default function VendorOrders() {
 
                 <td className="py-4 pl-4 text-center">
                   <span
-                    className={`whitespace-nowrap rounded-full px-2 py-1 text-xs ${order.status === "Delivered" ? "bg-green-100 dark:bg-[#dbfce7c8] text-green-700"
+                    className={` rounded-lg px-3 py-2 text-sm font-semibold ${order.status === "Delivered" ? "bg-green-50 dark:bg-[#dbfce7a3] dark:text-green-900 text-green-700"
                       : order.status === "Pending"
-                        ? "bg-[#F1EBFE] dark:bg-[#f1ebfec9] text-yellow-700"
+                        ? "bg-[#F9F7FF] dark:bg-[#f1ebfeac] dark:text-[#6219d6] text-[#7B29FB] px-5"
                         : order.status === "Processing"
-                          ? "bg-blue-100 dark:bg-[#dbeafed3] text-blue-700"
-                          : "bg-red-100 dark:bg-[#ffe2e2b1] text-red-700"
+                          ? "bg-blue-50 dark:bg-[#dbeafea6] dark:text-blue-900 text-[#031381]"
+                          : "bg-red-50 dark:bg-[#ffe2e29a] dark:text-red-900 text-red-700"
                       }`}
                   >
                     {(() => {

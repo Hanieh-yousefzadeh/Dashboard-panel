@@ -4,7 +4,7 @@ export type MyOrders = {
     image: string
     date: string
     price: number
-    status: "pendding" | "delivered" | "cancelled" | "returned"
+    status: "pending" | "delivered" | "cancelled" | "returned"
 }
 
 export const mockMyOrders: MyOrders[] = [
@@ -35,6 +35,6 @@ export const mockMyOrders: MyOrders[] = [
         image: "/product/watch.webp",
         date: "2026-10-22",
         price: 2500000,
-        status: "pendding",
+        status: "pending",
     },
 ]

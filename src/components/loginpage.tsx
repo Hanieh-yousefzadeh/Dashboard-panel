@@ -55,10 +55,10 @@ export default function LoginPage() {
         <main className="flex w-full ">
             
 
-            <div className="flex relative flex-col md:flex-row lg:w-[36%] sm:w-[45%]  w-full items-center justify-center bg-white md:p-10">
+            <div className="flex relative flex-col md:flex-row lg:w-[36%] sm:w-[45%]  w-full items-center justify-center dark:bg-[#0E0B2F] bg-white md:p-10">
                  <div className="absolute top-4 right-4"> <LanguageSwitch /> </div>
                 <img src="/Logo.png" className="md:hidden  h-26" />
-                <Card className="w-full max-w-md md:p-7 px-5 xl:pt-30  border-0 ring-0 shadow-none xl:h-130">
+                <Card className="w-full max-w-md md:p-7 px-5 xl:pt-30  border-0 ring-0 shadow-none xl:h-130 dark:bg-[#0E0B2F]">
                     <CardHeader className="text-center pb-9">
                         <CardTitle className="lg:text-3xl text-xl font-extrabold md:text-start pb-3">   {t("title")} </CardTitle>
                         <CardDescription className="md:text-start lg:w-70 md:text-base text-sm"> {t("description")} </CardDescription>
@@ -96,7 +96,7 @@ export default function LoginPage() {
                                 <p className="text-sm text-red-600">{t("error")}</p>
                             )}
 
-                            <Button type="submit" className="w-full bg-[#7925FF] py-5.5 text-lg cursor-pointer hover:bg-[#071499]"> {t("submit")} </Button>
+                            <Button type="submit" className="w-full bg-[#7925FF] py-5.5 text-lg cursor-pointer dark:text-[#d1ccd5] dark:hover:bg-[#480bab] hover:bg-[#071499]"> {t("submit")} </Button>
                         </form>
                     </CardContent>
                 </Card>
@@ -104,7 +104,7 @@ export default function LoginPage() {
 
             </div>
             <div className="w-[64%] hidden sm:block sm:h-auto">
-                <img src="/Experience.png" className="w-300 xl:h-173.5 h-140" />
+                <img src="/Experience.png" className="w-300 xl:h-173.5 h-140 dark:brightness-75" />
             </div>
 
         </main>
