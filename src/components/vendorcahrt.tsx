@@ -29,12 +29,12 @@ export default function VendorSalesChart() {
 
       <div className="sm:h-75 h-50 w-full">
         <ResponsiveContainer width="100%" height="100%">
-          <AreaChart className="-ml-4"
+          <AreaChart className="-ml-4 xl:ml-0"
             data={vendorMonthSales}
             margin={{
               top: 10,
               right: 10,
-              left: 10,
+              left: 0,
               bottom: 10,
             }}
           >
@@ -48,6 +48,7 @@ export default function VendorSalesChart() {
 
             <YAxis
               tick={{ fontSize: 12 }}
+              tickMargin={16}
               width={35}
             />
 

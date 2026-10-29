@@ -21,12 +21,18 @@
       "thisMonth": "این ماه"
     },
     "months": {
-      "January": "فروردین",
-      "February": "اردیبهشت",
-      "March": "خرداد",
-      "April": "تیر",
-      "May": "مرداد",
-      "June": "شهریور"
+      "january": "ژانویه",
+      "february": "فوریه",
+      "march": "مارس",
+      "april": "آوریل",
+      "may": "مه",
+      "june": "ژوئن",
+      "july": "ژوئیه",
+      "august": "اوت",
+      "september": "سپتامبر",
+      "october": "اکتبر",
+      "november": "نوامبر",
+      "december": "دسامبر"
     },
     "orderStatus": {
       "paid": "پرداخت‌شده",

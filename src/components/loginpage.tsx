@@ -61,7 +61,7 @@ export default function LoginPage() {
                 <Card className="w-full max-w-md md:p-7 px-5 xl:pt-30  border-0 ring-0 shadow-none xl:h-130 dark:bg-[#0E0B2F]">
                     <CardHeader className="text-center pb-9">
                         <CardTitle className="lg:text-3xl text-xl font-extrabold md:text-start pb-3">   {t("title")} </CardTitle>
-                        <CardDescription className="md:text-start lg:w-70 md:text-base text-sm"> {t("description")} </CardDescription>
+                        <CardDescription className="md:text-start lg:w-75 md:text-base text-sm"> {t("description")} </CardDescription>
                     </CardHeader>
 
                     <CardContent>

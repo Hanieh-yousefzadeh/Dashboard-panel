@@ -17,7 +17,7 @@ export default function SalesChart() {
   const t = useTranslations("AdminDashboard.salesChart")
   const tMonth = useTranslations("AdminDashboard.months")
   return (
-    <section className="xl:w-1/2 rounded-xl border border-[#7a3ffa1a] bg-card p-5 shadow-sm dark:bg-[#0E0B2F]">
+    <section className="xl:w-1/2 rounded-xl border border-[#7a3ffa1a]  p-5 shadow-sm dark:bg-[#0E0B2F]">
       <div className="mb-6">
         <h2 className="sm:text-lg font-semibold">
           {t("title")}
@@ -28,14 +28,14 @@ export default function SalesChart() {
         </p>
       </div>
 
-      <div className="sm:h-75 h-50 w-full">
+      <div className="sm:h-75 h-50 w-ful ">
         <ResponsiveContainer width="100%" height="100%">
-          <AreaChart className="-ml-4"
+          <AreaChart className="-ml-4 xl:ml-0"
             data={monthSales}
             margin={{
               top: 10,
               right: 10,
-              left: 10,
+              left: 0,
               bottom: 10,
             }}
           >
@@ -46,22 +46,23 @@ export default function SalesChart() {
             <XAxis
               dataKey="month"
               tick={{ fontSize: 12 }}
-                tickFormatter={(month) =>tMonth(month.toLowerCase())}
+              tickFormatter={(month) => tMonth(month.toLowerCase())}
             />
 
             {/* مقدار فروش */}
             <YAxis
               tick={{ fontSize: 12 }}
-              width={35}
+              tickMargin={14.5}
+              width={20}
             />
 
             {/* اطلاعات هنگام حرکت موس */}
             <Tooltip
-             formatter={(value) => [ `${value} ${t("millionDollars")}`,  t("sales")]}
+              formatter={(value) => [`${value} ${t("millionDollars")}`, t("sales")]}
             />
 
             {/* گرادیان رنگ زیر نمودار */}
-            <defs>
+            <defs >
               <linearGradient
                 id="salesGradient"
                 x1="0"
