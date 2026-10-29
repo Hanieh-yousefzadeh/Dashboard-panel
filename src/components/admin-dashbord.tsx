@@ -8,7 +8,7 @@ export default function AdminDashboard() {
   const t = useTranslations("AdminDashboard")
   const locale = useLocale()
   return (
-    <div className={`xl:w-315  pt-2 ${locale === "fa" ? "sm:pr-5" : "sm:pl-5"}`}>
+    <div className={`xl:w-315  pt-2 ${locale === "fa" ? "xl:pr-5" : "xl:pl-7.5 px-4"}`}>
       <div>
         <p className={`mt-2 text-lg sm:pb-2  ${locale === "fa" ? "sm:text-right" : "text-center sm:text-left"}  pb-5`}>  {t("overview")}</p>
       </div>

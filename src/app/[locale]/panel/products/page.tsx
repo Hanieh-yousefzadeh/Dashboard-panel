@@ -172,7 +172,7 @@ export default function ProductsPage() {
     } as const
 
     return (
-        <div className="p-5 pl-8 xl:w-316 md:w-3xl w-80 overflow-x-atuo">
+        <div className={`p-5 ${locale === "fa" ? "xl:pr-8" : "xl:pl-8"}  xl:w-316 md:w-3xl w-80 overflow-x-atuo`}>
             <div className="pb-12 flex items-center justify-between">
                 <div className="flex flex-col gap-3">
                     <h1 className="sm:text-2xl font-bold"> {t("title")}</h1>
@@ -253,7 +253,7 @@ export default function ProductsPage() {
                     <Table>
                         <TableHeader className="h-15 text-lg bg-[#f1ebfe6a] dark:bg-[#7a3ffa23]">
                             <TableRow className="hover:bg-transparent dark:hover:bg-transparent">
-                                <TableHead className={`font-semibold text-[#5409cd] dark:text-[#bd8efb] ${locale === "fa" ? "text-right xl:pr-15" : "text-left xl:pl-8"}`}>{t("id")} </TableHead>
+                                <TableHead className={`font-semibold text-[#5409cd] dark:text-[#bd8efb] ${locale === "fa" ? "text-right xl:pr-15" : "text-left pl-8"}`}>{t("id")} </TableHead>
                                 <TableHead className={`font-semibold text-[#5409cd] dark:text-[#bd8efb] ${locale === "fa" ? "text-right" : "text-left"}`}> {t("product")} </TableHead>
                                 <TableHead className={`font-semibold text-[#5409cd] dark:text-[#bd8efb] ${locale === "fa" ? "text-right" : "text-left"}`}> {t("category")}  </TableHead>
                                 <TableHead className={`font-semibold text-[#5409cd] dark:text-[#bd8efb] ${locale === "fa" ? "text-center pl-7" : "text-left"}`}> {t("price")} </TableHead>

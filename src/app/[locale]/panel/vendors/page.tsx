@@ -98,7 +98,7 @@ export default function VendorsPage() {
     const t = useTranslations("VendorsPage")
     const locale = useLocale()
     return (
-        <div className="p-5 pl-8 xl:w-316 md:w-3xl w-80 overflow-x-atuo">
+        <div className={`p-5  ${locale === "fa" ? "xl:pr-8" : "xl:pl-8"} xl:w-316 md:w-3xl w-80 overflow-x-atuo`}>
             <div className="flex justify-between pb-12">
                 <div className="flex flex-col gap-3">
                     <h1 className="sm:text-2xl font-bold"> 	{t("title")} </h1>

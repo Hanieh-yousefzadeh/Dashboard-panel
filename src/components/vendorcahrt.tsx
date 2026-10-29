@@ -16,9 +16,9 @@ import { useTranslations } from "next-intl"
 export default function VendorSalesChart() {
   const t = useTranslations("VendorDashboard")
   return (
-    <section className="w-[50%] rounded-xl border border-[#7a3ffa1a] bg-card p-5 shadow-sm dark:bg-[#0E0B2F]">
+    <section className="xl:w-1/2 rounded-xl border border-[#7a3ffa1a] bg-card p-5 shadow-sm dark:bg-[#0E0B2F]">
       <div className="mb-6">
-        <h2 className="text-lg font-semibold">
+        <h2 className="sm:text-lg font-semibold">
           {t("salesStatistics")}
         </h2>
 
@@ -27,9 +27,9 @@ export default function VendorSalesChart() {
         </p>
       </div>
 
-      <div className="h-75 w-full">
+      <div className="sm:h-75 h-50 w-full">
         <ResponsiveContainer width="100%" height="100%">
-          <AreaChart
+          <AreaChart className="-ml-4"
             data={vendorMonthSales}
             margin={{
               top: 10,

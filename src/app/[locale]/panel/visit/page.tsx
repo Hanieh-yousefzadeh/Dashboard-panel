@@ -35,9 +35,9 @@ export default function VisitPage() {
         }
     })
     return (
-        <div className={`${locale === "fa" ? "pr-6" : "pl-6 "} py-8 `}>
+        <div className={`${locale === "fa" ? "pr-6" : "xl:pl-6 px-5 "} py-8  xl:w-312 md:w-3xl w-80 overflow-x-atuo`}>
             <div className="rounded-md border-2 border-[#7a3ffa1a] dark:bg-[#0E0B2F]">
-                <Table className="w-307">
+                <Table>
                     <TableHeader className="h-15 text-lg bg-[#f1ebfe6a] dark:bg-[#7a3ffa23]">
                         <TableRow className="hover:bg-transparent dark:hover:bg-transparent">
                             <TableHead className={`font-semibold text-[#5409cd] dark:text-[#bd8efb] ${locale === "fa" ? "text-right pr-20":"pl-19"}`}>{t("product")}</TableHead>
