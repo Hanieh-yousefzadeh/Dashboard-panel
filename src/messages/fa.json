@@ -212,10 +212,27 @@
       "Cotton T-Shirt": "تی‌شرت نخی",
       "Sunscreen": "ضدآفتاب"
     }
-  },"VisitPage": {
-  "product": "محصول",
-  "views": "بازدیدها",
-  "addedToWishlist": "افزوده‌شده به علاقه‌مندی‌ها",
-  "noProductsFound": "محصولی یافت نشد."
-}
+  },
+  "VisitPage": {
+    "product": "محصول",
+    "views": "بازدیدها",
+    "addedToWishlist": "افزوده‌شده به علاقه‌مندی‌ها",
+    "noProductsFound": "محصولی یافت نشد.",
+    "sunscreen": "ضد آفتاب",
+    "smartWatch": "ساعت هوشمند",
+    "tShirt": "تی‌شرت",
+    "englishTutorial": "آموزش زبان انگلیسی",
+    "steelPot": "قابلمه استیل"
+  },
+  "UserDashboard": {
+    "title": "داشبورد کاربر",
+    "myOrders": "سفارش‌های من",
+    "myFavorite": "علاقه‌مندی‌های من",
+    "myAddress": "آدرس‌های من",
+    "myOpinions": "نظرات من",
+    "totalNumber": "تعداد کل",
+    "savedProducts": "محصولات ذخیره‌شده",
+    "registeredAddresses": "آدرس‌های ثبت‌شده",
+    "submittedComments": "نظرات ثبت‌شده"
+  }
 }

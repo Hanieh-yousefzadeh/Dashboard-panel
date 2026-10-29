@@ -212,10 +212,27 @@
       "Cotton T-Shirt": "Cotton T-Shirt",
       "Sunscreen": "Sunscreen"
     }
-  },"VisitPage": {
-  "product": "Product",
-  "views": "Views",
-  "addedToWishlist": "Added to Wishlist",
-  "noProductsFound": "No products found."
-}
+  },
+  "VisitPage": {
+    "product": "Product",
+    "views": "Views",
+    "addedToWishlist": "Added to wishlist",
+    "noProductsFound": "No products found.",
+    "sunscreen": "Sunscreen",
+    "smartWatch": "Smart Watch",
+    "tShirt": "T-Shirt",
+    "englishTutorial": "English Language Tutorial",
+    "steelPot": "Stainless steel pot"
+  },
+  "UserDashboard": {
+    "title": "User Dashboard",
+    "myOrders": "My Orders",
+    "myFavorite": "My Favorite",
+    "myAddress": "My Address",
+    "myOpinions": "My Opinions",
+    "totalNumber": "Total Number",
+    "savedProducts": "Saved products",
+    "registeredAddresses": "Registered addresses",
+    "submittedComments": "Submitted comments"
+  }
 }
