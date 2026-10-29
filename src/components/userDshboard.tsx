@@ -10,7 +10,7 @@ export default function UserDashboard() {
             <h1 className="text-2xl font-bold pb-8 pl-2">{t("title")}</h1>
 
 
-            <div className="flex pl-25  gap-7">
+            <div className="flex flex-wrap xl:pl-25 justify-center gap-7">
                 {userDashboardCard.map((card) => (
                     <DashboardCard
                         key={card.title}

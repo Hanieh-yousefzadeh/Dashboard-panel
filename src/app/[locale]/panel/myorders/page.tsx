@@ -39,9 +39,9 @@ export default function MyOrdersPage() {
     const locale = useLocale()
     return (
         <div className={` ${locale === "fa" ? "pr-9" : "pl-9"} p-6 `}>
-            <div className="flex items-center gap-x-29">
+            <div className="flex xl:flex-row flex-col items-center gap-x-29">
                 <h1 className="text-2xl font-bold">{t("title")}</h1>
-                <div className="flex  gap-4">
+                <div className="flex flex-wrap justify-center lg:justify-start xl:pt-0 pt-5 gap-3">
 
                     {orderStats.map((item) => {
                         const Icon = item.icon
@@ -64,11 +64,11 @@ export default function MyOrdersPage() {
                     })}
                 </div>
             </div>
-            <div className="rounded-md border-2 border-[#7a3ffa1a] mt-8  dark:bg-[#0E0B2F]">
+            <div className="rounded-md border-2 border-[#7a3ffa1a] mt-8  dark:bg-[#0E0B2F] xl:w-full w-80 lg:w-180 sm:w-170 overflow-x-auto">
                 <Table>
                     <TableHeader className="h-15 text-lg bg-[#f1ebfe6a] dark:bg-[#7a3ffa23]">
                         <TableRow className="hover:bg-transparent dark:hover:bg-transparent">
-                            <TableHead className={`font-bold  text-[#5409cd] dark:text-[#bd8efb] ${ locale === "fa" ? "text-right pr-16" : "pl-16"} `}>{t("orderId")}</TableHead>
+                            <TableHead className={`font-bold  text-[#5409cd] dark:text-[#bd8efb] ${ locale === "fa" ? "text-right pr-16" : "xl:pl-16 pl-7"} `}>{t("orderId")}</TableHead>
                             <TableHead className={`font-bold  text-[#5409cd] dark:text-[#bd8efb] ${locale === "fa" ? "text-right" : ""}`}>{t("product")}</TableHead>
                             <TableHead className={`font-bold  text-[#5409cd] dark:text-[#bd8efb] ${locale === "fa" ? "text-right" : ""}`}>{t("date")}</TableHead>
                             <TableHead className={`font-bold  text-[#5409cd] dark:text-[#bd8efb] ${locale === "fa" ? "text-right pr-10" : ""}`}>{t("price")}</TableHead>
@@ -79,7 +79,7 @@ export default function MyOrdersPage() {
                     <TableBody>
                         {mockMyOrders.map((order) => (
                             <TableRow key={order.id} className="h-13">
-                                <TableCell className="font-medium pl-16 pr-16"> #{order.id}</TableCell>
+                                <TableCell className="font-medium xl:pl-16 pl-7 pr-16"> #{order.id}</TableCell>
                                 <TableCell>
                                     <div className="flex items-center gap-3 min-w-40">
                                         <Image src={order.image} alt={order.name} width={48} height={48}

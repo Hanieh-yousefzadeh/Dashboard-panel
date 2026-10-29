@@ -99,7 +99,7 @@ export default function MyOpinionsPage() {
                 </DialogContent>
             </Dialog>
 
-            <div className="w-300 rounded-md border border-[#7a3ffa1a] dark:bg-[#0E0B2F] mt-4  shadow-sm">
+            <div className="xl:w-300 md:w-3xl w-80 overflow-x-auto rounded-md border border-[#7a3ffa1a] dark:bg-[#0E0B2F] mt-4  shadow-sm">
                 <Table >
                     <TableHeader className="h-15 text-lg bg-[#f1ebfe6a] dark:bg-[#7a3ffa23]">
                         <TableRow className="hover:bg-transparent dark:hover:bg-transparent">

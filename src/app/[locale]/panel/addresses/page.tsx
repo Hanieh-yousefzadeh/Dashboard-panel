@@ -174,7 +174,7 @@ export default function MyAddressesPage() {
     }
 
     return (
-        <div className={`p-5 ${locale === "fa" ? "pr-8" : "pl-8"} xl:w-316 md:w-3xl w-80 overflow-x-auto`}>
+        <div className={`p-5 ${locale === "fa" ? "pr-8" : "xl:pl-8"} xl:w-316 md:w-3xl w-80 overflow-x-auto`}>
             <div className="pb-12 flex items-center justify-between gap-4">
                 <div className="flex flex-col gap-3">
                     <h1 className="sm:text-2xl font-bold"> {t("myAddresses")} </h1>
@@ -217,7 +217,7 @@ export default function MyAddressesPage() {
                     <Table>
                         <TableHeader className="h-15 text-lg bg-[#f1ebfe6a] dark:bg-[#7a3ffa23]">
                             <TableRow className="hover:bg-transparent dark:hover:bg-transparent">
-                                <TableHead className={`font-semibold  text-[#5409cd] dark:text-[#bd8efb] ${locale === "fa" ? "text-right pr-12" : " pl-12"}`}>{t("addNewAddress")}</TableHead>
+                                <TableHead className={`font-semibold  text-[#5409cd] dark:text-[#bd8efb] ${locale === "fa" ? "text-right pr-12" : " xl:pl-12 pl-5"}`}>{t("provinceCity")}</TableHead>
                                 <TableHead className={`font-semibold  text-[#5409cd] dark:text-[#bd8efb] ${locale === "fa" ? "text-right" : ""}`}>{t("address")}</TableHead>
                                 <TableHead className={`font-semibold  text-[#5409cd] dark:text-[#bd8efb] ${locale === "fa" ? "text-right" : ""}`}>{t("plaque")}</TableHead>
                                 <TableHead className={`font-semibold  text-[#5409cd] dark:text-[#bd8efb] ${locale === "fa" ? "text-right" : ""}`}>{t("postalCode")}</TableHead>
@@ -228,7 +228,7 @@ export default function MyAddressesPage() {
                         <TableBody>
                             {addresses.map((item) => (
                                 <TableRow key={item.id} className="h-15">
-                                    <TableCell className={`${locale === "fa" ? " pr-12" : "pl-12"}`}>   {item.province === "Tehran" ? t("tehran") : t("isfahan")},
+                                    <TableCell className={`${locale === "fa" ? " pr-12" : "xl:pl-12 pl-5"}`}>   {item.province === "Tehran" ? t("tehran") : t("isfahan")},
                                         {" "}
                                         {item.city === "Tehran" ? t("tehran") : t("isfahan")}
                                     </TableCell>
