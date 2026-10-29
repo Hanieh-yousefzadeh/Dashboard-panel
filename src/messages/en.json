@@ -64,7 +64,9 @@
       "user": "User"
     },
     "header": {
-      "logout": "Logout"
+      "logout": "Logout",
+      "language": "Change Language",
+      "theme": "Change Theme"
     },
     "theme": {
       "light": "Light",

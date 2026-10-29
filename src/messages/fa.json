@@ -64,7 +64,9 @@
       "user": "کاربر"
     },
     "header": {
-      "logout": "خروج"
+      "logout": "خروج",
+      "language": "تغییر زبان",
+      "theme": "تغییر تم"
     },
     "theme": {
       "light": "روشن",
