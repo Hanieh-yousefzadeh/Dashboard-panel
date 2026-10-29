@@ -72,12 +72,12 @@ export default function MyOpinionsPage() {
                     if (!isOpen) setEditingOpinion(null)
                 }}
             >
-                <DialogContent className="border-[#7a3ffa1a] text-[#5409cd]">
+                <DialogContent className="border-[#7a3ffa1a] text-[#5409cd] dark:text-[#dbc8f9] dark:border-[#b392fbab]   dark:bg-[#0a0220]">
                     <DialogHeader>
-                        <DialogTitle className="font-bold text-[#5409cd]"> Edit Opinion or Question </DialogTitle>
+                        <DialogTitle className="font-bold text-[#5409cd] dark:text-[#d1ccd5]"> Edit Opinion or Question </DialogTitle>
                     </DialogHeader>
 
-                    <form onSubmit={handleEditSubmit} className="flex flex-col gap-5 pt-5">
+                    <form onSubmit={handleEditSubmit} className="flex flex-col gap-7 pt-5 dark:text-[#d1ccd5]">
                         <div className="flex flex-col gap-2">
                             <Label htmlFor="edit-message"> Your Message </Label>
 
@@ -86,26 +86,26 @@ export default function MyOpinionsPage() {
                                 onChange={handleMessageChange}
                                 placeholder="Enter your message"
                                 required
-                                className="min-h-28 border-[#7a3ffa1a] text-[#4104a2] focus-visible:ring-0"
+                                className="min-h-28 border-[#7a3ffa1a] text-[#4104a2] focus-visible:ring-0 dark:placeholder:text-[#b098d6bd] dark:text-[#bea2eba1]"
                             />
                         </div>
-                        <Button type="submit" className="mt-3 w-full bg-[#7a3ffacb] py-5 hover:bg-[#5409cd]">
+                        <Button type="submit" className="mt-3 w-full bg-[#7a3ffacb] py-5 hover:bg-[#5409cd]  dark:text-[#d1ccd5] dark:bg-[#3b0b87]">
                             Save Changes
                         </Button>
                     </form>
                 </DialogContent>
             </Dialog>
 
-            <div className="w-300 rounded-md border border-[#7a3ffa1a] mt-4  shadow-sm">
+            <div className="w-300 rounded-md border border-[#7a3ffa1a] dark:bg-[#0E0B2F] mt-4  shadow-sm">
                 <Table >
-                    <TableHeader className="h-15 bg-[#f1ebfe6a]">
-                        <TableRow>
-                            <TableHead className="text-base font-bold text-[#5409cd] pl-9">Product</TableHead>
-                            <TableHead className="text-base font-bold text-[#5409cd]">Type</TableHead>
-                            <TableHead className="text-base font-bold text-[#5409cd] pl-10">Message</TableHead>
-                            <TableHead className="text-base font-bold text-[#5409cd]">Status</TableHead>
-                            <TableHead className="text-base font-bold text-[#5409cd] pl-10">Admin Reply</TableHead>
-                            <TableHead className="text-base font-bold text-[#5409cd] pr-6">Actions</TableHead>
+                    <TableHeader className="h-15 text-lg bg-[#f1ebfe6a] dark:bg-[#7a3ffa23]">
+                        <TableRow className="hover:bg-transparent dark:hover:bg-transparent">
+                            <TableHead className="dark:text-[#bd8efb] font-bold text-[#5409cd] pl-9">Product</TableHead>
+                            <TableHead className="dark:text-[#bd8efb] font-bold text-[#5409cd]">Type</TableHead>
+                            <TableHead className="dark:text-[#bd8efb] font-bold text-[#5409cd] pl-10">Message</TableHead>
+                            <TableHead className="dark:text-[#bd8efb] font-bold text-[#5409cd]">Status</TableHead>
+                            <TableHead className="dark:text-[#bd8efb] font-bold text-[#5409cd] pl-10">Admin Reply</TableHead>
+                            <TableHead className="dark:text-[#bd8efb] font-bold text-[#5409cd] pr-6">Actions</TableHead>
                         </TableRow>
                     </TableHeader>
 
@@ -128,7 +128,7 @@ export default function MyOpinionsPage() {
 
                                 <TableCell><div className="line-clamp-1 pl-10">{opinion.message}</div></TableCell>
 
-                                <TableCell><div className={`rounded-full text-center py-2 px-1.5 text-xs ${opinion.status === "Answered" ? "bg-green-100 text-green-700" : "bg-[#ede8fd] text-[#031381]"}`}>
+                                <TableCell><div className={`rounded-lg text-center py-2 px-1.5 text-sm font-semibold ${opinion.status === "Answered" ? "bg-green-50 text-green-700 dark:bg-[#dbfce7a3] dark:text-green-900" : "bg-[#ede8fd] dark:bg-[#f1ebfeac] text-[#031481bd]"}`}>
                                     {opinion.status === "Answered" ? "Answered" : "Pending"}
                                 </div>
                                 </TableCell>
@@ -142,12 +142,12 @@ export default function MyOpinionsPage() {
                                 <TableCell>
                                     <div className="flex items-center justify-center pr-7">
                                         <button onClick={() => handleEditClick(opinion)}
-                                            className="text-[#6e2dfab3] cursor-pointer" >
+                                            className="text-[#6e2dfab3] cursor-pointer dark:text-[#6e2dfae0]" >
                                             <PencilSparkles className="size-5" />
                                         </button>
 
                                         <button onClick={() => handleDeleteOpinion(opinion.id)}
-                                            className="ml-3 text-red-600 cursor-pointer">
+                                            className="m-3 text-red-600 dark:text-red-900 cursor-pointer">
                                             <Trash className="size-5" />
                                         </button>
                                     </div>

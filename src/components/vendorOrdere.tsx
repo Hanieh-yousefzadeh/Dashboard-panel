@@ -10,13 +10,13 @@ export default function VendorOrders() {
     Cancelled: "cancelled",
   } as const
   return (
-    <section className="w-[50%] rounded-xl border border-[#7a3ffa1a] bg-card p-5 shadow-sm">
+    <section className="w-[50%] rounded-xl border border-[#7a3ffa1a] dark:bg-[#0E0B2F] bg-card p-5 shadow-sm">
       <h2 className="mb-7 text-lg font-semibold">  {t("latestOrders")}</h2>
 
       <div className="w-full overflow-x-auto">
         <table className="w-full text-right text-sm">
           <thead>
-            <tr className="border-b border-[#9468fc47] font-semibold text-[#7B29FB]">
+            <tr className="border-b border-[#9468fc47] font-semibold text-[#7B29FB] dark:text-[#af8dfc]">
               <th className="w-24 pb-3 text-center"> {t("orderNumber")}</th>
               <th className="pb-3 pl-4 text-center"> {t("product")}</th>
               <th className="pb-3 pl-4 text-center"> {t("customer")} </th>
@@ -42,12 +42,12 @@ export default function VendorOrders() {
 
                 <td className="py-4 pl-4 text-center">
                   <span
-                    className={`whitespace-nowrap rounded-full px-2 py-1 text-xs ${order.status === "Delivered" ? "bg-green-100 text-green-700"
+                    className={` rounded-lg px-3 py-2 text-sm font-semibold ${order.status === "Delivered" ? "bg-green-50 dark:bg-[#dbfce7a3] dark:text-green-900 text-green-700"
                       : order.status === "Pending"
-                        ? "bg-[#F1EBFE] text-yellow-700"
+                        ? "bg-[#F9F7FF] dark:bg-[#f1ebfeac] dark:text-[#6219d6] text-[#7B29FB] px-5"
                         : order.status === "Processing"
-                          ? "bg-blue-100 text-blue-700"
-                          : "bg-red-100 text-red-700"
+                          ? "bg-blue-50 dark:bg-[#dbeafea6] dark:text-blue-900 text-[#031381]"
+                          : "bg-red-50 dark:bg-[#ffe2e29a] dark:text-red-900 text-red-700"
                       }`}
                   >
                     {(() => {

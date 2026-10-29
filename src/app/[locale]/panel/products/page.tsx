@@ -176,28 +176,28 @@ export default function ProductsPage() {
             <div className="pb-12 flex items-center justify-between">
                 <div className="flex flex-col gap-3">
                     <h1 className="sm:text-2xl font-bold"> {t("title")}</h1>
-                    <p className="text-sm text-[#7B29FB]"> {t("totalProducts", { count: mounted ? products.length : "..." })} </p>
+                    <p className="text-base text-[#7B29FB] dark:text-[#decaf9]"> {t("totalProducts", { count: mounted ? products.length : "..." })} </p>
                 </div>
                 <Dialog open={open} onOpenChange={setOpen}>
-                    <DialogTrigger render={<Button className="text-base bg-[#7a3ffacb] py-4.5 pr-3.5 hover:bg-[#5409cd] cursor-pointer">
+                    <DialogTrigger render={<Button className="text-base bg-[#7a3ffacb] py-4.5 pr-3.5 hover:bg-[#5409cd] dark:hover:text-[#d1ccd5] dark:bg-[#261666] dark:text-[#d1ccd5]  cursor-pointer">
                         <Plus strokeWidth={3} /> {t("addProduct")} </Button>} />
-                    <DialogContent className="border-[#7a3ffa1a] text-[#5409cd]">
+                    <DialogContent className="border-[#7a3ffa1a] text-[#5409cd] dark:text-[#dbc8f9] dark:border-[#b392fbab]   dark:bg-[#0a0220]">
                         <DialogHeader>
-                            <DialogTitle className="text-[#5409cd] font-bold">	{t("addNewProduct")}</DialogTitle>
+                            <DialogTitle className="text-[#5409cd] dark:text-[#d1ccd5] font-bold">	{t("addNewProduct")}</DialogTitle>
                         </DialogHeader>
-                        <form onSubmit={handleSubmit} className="flex flex-col gap-5 pt-5 text-[#6200ff]">
+                        <form onSubmit={handleSubmit} className="flex flex-col gap-7 pt-5 dark:text-[#d1ccd5] text-[#6200ff]">
                             <div className="flex flex-col gap-2">
                                 <Label>	{t("productName")}</Label>
                                 <Input value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })}
                                     placeholder="Product name"
-                                    required className="border-[#7a3ffa1a] text-[#4104a2] placeholder:text-[#6315e16e] focus-visible:ring-0"
+                                    required className="border-[#7a3ffa1a] h-10 text-[#4104a2] placeholder:text-[#6315e16e] dark:placeholder:text-[#b098d6bd] dark:text-[#bea2eba1] focus-visible:ring-0"
                                 />
                             </div>
 
                             <div className="flex flex-col gap-2">
                                 <Label>	{t("productImage")}</Label>
 
-                                <div className="flex h-10 items-center rounded-md border border-[#7a3ffa1a] px-3 text-sm text-[#4104a2ba]">
+                                <div className="flex h-10 items-center rounded-md border border-[#7a3ffa1a] dark:placeholder:text-[#b098d6bd] dark:text-[#bea2eba1] dark:bg-[#150D2A] px-3 text-sm text-[#4104a2ba]">
                                     {imageName || t("noFileChosen")}
                                 </div>
 
@@ -207,7 +207,7 @@ export default function ProductsPage() {
                                 />
 
                                 <label htmlFor="productImage"
-                                    className="flex w-fit cursor-pointer items-center rounded-md bg-[#7a3ffa] px-4 py-2 text-white hover:bg-[#5409cd]"
+                                    className="flex w-fit cursor-pointer items-center rounded-md bg-[#7a3ffa] dark:bg-[#3b0b87]  px-4 py-2 text-white dark:text-[#d1ccd5] hover:bg-[#5409cd]"
                                 >
                                     {t("chooseFile")}
                                 </label>
@@ -215,7 +215,7 @@ export default function ProductsPage() {
                             <div className="flex flex-col gap-2">
                                 <Label>	{t("category")}</Label>
                                 <select value={form.categoryId} onChange={(e) => setForm({ ...form, categoryId: e.target.value })}
-                                    required className="w-full rounded-md border bg-transparent p-2 text-sm"
+                                    required className="w-full rounded-md bg-transparent  dark:text-[#bea2ebc6] dark:bg-[#150D2A] h-10 p-2 text-sm outline outline-[#7a3ffa1a] border-r-5 border-r-transparent"
                                 >
                                     <option value="">{t("selectCategory")}</option>
                                     {mockCategories.map((category) => (
@@ -231,7 +231,7 @@ export default function ProductsPage() {
                                 <Label>	{t("price")}</Label>
                                 <Input type="number" value={form.price} onChange={(e) => setForm({ ...form, price: e.target.value })}
                                     placeholder="Price"
-                                    required className="border-[#7a3ffa1a] text-[#4104a2] placeholder:text-[#6315e16e] focus-visible:ring-0"
+                                    required className="border-[#7a3ffa1a] h-10 dark:placeholder:text-[#b098d6bd] dark:text-[#bea2eba1] text-[#4104a2] placeholder:text-[#6315e16e] focus-visible:ring-0"
                                 />
                             </div>
 
@@ -240,25 +240,25 @@ export default function ProductsPage() {
                                 <Input type="number" value={form.stock}
                                     onChange={(e) => setForm({ ...form, stock: e.target.value })}
                                     placeholder="Stock"
-                                    required className="border-[#7a3ffa1a] text-[#4104a2] placeholder:text-[#6315e16e] focus-visible:ring-0"
+                                    required className="border-[#7a3ffa1a] h-10 dark:placeholder:text-[#b098d6bd] dark:text-[#bea2eba1]  text-[#4104a2] placeholder:text-[#6315e16e] focus-visible:ring-0"
                                 />
                             </div>
-                            <Button type="submit" className="w-full bg-[#7a3ffa] hover:bg-[#5409cd]">	{t("addProduct")}</Button>
+                            <Button type="submit" className="w-full py-5 mt-3  dark:text-[#d1ccd5] dark:bg-[#3b0b87] bg-[#7a3ffacb] hover:bg-[#5409cd]">	{t("addProduct")}</Button>
                         </form>
                     </DialogContent>
                 </Dialog>
             </div>
             {mounted && (
-                <div className="rounded-md border-2 border-[#7a3ffa1a]">
+                <div className="rounded-md border-2 border-[#7a3ffa1a] dark:bg-[#0E0B2F]">
                     <Table>
-                        <TableHeader className="h-15 text-base bg-[#f1ebfe6a]">
-                            <TableRow>
-                                <TableHead className={`font-semibold text-[#5409cd] ${locale === "fa" ? "text-right xl:pr-15" : "text-left xl:pl-8"}`}>{t("id")} </TableHead>
-                                <TableHead className={`font-semibold text-[#5409cd] ${locale === "fa" ? "text-right" : "text-left"}`}> {t("product")} </TableHead>
-                                <TableHead className={`font-semibold text-[#5409cd] ${locale === "fa" ? "text-right" : "text-left"}`}> {t("category")}  </TableHead>
-                                <TableHead className={`font-semibold text-[#5409cd] ${locale === "fa" ? "text-center pl-7" : "text-left"}`}> {t("price")} </TableHead>
-                                <TableHead className={`font-semibold text-[#5409cd] ${locale === "fa" ? "text-center pl-5" : "text-left"}`}> {t("stock")} </TableHead>
-                                <TableHead className={`font-semibold text-[#5409cd] ${locale === "fa" ? "text-center pl-10" : "text-left"}`}> {t("actions")} </TableHead>
+                        <TableHeader className="h-15 text-lg bg-[#f1ebfe6a] dark:bg-[#7a3ffa23]">
+                            <TableRow className="hover:bg-transparent dark:hover:bg-transparent">
+                                <TableHead className={`font-semibold text-[#5409cd] dark:text-[#bd8efb] ${locale === "fa" ? "text-right xl:pr-15" : "text-left xl:pl-8"}`}>{t("id")} </TableHead>
+                                <TableHead className={`font-semibold text-[#5409cd] dark:text-[#bd8efb] ${locale === "fa" ? "text-right" : "text-left"}`}> {t("product")} </TableHead>
+                                <TableHead className={`font-semibold text-[#5409cd] dark:text-[#bd8efb] ${locale === "fa" ? "text-right" : "text-left"}`}> {t("category")}  </TableHead>
+                                <TableHead className={`font-semibold text-[#5409cd] dark:text-[#bd8efb] ${locale === "fa" ? "text-center pl-7" : "text-left"}`}> {t("price")} </TableHead>
+                                <TableHead className={`font-semibold text-[#5409cd] dark:text-[#bd8efb] ${locale === "fa" ? "text-center pl-5" : "text-left"}`}> {t("stock")} </TableHead>
+                                <TableHead className={`font-semibold text-[#5409cd] dark:text-[#bd8efb] ${locale === "fa" ? "text-center pl-10" : "text-left"}`}> {t("actions")} </TableHead>
                             </TableRow>
                         </TableHeader>
                         <TableBody>
@@ -290,21 +290,21 @@ export default function ProductsPage() {
                                                     onOpenChange={(isOpen) => { if (!isOpen) setEditingProduct(null) }}
                                                 >
                                                     <DialogTrigger render={
-                                                        <button type="button" className="cursor-pointer text-[#6e2dfab3]" onClick={() => handleEditClick(product)}>
+                                                        <button type="button" className="cursor-pointer text-[#6e2dfab3] dark:text-[#6e2dfae0]" onClick={() => handleEditClick(product)}>
                                                             <PencilSparkles className="size-5" />
                                                         </button>
                                                     } />
-                                                    <DialogContent className="border-[#7a3ffa1a] text-[#5409cd]">
+                                                    <DialogContent className="border-[#7a3ffa1a] text-[#5409cd] dark:border-[#b392fbab] dark:text-[#dbc8f9] dark:bg-[#0a0220] ">
                                                         <DialogHeader>
-                                                            <DialogTitle className="text-[#5409cd] font-bold">	{t("editProduct")}</DialogTitle>
+                                                            <DialogTitle className="text-[#5409cd] dark:text-[#d1ccd5] font-bold">	{t("editProduct")}</DialogTitle>
                                                         </DialogHeader>
 
-                                                        <form onSubmit={handleEditSubmit} className="flex flex-col gap-5 pt-5">
+                                                        <form onSubmit={handleEditSubmit} className="flex flex-col gap-5 pt-5 dark:text-[#d1ccd5]">
                                                             <div className="flex flex-col gap-2">
                                                                 <Label>	{t("productName")}</Label>
                                                                 <Input value={editForm.name}
                                                                     onChange={(e) => setEditForm({ ...editForm, name: e.target.value })}
-                                                                    required className="border-[#7a3ffa1a] text-[#4104a2] placeholder:text-[#6315e16e] focus-visible:ring-0"
+                                                                    required className="border-[#7a3ffa1a] h-10 text-[#4104a2] dark:placeholder:text-[#a881e6a1] dark:text-[#d7c5f5a1]  placeholder:text-[#6315e16e] focus-visible:ring-0"
                                                                 />
                                                             </div>
 
@@ -319,7 +319,7 @@ export default function ProductsPage() {
                                                                         className="size-12 rounded-md object-cover"
                                                                     />
 
-                                                                    <div className="flex h-10 flex-1 items-center rounded-md border border-[#7a3ffa1a] px-3 text-sm text-[#4104a2]">
+                                                                    <div className="flex h-10 flex-1 items-center rounded-md border dark:placeholder:text-[#b098d6bd] dark:text-[#bea2eba1] dark:bg-[#150D2A] border-[#7a3ffa1a] px-3 text-sm text-[#4104a2]">
                                                                         {imageName || t("currentProductImage")}
                                                                     </div>
                                                                 </div>
@@ -333,7 +333,7 @@ export default function ProductsPage() {
                                                                 />
 
                                                                 <label htmlFor="editProductImage"
-                                                                    className="flex w-fit cursor-pointer items-center rounded-md bg-[#7a3ffa] px-4 py-2 text-white hover:bg-[#5409cd]"
+                                                                    className="flex w-fit cursor-pointer items-center h-10 dark:text-[#d1ccd5] dark:bg-[#3b0b87]   rounded-md bg-[#7a3ffa] px-4 py-2 text-white hover:bg-[#5409cd]"
                                                                 >
                                                                     {t("chooseFile")}
                                                                 </label>
@@ -346,7 +346,7 @@ export default function ProductsPage() {
                                                                         categoryId: e.target.value,
                                                                     })
                                                                     }
-                                                                    required className="w-full rounded-md border bg-transparent p-2 text-sm"
+                                                                    required className="w-full rounded-md h-10 bg-transparent p-2 text-sm dark:text-[#bea2ebc6] dark:bg-[#150D2A] outline outline-[#7a3ffa1a] border-r-5 border-r-transparent"
                                                                 >
                                                                     <option value="">{t("selectCategory")}</option>
                                                                     {mockCategories.map((category) => (
@@ -365,7 +365,7 @@ export default function ProductsPage() {
                                                                         price: e.target.value,
                                                                     })
                                                                     }
-                                                                    required className="border-[#7a3ffa1a] text-[#4104a2] placeholder:text-[#6315e16e] focus-visible:ring-0"
+                                                                    required className="border-[#7a3ffa1a] h-10 dark:placeholder:text-[#a881e6a1] dark:text-[#d7c5f5a1]  text-[#4104a2] placeholder:text-[#6315e16e] focus-visible:ring-0"
                                                                 />
                                                             </div>
 
@@ -377,15 +377,15 @@ export default function ProductsPage() {
                                                                         stock: e.target.value,
                                                                     })
                                                                     }
-                                                                    required className="border-[#7a3ffa1a] text-[#4104a2] placeholder:text-[#6315e16e] focus-visible:ring-0"
+                                                                    required className="border-[#7a3ffa1a] h-10 dark:placeholder:text-[#a881e6a1] dark:text-[#d7c5f5a1]  text-[#4104a2] placeholder:text-[#6315e16e] focus-visible:ring-0"
                                                                 />
                                                             </div>
-                                                            <Button type="submit" className="w-full py-5 bg-[#7a3ffacb] hover:bg-[#5409cd]"> {t("saveChanges")}  </Button>
+                                                            <Button type="submit" className="w-full py-5 mt-3 dark:text-[#d1ccd5] dark:bg-[#3b0b87] bg-[#7a3ffacb] hover:bg-[#5409cd]"> {t("saveChanges")}  </Button>
                                                         </form>
                                                     </DialogContent>
                                                 </Dialog>
 
-                                                <button type="button" className="cursor-pointer text-red-600" onClick={() => handleDeleteProduct(product.id)} >
+                                                <button type="button" className="cursor-pointer dark:text-red-900 text-red-600" onClick={() => handleDeleteProduct(product.id)} >
                                                     <Trash className="size-5" />
                                                 </button>
                                             </div>

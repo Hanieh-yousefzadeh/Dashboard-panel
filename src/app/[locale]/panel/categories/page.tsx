@@ -93,19 +93,19 @@ export default function categoryPage() {
             <div className="flex justify-between pb-12">
                 <div className="flex flex-col gap-3">
                     <p className="lg:text-2xl font-bold"> {t("title")}</p>
-                    <p className="text-sm text-[#7B29FB]"> {t("totalCategories")}: ({categories.length}) </p>
+                    <p className="text-base text-[#7B29FB] dark:text-[#decaf9]"> {t("totalCategories")}: ({categories.length}) </p>
                 </div>
                 <Dialog open={open} onOpenChange={setOpen}>
-                    <DialogTrigger render={<Button className="text-base bg-[#7a3ffacb] py-4.5 pr-3.5 hover:bg-[#5409cd] cursor-pointer"><Plus strokeWidth={3} />  Add Category</Button>} />
+                    <DialogTrigger render={<Button className="text-base bg-[#7a3ffacb] py-4.5  pr-3.5 dark:hover:text-[#d1ccd5] dark:bg-[#261666] dark:text-[#d1ccd5]  hover:bg-[#5409cd] cursor-pointer"><Plus strokeWidth={3} />  Add Category</Button>} />
 
-                    <DialogContent className="border-[#7a3ffa1a] text-[#5409cd]">
+                    <DialogContent className="border-[#7a3ffa1a] text-[#5409cd] dark:text-[#dbc8f9] dark:border-[#b392fbab]   dark:bg-[#0a0220]">
                         <DialogHeader>
-                            <DialogTitle className="text-[#5409cd] font-bold">	{t("addNewCategory")}</DialogTitle>
+                            <DialogTitle className="text-[#5409cd] dark:text-[#d1ccd5] font-bold">	{t("addNewCategory")}</DialogTitle>
                         </DialogHeader>
 
                         <form
                             onSubmit={handleAddCategory}
-                            className=" flex flex-col gap-5 pt-5 text-[#6200ff]"
+                            className=" flex flex-col gap-7 pt-5 text-[#6200ff] dark:text-[#d1ccd5]"
                         >
                             <div className="flex flex-col gap-2">
                                 <Label htmlFor="name">	{t("categoryName")}</Label>
@@ -115,10 +115,10 @@ export default function categoryPage() {
                                     onChange={(e) => setCategory(e.target.value)}
                                     placeholder="Enter category name"
                                     required
-                                    className="border-[#7a3ffa1a] text-[#4104a2] placeholder:text-[#6315e16e] focus-visible:ring-0"
+                                    className="border-[#7a3ffa1a] text-[#4104a2] h-10 placeholder:text-[#6315e16e]ark:placeholder:text-[#b098d6bd] dark:text-[#bea2eba1] focus-visible:ring-0"
                                 />
                             </div>
-                            <Button type="submit" className=" cursor-pointer w-full py-5 mt-3 bg-[#7a3ffacb] hover:bg-[#5409cd]">{t("addCategory")}</Button>
+                            <Button type="submit" className=" cursor-pointer dark:text-[#d1ccd5] dark:bg-[#3b0b87] w-full py-5 mt-3 bg-[#7a3ffacb] hover:bg-[#5409cd]">{t("addCategory")}</Button>
                         </form>
                     </DialogContent>
                 </Dialog>
@@ -128,11 +128,11 @@ export default function categoryPage() {
                         if (!isOpen) setEditingCategory(null)
                     }}
                 >
-                    <DialogContent className="border-[#7a3ffa1a] text-[#5409cd]">
+                    <DialogContent className="border-[#7a3ffa1a] text-[#5409cd] dark:border-[#b392fbab] dark:text-[#dbc8f9] dark:bg-[#0a0220]">
                         <DialogHeader>
-                            <DialogTitle className="text-[#5409cd] font-bold">	{t("editCategory")}</DialogTitle>
+                            <DialogTitle className="text-[#5409cd] dark:text-[#d1ccd5] font-bold">	{t("editCategory")}</DialogTitle>
                         </DialogHeader>
-                        <form onSubmit={handleEditSubmit} className="flex flex-col gap-5 pt-5">
+                        <form onSubmit={handleEditSubmit} className="flex flex-col gap-7 pt-5 dark:text-[#d1ccd5]">
                             <div className="flex flex-col gap-2">
                                 <Label htmlFor="editName"> {t("categoryName")}</Label>
                                 <Input
@@ -143,35 +143,35 @@ export default function categoryPage() {
                                     }
                                     required
                                     placeholder={t("enterCategoryName")}
-                                    className="border-[#7a3ffa1a] text-[#4104a2] placeholder:text-[#6315e16e] focus-visible:ring-0"
+                                    className="border-[#7a3ffa1a] h-10 text-[#4104a2] dark:placeholder:text-[#a881e6a1] dark:text-[#d7c5f5a1] placeholder:text-[#6315e16e] focus-visible:ring-0"
                                 />
                             </div>
-                            <Button type="submit" className="w-full py-5 bg-[#7a3ffacb] hover:bg-[#5409cd]" > {t("saveChanges")}  </Button>
+                            <Button type="submit" className="w-full py-5 dark:text-[#d1ccd5] dark:bg-[#3b0b87] bg-[#7a3ffacb] hover:bg-[#5409cd]" > {t("saveChanges")}  </Button>
                         </form>
                     </DialogContent>
                 </Dialog>
             </div>
 
             {mounted && (
-                <div className="rounded-md border-2 border-[#7a3ffa1a]">
+                <div className="rounded-md border-2 border-[#7a3ffa1a] dark:bg-[#0E0B2F]">
                     <Table className="">
-                        <TableHeader className="h-12 text-base bg-[#f1ebfe6a]">
-                            <TableRow>
-                                <TableHead className={`${locale === "fa" ? "text-right pr-18" : "xl:pl-11"} font-semibold text-[#5409cd]`}>{t("id")}</TableHead>
-                                <TableHead className={`${locale === "fa" ? "text-right" : "text-left xl:pl-3"} font-semibold text-[#5409cd]`}>{t("categoryName")}</TableHead>
-                                <TableHead className={` font-semibold text-[#5409cd]  ${locale === "fa" ? "text-center pl-10" : "text-center pr-5"}`}>{t("actions")}</TableHead>
+                        <TableHeader className="h-15 text-lg bg-[#f1ebfe6a] dark:bg-[#7a3ffa23]">
+                            <TableRow className="hover:bg-transparent dark:hover:bg-transparent">
+                                <TableHead className={`${locale === "fa" ? "text-right pr-18" : "xl:pl-22"} font-semibold text-[#5409cd] dark:text-[#bd8efb]`}>{t("id")}</TableHead>
+                                <TableHead className={`${locale === "fa" ? "text-right" : "text-left xl:pl-1"} font-semibold text-[#5409cd] dark:text-[#bd8efb]`}>{t("categoryName")}</TableHead>
+                                <TableHead className={` font-semibold text-[#5409cd] dark:text-[#bd8efb]  ${locale === "fa" ? "text-center pl-10" : "text-center pr-5"}`}>{t("actions")}</TableHead>
                             </TableRow>
                         </TableHeader>
                         <TableBody >
                             {categories.map((item) => (
-                                <TableRow key={item.id} className="h-15">
-                                    <TableCell className={`${locale === "fa" ? "pr-16" : "xl:pl-10"}`}>{item.id}</TableCell>
+                                <TableRow key={item.id} className="h-14">
+                                    <TableCell className={`${locale === "fa" ? "pr-16" : "xl:pl-22"}`}>{item.id}</TableCell>
                                     <TableCell> {tCategories(categoryTranslationKeys[item.name as keyof typeof categoryTranslationKeys])}</TableCell>
                                     <TableCell className="flex items-center justify-center">
-                                        <button onClick={() => handleEditClick(item)} className="text-[#6e2dfab3] cursor-pointer ">
+                                        <button onClick={() => handleEditClick(item)} className="text-[#6e2dfab3] dark:text-[#6e2dfae0]  cursor-pointer ">
                                             <PencilSparkles className=" size-5" />
                                         </button>
-                                        <button onClick={() => handleDeleteCategory(item.id)} className="m-3 text-red-600 cursor-pointer">
+                                        <button onClick={() => handleDeleteCategory(item.id)} className="m-3 text-red-600 dark:text-red-900 cursor-pointer">
                                             <Trash className="size-5" />
                                         </button>
                                     </TableCell>

@@ -32,9 +32,9 @@ export default function SideBar() {
 
     const menu = navigation[user.role]
     return (
-        <aside className={`hidden lg:flex h-153 w-64 shrink-0 flex-col ${ locale === "fa" ? "border-l-2" : " border-r-2"} border-[#7a3ffa2d] p-4  `}>
+        <aside className={`hidden lg:flex h-153 w-64 shrink-0 flex-col ${ locale === "fa" ? "border-l-2" : " border-r-2"} border-[#7a3ffa2d] dark:border-[#7a3ffa51] p-4  `}>
             <div className="flex items-center pl-1 pb-8 gap-1">
-                <CircleUserRound className="text-[#5d16f76f] size-9" />
+                <CircleUserRound className="text-[#5d16f76f] dark:text-[#9a70fc] size-9" />
                 <h2 className=" font-bold">  {t("dashboard")} {t(user.role.toLowerCase())} </h2>
             </div>
             <div className="">
@@ -45,8 +45,8 @@ export default function SideBar() {
                         <Link
                             key={item.href}
                             href={item.href}
-                            className={`flex items-center gap-3 rounded-md px-3 py-2 text-base mb-1 ${isActive ? "text-[#7a3ffa] bg-[#7a3ffa1a]"
-                                : " hover:text-[#7a3ffa] hover:bg-[#7a3ffa1a]"
+                            className={`flex items-center gap-3 rounded-md px-3 py-2 text-base mb-1 ${isActive ? "text-[#7a3ffa] dark:text-[#9a70fc] dark:bg-[#17143D] bg-[#7a3ffa1a]"
+                                : " hover:text-[#7a3ffa] dark:hover:text-[#9a70fc] dark:hover:bg-[#17143D] hover:bg-[#7a3ffa1a]"
                                 }`}
                         >
                             <Icon size={20} />

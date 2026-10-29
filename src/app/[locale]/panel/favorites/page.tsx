@@ -45,13 +45,13 @@ export default function MyFavoritePage() {
         <div className="p-6">
             <h1 className="mb-8 pl-3 text-2xl font-bold">My Favorite </h1>
 
-            <div className="mt-4  ml-3 w-300 rounded-md border border-[#7a3ffa1a] shadow-sm">
+            <div className="mt-4  ml-3 w-300 rounded-md border border-[#7a3ffa1a] shadow-sm dark:bg-[#0E0B2F]">
                 <Table>
-                    <TableHeader className="h-15 bg-[#f1ebfe6a]">
-                        <TableRow>
-                            <TableHead className="pl-10 text-base font-bold text-[#5409cd]"> Product</TableHead>
-                            <TableHead className="text-base font-bold text-[#5409cd]">Price </TableHead>
-                            <TableHead className="text-center text-base font-bold text-[#5409cd]"> Action </TableHead>
+                    <TableHeader className="h-15 text-lg bg-[#f1ebfe6a] dark:bg-[#7a3ffa23]">
+                        <TableRow className="hover:bg-transparent dark:hover:bg-transparent">
+                            <TableHead className="pl-10 font-semibold text-[#5409cd] dark:text-[#bd8efb]"> Product</TableHead>
+                            <TableHead className="font-semibold text-[#5409cd] dark:text-[#bd8efb]">Price </TableHead>
+                            <TableHead className="text-center  font-semibold text-[#5409cd] dark:text-[#bd8efb]"> Action </TableHead>
                         </TableRow>
                     </TableHeader>
 
@@ -59,7 +59,7 @@ export default function MyFavoritePage() {
                         {favorites.map((product) => (
                             <TableRow key={product.id} className="h-16">
                                 <TableCell>
-                                    <div className="flex min-w-40 items-center gap-3">
+                                    <div className="flex min-w-40 items-center gap-3 pl-8">
                                         <Image src={product.image} alt={product.name} width={48} height={48}
                                             className="size-12 shrink-0 rounded-md object-cover"
                                         />
@@ -73,7 +73,7 @@ export default function MyFavoritePage() {
                                 <TableCell className="text-center">
                                     <button
                                         onClick={() => deleteFavorite(product.id)}
-                                        className="rounded-lg p-2 text-red-500 transition hover:bg-red-50">
+                                        className="rounded-lg p-2 text-red-500 dark:text-red-900 hover:bg-red-50">
                                         <Trash className="size-5" />
                                     </button>
                                 </TableCell>
