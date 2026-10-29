@@ -49,25 +49,28 @@ export default async function RootLayout({
         notFound();
     }
 
-   const messages = await getMessages({ locale });
+    const messages = await getMessages({ locale })
 
-    console.log("Login messages:", messages.Login);
+    console.log("RootLayout locale:", locale);
+    console.log("VisitPage messages:", messages.VisitPage);
 
-   return (
-    <NextIntlClientProvider locale={locale} messages={messages} >
-        <StoreProvider>
-            <ThemeProvider>
-                <div dir={locale === "fa" ? "rtl" : "ltr"} className="min-h-screen flex flex-col" >
-                    <AuthStorage />
-                    <CustomersStorage />
-                    <VendorsStorage />
-                    <ProductStorage />
-                    <CategoriesStorage />
-                    <OrderStorage />
-                    {children}
-                </div>
-            </ThemeProvider>
-        </StoreProvider>
-    </NextIntlClientProvider>
-);
+    console.log("Login messages:", messages.Login)
+
+    return (
+        <NextIntlClientProvider locale={locale} messages={messages} >
+            <StoreProvider>
+                <ThemeProvider>
+                    <div dir={locale === "fa" ? "rtl" : "ltr"} className="min-h-screen flex flex-col" >
+                        <AuthStorage />
+                        <CustomersStorage />
+                        <VendorsStorage />
+                        <ProductStorage />
+                        <CategoriesStorage />
+                        <OrderStorage />
+                        {children}
+                    </div>
+                </ThemeProvider>
+            </StoreProvider>
+        </NextIntlClientProvider>
+    );
 }

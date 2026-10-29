@@ -24,11 +24,14 @@ import {
 import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
+import { useLocale, useTranslations } from "next-intl"
 
 export default function MyOpinionsPage() {
     const [opinions, setOpinions] = useState<MyOpinion[]>(mockMyOpinions)
     const [loaded, setLoaded] = useState(false)
     const [editingOpinion, setEditingOpinion] = useState<MyOpinion | null>(null)
+    const t = useTranslations("MyOpinionsPage")
+    const locale = useLocale()
     useEffect(() => {
         const savedOpinions = localStorage.getItem("myOpinions")
         if (savedOpinions) {
@@ -66,7 +69,7 @@ export default function MyOpinionsPage() {
 
     return (
         <div className="px-9 pt-6">
-            <h1 className="text-2xl font-bold pb-5">My Opinions & Questions</h1>
+            <h1 className="text-2xl font-bold pb-5"> {t("title")}</h1>
             <Dialog open={editingOpinion !== null}
                 onOpenChange={(isOpen) => {
                     if (!isOpen) setEditingOpinion(null)
@@ -74,23 +77,23 @@ export default function MyOpinionsPage() {
             >
                 <DialogContent className="border-[#7a3ffa1a] text-[#5409cd] dark:text-[#dbc8f9] dark:border-[#b392fbab]   dark:bg-[#0a0220]">
                     <DialogHeader>
-                        <DialogTitle className="font-bold text-[#5409cd] dark:text-[#d1ccd5]"> Edit Opinion or Question </DialogTitle>
+                        <DialogTitle className="font-bold text-[#5409cd] dark:text-[#d1ccd5]"> {t("editTitle")} </DialogTitle>
                     </DialogHeader>
 
                     <form onSubmit={handleEditSubmit} className="flex flex-col gap-7 pt-5 dark:text-[#d1ccd5]">
                         <div className="flex flex-col gap-2">
-                            <Label htmlFor="edit-message"> Your Message </Label>
+                            <Label htmlFor="edit-message"> {t("yourMessage")} </Label>
 
                             <Textarea id="edit-message"
                                 value={editingOpinion?.message}
                                 onChange={handleMessageChange}
-                                placeholder="Enter your message"
+                                placeholder={t("messagePlaceholder")}
                                 required
-                                className="min-h-28 border-[#7a3ffa1a] text-[#4104a2] focus-visible:ring-0 dark:placeholder:text-[#b098d6bd] dark:text-[#bea2eba1]"
+                                className="min-h-28 border-[#7a3ffa1a] text-[#1e0547] focus-visible:ring-0 dark:placeholder:text-[#b098d6bd] dark:text-[#bea2eba1]"
                             />
                         </div>
                         <Button type="submit" className="mt-3 w-full bg-[#7a3ffacb] py-5 hover:bg-[#5409cd]  dark:text-[#d1ccd5] dark:bg-[#3b0b87]">
-                            Save Changes
+                            {t("saveChanges")}
                         </Button>
                     </form>
                 </DialogContent>
@@ -100,12 +103,12 @@ export default function MyOpinionsPage() {
                 <Table >
                     <TableHeader className="h-15 text-lg bg-[#f1ebfe6a] dark:bg-[#7a3ffa23]">
                         <TableRow className="hover:bg-transparent dark:hover:bg-transparent">
-                            <TableHead className="dark:text-[#bd8efb] font-bold text-[#5409cd] pl-9">Product</TableHead>
-                            <TableHead className="dark:text-[#bd8efb] font-bold text-[#5409cd]">Type</TableHead>
-                            <TableHead className="dark:text-[#bd8efb] font-bold text-[#5409cd] pl-10">Message</TableHead>
-                            <TableHead className="dark:text-[#bd8efb] font-bold text-[#5409cd]">Status</TableHead>
-                            <TableHead className="dark:text-[#bd8efb] font-bold text-[#5409cd] pl-10">Admin Reply</TableHead>
-                            <TableHead className="dark:text-[#bd8efb] font-bold text-[#5409cd] pr-6">Actions</TableHead>
+                            <TableHead className={`dark:text-[#bd8efb] font-bold text-[#5409cd] ${locale === "fa" ? " text-right pr-10" : "pl-9"}`}>{t("product")}</TableHead>
+                            <TableHead className={`dark:text-[#bd8efb] font-bold text-[#5409cd] ${locale === "fa" ? "text-right" : ""}`}>{t("type")}</TableHead>
+                            <TableHead className={`dark:text-[#bd8efb] font-bold text-[#5409cd] ${locale === "fa" ? "text-right pr-17" : "pl-10"}`}>{t("message")}</TableHead>
+                            <TableHead className={`dark:text-[#bd8efb] font-bold text-[#5409cd] ${locale === "fa" ? "text-center" : " pl-5"}`}>{t("status")}</TableHead>
+                            <TableHead className={`dark:text-[#bd8efb] font-bold text-[#5409cd] ${locale === "fa" ? "text-right pr-21" : "pl-10"}`}>{t("adminReply")}</TableHead>
+                            <TableHead className={`dark:text-[#bd8efb] font-bold text-[#5409cd] ${locale === "fa" ? "text-center" : "pr-6"}`}>{t("actions")}</TableHead>
                         </TableRow>
                     </TableHeader>
 
@@ -113,29 +116,29 @@ export default function MyOpinionsPage() {
                         {opinions.map((opinion) => (
                             <TableRow key={opinion.id}>
                                 <TableCell>
-                                    <div className="flex min-w-40 items-center gap-1 pl-5">
+                                    <div className={`flex min-w-40 items-center gap-1 ${locale === "fa" ? "pr-5" : "pl-5 "}`}>
                                         <Image src={opinion.image} alt={opinion.name} width={48} height={48}
                                             className="size-12 shrink-0 rounded-md object-cover"
                                         />
-                                        <span className="line-clamp-1"> {opinion.name}</span>
+                                        <span className="line-clamp-1"> {opinion.name === "Sunscreen" ? t("sunscreen") : t("englishTutorial")}</span>
                                     </div>
                                 </TableCell>
 
 
                                 <TableCell>
-                                    {opinion.type === "opinion" ? "Opinion" : "Question"}
+                                    {opinion.type === "opinion" ? t("opinion") : t("question")}
                                 </TableCell>
 
-                                <TableCell><div className="line-clamp-1 pl-10">{opinion.message}</div></TableCell>
+                                <TableCell><div className={`line-clamp-1 ${locale === "fa" ? "pr-15" : "pl-10"}`}> {opinion.message === "The product quality was good." ? t("goodQualityMessage") : t("printedVersionQuestion")}</div></TableCell>
 
                                 <TableCell><div className={`rounded-lg text-center py-2 px-1.5 text-sm font-semibold ${opinion.status === "Answered" ? "bg-green-50 text-green-700 dark:bg-[#dbfce7a3] dark:text-green-900" : "bg-[#ede8fd] dark:bg-[#f1ebfeac] text-[#031481bd]"}`}>
-                                    {opinion.status === "Answered" ? "Answered" : "Pending"}
+                                    {opinion.status === "Answered" ? t("answered") : t("pending")}
                                 </div>
                                 </TableCell>
 
                                 <TableCell>
-                                    <div className="line-clamp-1 pl-10">
-                                        {opinion.adminReply || ""}
+                                    <div className={`line-clamp-1 ${locale === "fa" ? " pr-20" : "pl-10"}`}>
+                                        {opinion.adminReply === "Thank you for your comment" ? t("thankYouReply") : opinion.adminReply}
                                     </div>
                                 </TableCell>
 

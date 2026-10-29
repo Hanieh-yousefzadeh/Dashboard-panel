@@ -1,6 +1,6 @@
 "use client"
 
-import { useRouter } from "next/navigation"
+import { useRouter } from "@/i18n/nav"
 import { useState, useEffect } from "react"
 import { dispatchType, stateType } from "@/lib/store"
 import { useDispatch, useSelector } from "react-redux"
@@ -8,7 +8,7 @@ import { logout } from "@/redux/authSlice"
 import { LogOut } from "lucide-react"
 import Theme from "./theme"
 import LanguageSwitch from "@/components/lang-switch"
-import { useTranslations } from "next-intl"
+import { useLocale, useTranslations } from "next-intl"
 
 
 
@@ -16,6 +16,7 @@ import { useTranslations } from "next-intl"
 
 export default function Header() {
     const t = useTranslations("AdminDashboard.header")
+    const locale = useLocale()
     const user = useSelector((state: stateType) => state.auth.user)
     const dispatch = useDispatch<dispatchType>()
     const router = useRouter()
@@ -31,8 +32,9 @@ export default function Header() {
     }
 
     function handleLogout() {
-        dispatch(logout());
-        router.replace("/");
+        dispatch(logout())
+       router.replace("/", { locale })
+
     }
 
     return (
