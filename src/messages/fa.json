@@ -262,5 +262,32 @@
     "smartWatch": "ساعت هوشمند",
     "sunscreen": "ضد آفتاب",
     "tShirt": "تی‌شرت"
+  },
+  "MyAddressesPage": {
+    "province": "استان",
+    "enterProvince": "استان را وارد کنید",
+    "city": "شهر",
+    "enterCity": "شهر را وارد کنید",
+    "fullAddress": "آدرس کامل",
+    "addressPlaceholder": "خیابان، کوچه، ساختمان...",
+    "plaqueNumber": "شماره پلاک",
+    "enterPlaque": "شماره پلاک را وارد کنید",
+    "postalCode": "کد پستی",
+    "postalCodePlaceholder": "کد پستی ۱۰ رقمی",
+    "saveChanges": "ذخیره تغییرات",
+    "addAddress": "افزودن آدرس",
+    "myAddresses": "آدرس‌های من",
+    "totalAddresses": "تعداد کل آدرس‌ها",
+    "addNewAddress": "افزودن آدرس جدید",
+    "provinceCity": "استان / شهر",
+    "address": "آدرس",
+    "plaque": "پلاک",
+    "actions": "عملیات",
+    "noAddresses": "هیچ آدرسی یافت نشد.",
+    "editAddress": "ویرایش آدرس",
+    "tehran": "تهران",
+    "isfahan": "اصفهان",
+    "valiasrStreet": "خیابان ولیعصر",
+    "chaharbaghStreet": "خیابان چهارباغ"
   }
 }

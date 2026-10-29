@@ -262,5 +262,32 @@
     "smartWatch": "Smart Watch",
     "sunscreen": "Sunscreen",
     "tShirt": "T-Shirt"
+  },
+  "MyAddressesPage": {
+    "province": "Province",
+    "enterProvince": "Enter province",
+    "city": "City",
+    "enterCity": "Enter city",
+    "fullAddress": "Full Address",
+    "addressPlaceholder": "Street, alley, building...",
+    "plaqueNumber": "Plaque Number",
+    "enterPlaque": "Enter plaque number",
+    "postalCode": "Postal Code",
+    "postalCodePlaceholder": "10-digit postal code",
+    "saveChanges": "Save Changes",
+    "addAddress": "Add Address",
+    "myAddresses": "My Addresses",
+    "totalAddresses": "Total Addresses",
+    "addNewAddress": "Add New Address",
+    "provinceCity": "Province / City",
+    "address": "Address",
+    "plaque": "Plaque",
+    "actions": "Actions",
+    "noAddresses": "No addresses found.",
+    "editAddress": "Edit Address",
+    "tehran": "Tehran",
+    "isfahan": "Isfahan",
+    "valiasrStreet": "Valiasr Street",
+    "chaharbaghStreet": "Chaharbagh Street"
   }
 }

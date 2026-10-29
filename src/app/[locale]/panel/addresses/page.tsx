@@ -24,6 +24,7 @@ import {
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Button } from "@/components/ui/button"
+import { useLocale, useTranslations } from "next-intl"
 
 const emptyAddress = {
     province: "",
@@ -34,6 +35,9 @@ const emptyAddress = {
 }
 
 export default function MyAddressesPage() {
+    const t = useTranslations("MyAddressesPage")
+    const locale = useLocale()
+
     const [addresses, setAddresses] = useState<Address[]>(mockAddresses)
     const [mounted, setMounted] = useState(false)
 
@@ -86,14 +90,14 @@ export default function MyAddressesPage() {
             ...form,
         }
 
-        const update = addresses.map((item) => item.id === editingAddress.id ? updatedAddress : item )
+        const update = addresses.map((item) => item.id === editingAddress.id ? updatedAddress : item)
         setAddresses(update)
         setEditingAddress(null)
         setForm(emptyAddress)
     }
 
     function handleDeleteAddress(id: number) {
-         const deleteAddress = addresses.filter((item) => item.id !== id)
+        const deleteAddress = addresses.filter((item) => item.id !== id)
         setAddresses(deleteAddress)
     }
 
@@ -102,11 +106,11 @@ export default function MyAddressesPage() {
             <form onSubmit={isEditing ? handleEditSubmit : handleSubmit}
                 className="flex flex-col gap-7 pt-5 text-[#6200ff] dark:border-[#b392fbab] dark:text-[#dbc8f9] dark:bg-[#0a0220]">
                 <div className="flex flex-col gap-2">
-                    <Label htmlFor="province">Province</Label>
+                    <Label htmlFor="province">{t("province")}</Label>
                     <Input
                         id="province"
                         value={form.province}
-                        onChange={(e) => setForm({ ...form, province: e.target.value }) }
+                        onChange={(e) => setForm({ ...form, province: e.target.value })}
                         placeholder="Enter province"
                         required
                         className="border-[#7a3ffa1a] h-10 focus-visible:ring-0 dark:placeholder:text-[#b098d6bd] dark:text-[#bea2eba1]"
@@ -114,11 +118,11 @@ export default function MyAddressesPage() {
                 </div>
 
                 <div className="flex flex-col gap-2">
-                    <Label htmlFor="city">City</Label>
+                    <Label htmlFor="city">	{t("city")}</Label>
                     <Input
                         id="city"
                         value={form.city}
-                        onChange={(e) =>setForm({ ...form, city: e.target.value })}
+                        onChange={(e) => setForm({ ...form, city: e.target.value })}
                         placeholder="Enter city"
                         required
                         className="border-[#7a3ffa1a] h-10 focus-visible:ring-0 dark:placeholder:text-[#b098d6bd] dark:text-[#bea2eba1]"
@@ -126,11 +130,11 @@ export default function MyAddressesPage() {
                 </div>
 
                 <div className="flex flex-col gap-2">
-                    <Label htmlFor="address">Full Address</Label>
+                    <Label htmlFor="address">{t("fullAddress")}</Label>
                     <Input
                         id="address"
                         value={form.address}
-                        onChange={(e) => setForm({ ...form, address: e.target.value }) }
+                        onChange={(e) => setForm({ ...form, address: e.target.value })}
                         placeholder="Street, alley, building..."
                         required
                         className="border-[#7a3ffa1a] h-10 focus-visible:ring-0 dark:placeholder:text-[#b098d6bd] dark:text-[#bea2eba1]"
@@ -138,7 +142,7 @@ export default function MyAddressesPage() {
                 </div>
 
                 <div className="flex flex-col gap-2">
-                    <Label htmlFor="plaque">Plaque Number</Label>
+                    <Label htmlFor="plaque">{t("plaqueNumber")}</Label>
                     <Input
                         id="plaque"
                         value={form.plaque}
@@ -150,7 +154,7 @@ export default function MyAddressesPage() {
                 </div>
 
                 <div className="flex flex-col gap-2">
-                    <Label htmlFor="postalCode">Postal Code</Label>
+                    <Label htmlFor="postalCode">{t("postalCode")}</Label>
                     <Input
                         id="postalCode"
                         value={form.postalCode}
@@ -170,17 +174,17 @@ export default function MyAddressesPage() {
     }
 
     return (
-        <div className="p-5 pl-8 xl:w-316 md:w-3xl w-80 overflow-x-auto">
+        <div className={`p-5 ${locale === "fa" ? "pr-8" : "pl-8"} xl:w-316 md:w-3xl w-80 overflow-x-auto`}>
             <div className="pb-12 flex items-center justify-between gap-4">
                 <div className="flex flex-col gap-3">
-                    <h1 className="sm:text-2xl font-bold"> My Addresses </h1>
-                    <p className="text-base text-[#7B29FB] dark:text-[#decaf9]">Total Addresses: ({addresses.length})</p>
+                    <h1 className="sm:text-2xl font-bold"> {t("myAddresses")} </h1>
+                    <p className="text-base text-[#7B29FB] dark:text-[#decaf9]"> {t("totalAddresses")}: ({addresses.length})</p>
                 </div>
 
                 <Dialog
                     open={open}
                     onOpenChange={(isOpen) => {
-                         setOpen(isOpen)
+                        setOpen(isOpen)
 
                         if (isOpen) {
                             setForm(emptyAddress)
@@ -191,7 +195,7 @@ export default function MyAddressesPage() {
                         render={
                             <Button className="bg-[#7a3ffacb] hover:bg-[#5409cd] cursor-pointer py-4.5 pr-3.5 dark:hover:text-[#d1ccd5] dark:bg-[#261666] dark:text-[#d1ccd5]">
                                 <Plus strokeWidth={3} />
-                                Add Address
+                                {t("addAddress")}
                             </Button>
                         }
                     />
@@ -199,7 +203,7 @@ export default function MyAddressesPage() {
                     <DialogContent className="border-[#7a3ffa1a] text-[#5409cd] dark:border-[#b392fbab] dark:text-[#dbc8f9] dark:bg-[#0a0220]">
                         <DialogHeader>
                             <DialogTitle className="font-bold text-[#5409cd] dark:text-[#d1ccd5] ">
-                                Add New Address
+                                {t("addNewAddress")}
                             </DialogTitle>
                         </DialogHeader>
 
@@ -213,20 +217,23 @@ export default function MyAddressesPage() {
                     <Table>
                         <TableHeader className="h-15 text-lg bg-[#f1ebfe6a] dark:bg-[#7a3ffa23]">
                             <TableRow className="hover:bg-transparent dark:hover:bg-transparent">
-                                <TableHead className="font-semibold  text-[#5409cd] dark:text-[#bd8efb]  pl-12"> Province / City  </TableHead>
-                                <TableHead className="font-semibold  text-[#5409cd] dark:text-[#bd8efb] "> Address </TableHead>
-                                <TableHead className="font-semibold  text-[#5409cd] dark:text-[#bd8efb] "> Plaque </TableHead>
-                                <TableHead className="font-semibold  text-[#5409cd] dark:text-[#bd8efb] ">  Postal Code </TableHead>
-                                <TableHead className="text-center font-semibold text-[#5409cd] dark:text-[#bd8efb] "> Actions </TableHead>
+                                <TableHead className={`font-semibold  text-[#5409cd] dark:text-[#bd8efb] ${locale === "fa" ? "text-right pr-12" : " pl-12"}`}>{t("addNewAddress")}</TableHead>
+                                <TableHead className={`font-semibold  text-[#5409cd] dark:text-[#bd8efb] ${locale === "fa" ? "text-right" : ""}`}>{t("address")}</TableHead>
+                                <TableHead className={`font-semibold  text-[#5409cd] dark:text-[#bd8efb] ${locale === "fa" ? "text-right" : ""}`}>{t("plaque")}</TableHead>
+                                <TableHead className={`font-semibold  text-[#5409cd] dark:text-[#bd8efb] ${locale === "fa" ? "text-right" : ""}`}>{t("postalCode")}</TableHead>
+                                <TableHead className="text-center font-semibold text-[#5409cd] dark:text-[#bd8efb] ">{t("actions")}</TableHead>
                             </TableRow>
                         </TableHeader>
 
                         <TableBody>
                             {addresses.map((item) => (
                                 <TableRow key={item.id} className="h-15">
-                                    <TableCell className="pl-12"> {item.province}, {item.city}</TableCell>
-                                    <TableCell className="w-90 pr-10"> {item.address} </TableCell>
-                                    <TableCell className="pl-3 pr-15">{item.plaque}</TableCell>
+                                    <TableCell className={`${locale === "fa" ? " pr-12" : "pl-12"}`}>   {item.province === "Tehran" ? t("tehran") : t("isfahan")},
+                                        {" "}
+                                        {item.city === "Tehran" ? t("tehran") : t("isfahan")}
+                                    </TableCell>
+                                    <TableCell className={`w-90 ${locale === "fa" ? "" : "pr-10"} `}>  {item.address === "Valiasr Street" ? t("valiasrStreet") : t("chaharbaghStreet")} </TableCell>
+                                    <TableCell className={`${locale === "fa" ? " pl-10" : "pl-3 pr-15"}`}>{item.plaque}</TableCell>
                                     <TableCell>{item.postalCode}</TableCell>
                                     <TableCell>
                                         <div className="flex items-center justify-center">
@@ -235,8 +242,8 @@ export default function MyAddressesPage() {
                                                 <PencilSparkles className="size-5" />
                                             </button>
 
-                                            <button onClick={() => handleDeleteAddress(item.id) }
-                                                className="ml-3 text-red-600 dark:text-red-900 cursor-pointer">
+                                            <button onClick={() => handleDeleteAddress(item.id)}
+                                                className="m-3 text-red-600 dark:text-red-900 cursor-pointer">
                                                 <Trash className="size-5" />
                                             </button>
                                         </div>
@@ -247,7 +254,7 @@ export default function MyAddressesPage() {
                             {addresses.length === 0 && (
                                 <TableRow>
                                     <TableCell colSpan={5} className="h-24 text-center">
-                                        No addresses found.
+                                        {t("noAddresses")}
                                     </TableCell>
                                 </TableRow>
                             )}
@@ -268,7 +275,7 @@ export default function MyAddressesPage() {
                 <DialogContent className="border-[#7a3ffa1a] text-[#5409cd] dark:text-[#dbc8f9] dark:bg-[#0a0220] ">
                     <DialogHeader>
                         <DialogTitle className="font-bold text-[#5409cd] dark:text-[#d1ccd5]">
-                            Edit Address
+                            {t("editAddress")}
                         </DialogTitle>
                     </DialogHeader>
 
