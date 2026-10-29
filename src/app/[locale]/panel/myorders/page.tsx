@@ -38,7 +38,7 @@ export default function MyOrdersPage() {
     const t = useTranslations("MyOrdersPage")
     const locale = useLocale()
     return (
-        <div className="p-6 pl-9">
+        <div className={` ${locale === "fa" ? "pr-9" : "pl-9"} p-6 `}>
             <div className="flex items-center gap-x-29">
                 <h1 className="text-2xl font-bold">{t("title")}</h1>
                 <div className="flex  gap-4">

@@ -234,22 +234,33 @@
     "savedProducts": "محصولات ذخیره‌شده",
     "registeredAddresses": "آدرس‌های ثبت‌شده",
     "submittedComments": "نظرات ثبت‌شده"
-  },"MyOrdersPage": {
-  "title": "سفارش‌های من",
-  "orderId": "شناسه سفارش",
-  "product": "محصول",
-  "date": "تاریخ",
-  "price": "قیمت",
-  "status": "وضعیت",
-  "pending": "در انتظار",
-  "delivered": "تحویل‌شده",
-  "cancelled": "لغوشده",
-  "returned": "مرجوع‌شده",
-  "noOrders": "هنوز سفارشی ثبت نکرده‌اید.",
-  "totalNumber": "تعداد کل",
-  "pendingOrders": "سفارش‌های در انتظار",
-  "deliveredOrders": "سفارش‌های تحویل‌شده",
-  "cancelledOrders": "سفارش‌های لغوشده",
-  "returnedOrders": "سفارش‌های مرجوع‌شده"
-}
+  },
+  "MyOrdersPage": {
+    "title": "سفارش‌های من",
+    "orderId": "شناسه سفارش",
+    "product": "محصول",
+    "date": "تاریخ",
+    "price": "قیمت",
+    "status": "وضعیت",
+    "pending": "در انتظار",
+    "delivered": "تحویل‌شده",
+    "cancelled": "لغوشده",
+    "returned": "مرجوع‌شده",
+    "noOrders": "هنوز سفارشی ثبت نکرده‌اید.",
+    "totalNumber": "تعداد کل",
+    "pendingOrders": "سفارش‌های در انتظار",
+    "deliveredOrders": "سفارش‌های تحویل‌شده",
+    "cancelledOrders": "سفارش‌های لغوشده",
+    "returnedOrders": "سفارش‌های مرجوع‌شده"
+  },
+  "MyFavoritePage": {
+    "title": "علاقه‌مندی‌های من",
+    "product": "محصول",
+    "price": "قیمت",
+    "action": "عملیات",
+    "noFavorites": "هنوز محصولی به علاقه‌مندی‌های خود اضافه نکرده‌اید.",
+    "smartWatch": "ساعت هوشمند",
+    "sunscreen": "ضد آفتاب",
+    "tShirt": "تی‌شرت"
+  }
 }
