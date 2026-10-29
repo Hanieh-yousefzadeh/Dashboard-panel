@@ -234,5 +234,22 @@
     "savedProducts": "Saved products",
     "registeredAddresses": "Registered addresses",
     "submittedComments": "Submitted comments"
-  }
+  },"MyOrdersPage": {
+  "title": "My Orders",
+  "orderId": "Order Id",
+  "product": "Product",
+  "date": "Date",
+  "price": "Price",
+  "status": "Status",
+  "pending": "Pending",
+  "delivered": "Delivered",
+  "cancelled": "Cancelled",
+  "returned": "Returned",
+  "noOrders": "You have no orders yet.",
+  "totalNumber": "Total Number",
+  "pendingOrders": "Pending Orders",
+  "deliveredOrders": "Delivered Orders",
+  "cancelledOrders": "Cancelled Orders",
+  "returnedOrders": "Returned Orders"
+}
 }
