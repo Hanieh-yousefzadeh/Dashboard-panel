@@ -7,13 +7,13 @@ export default function StatusOrders() {
 
   const tStatus = useTranslations("AdminDashboard.orderStatus")
   return (
-    <section className="xl:w-1/2 rounded-xl border  border-[#7a3ffa1a] bg-card p-5 shadow-sm ">
+    <section className="xl:w-1/2 rounded-xl border  border-[#7a3ffa1a] dark:bg-[#0E0B2F] bg-card p-5 shadow-sm ">
       <h2 className="mb-7 text-lg font-semibold">  {t("title")}</h2>
 
       <div className="">
         <table className="w-full text-right text-sm ">
           <thead>
-            <tr className="border-b border-[#9468fc47] font-semibold text-[#7B29FB]">
+            <tr className="border-b border-[#9468fc47] font-semibold text-[#863aff] dark:text-[#af8dfc]">
               <th className="pb-3 text-center w-30">  {t("orderNumber")}</th>
 
               <th className="pb-3 text-center pl-4">{t("customer")}</th>
@@ -26,7 +26,7 @@ export default function StatusOrders() {
 
           <tbody>
             {statusorders.map((order) => (
-              <tr key={order.id} className="border-b border-[#9468fc47]" >
+              <tr key={order.id} className="border-b border-[#9468fc47] " >
                 <td className="py-4 text-center"> #{order.id}</td>
 
                 <td className="py-4 pl-4 text-center"> {order.customer}</td>

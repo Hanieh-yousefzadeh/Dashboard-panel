@@ -50,17 +50,17 @@ export default function Theme() {
           value={theme}
           onValueChange={(value) => setTheme(value)}
         >
-          <DropdownMenuRadioItem value="light"  className="focus:bg-[#F1EBFE] text-[#031381]">
+          <DropdownMenuRadioItem value="light"  className="focus:bg-[#F1EBFE] dark:focus:bg-[#c5a3fd3c] text-[#031381] dark:text-current">
             <SunMedium />
             {t("light")}
           </DropdownMenuRadioItem>
 
-          <DropdownMenuRadioItem value="dark" className="focus:bg-[#F1EBFE] text-[#031381]">
+          <DropdownMenuRadioItem value="dark" className="focus:bg-[#F1EBFE] text-[#031381] dark:text-current dark:focus:bg-[#c5a3fd3c]">
             <Moon />
             {t("dark")}
           </DropdownMenuRadioItem>
 
-          <DropdownMenuRadioItem value="system" className="focus:bg-[#F1EBFE] text-[#031381]">
+          <DropdownMenuRadioItem value="system" className="focus:bg-[#F1EBFE] text-[#031381] dark:text-current dark:focus:bg-[#c5a3fd3c]">
             <Monitor />
              {t("system")}
           </DropdownMenuRadioItem>

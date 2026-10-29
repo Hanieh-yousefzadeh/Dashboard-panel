@@ -17,13 +17,13 @@ export default function SalesChart() {
   const t = useTranslations("AdminDashboard.salesChart")
   const tMonth = useTranslations("AdminDashboard.months")
   return (
-    <section className="xl:w-1/2 rounded-xl border border-[#7a3ffa1a] bg-card sm:p-5 p-2 shadow-sm">
+    <section className="xl:w-1/2 rounded-xl border border-[#7a3ffa1a] bg-card sm:p-5 p-2 shadow-sm dark:bg-[#0E0B2F]">
       <div className="mb-6">
         <h2 className="sm:text-lg font-semibold">
           {t("title")}
         </h2>
 
-        <p className="mt-1 text-sm text-[#7B29FB]">
+        <p className="mt-1 text-sm text-[#7B29FB] dark:text-[#af8dfc]">
           {t("subtitle")}
         </p>
       </div>
