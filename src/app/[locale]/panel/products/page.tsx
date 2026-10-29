@@ -176,7 +176,7 @@ export default function ProductsPage() {
             <div className="pb-12 flex items-center justify-between">
                 <div className="flex flex-col gap-3">
                     <h1 className="sm:text-2xl font-bold"> {t("title")}</h1>
-                    <p className="text-sm text-[#7B29FB] dark:text-[#decaf9]"> {t("totalProducts", { count: mounted ? products.length : "..." })} </p>
+                    <p className="text-base text-[#7B29FB] dark:text-[#decaf9]"> {t("totalProducts", { count: mounted ? products.length : "..." })} </p>
                 </div>
                 <Dialog open={open} onOpenChange={setOpen}>
                     <DialogTrigger render={<Button className="text-base bg-[#7a3ffacb] py-4.5 pr-3.5 hover:bg-[#5409cd] dark:hover:text-[#d1ccd5] dark:bg-[#261666] dark:text-[#d1ccd5]  cursor-pointer">
