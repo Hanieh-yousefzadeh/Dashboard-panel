@@ -16,13 +16,13 @@ import { useTranslations } from "next-intl"
 export default function VendorSalesChart() {
   const t = useTranslations("VendorDashboard")
   return (
-    <section className="w-[50%] rounded-xl border border-[#7a3ffa1a] bg-card p-5 shadow-sm">
+    <section className="w-[50%] rounded-xl border border-[#7a3ffa1a] bg-card p-5 shadow-sm dark:bg-[#0E0B2F]">
       <div className="mb-6">
         <h2 className="text-lg font-semibold">
           {t("salesStatistics")}
         </h2>
 
-        <p className="mt-1 text-sm text-[#7B29FB]">
+        <p className="mt-1 text-sm text-[#7B29FB] dark:text-[#af8dfc]">
           {t("monthlySales")}
         </p>
       </div>

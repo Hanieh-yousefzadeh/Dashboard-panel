@@ -164,7 +164,7 @@ export default function categoryPage() {
                         </TableHeader>
                         <TableBody >
                             {categories.map((item) => (
-                                <TableRow key={item.id} className="h-15">
+                                <TableRow key={item.id} className="h-14">
                                     <TableCell className={`${locale === "fa" ? "pr-16" : "xl:pl-22"}`}>{item.id}</TableCell>
                                     <TableCell> {tCategories(categoryTranslationKeys[item.name as keyof typeof categoryTranslationKeys])}</TableCell>
                                     <TableCell className="flex items-center justify-center">

@@ -36,13 +36,13 @@ export default function VisitPage() {
     })
     return (
         <div className="pl-6 py-8">
-            <div className="rounded-md border-2 border-[#7a3ffa1a]">
+            <div className="rounded-md border-2 border-[#7a3ffa1a] dark:bg-[#0E0B2F]">
                 <Table className="w-307">
-                    <TableHeader className="h-15 bg-[#f1ebfe6a]">
-                        <TableRow>
-                            <TableHead className=" font-semibold text-[#5409cd] pl-19">{t("product")}</TableHead>
-                            <TableHead className="font-semibold text-[#5409cd]">{t("views")}</TableHead>
-                            <TableHead className="font-semibold text-[#5409cd]"> {t( "addedToWishlist")}</TableHead>
+                    <TableHeader  className="h-15 text-lg bg-[#f1ebfe6a] dark:bg-[#7a3ffa23]">
+                        <TableRow className="hover:bg-transparent dark:hover:bg-transparent">
+                            <TableHead className=" font-semibold text-[#5409cd] dark:text-[#bd8efb] pl-19">{t("product")}</TableHead>
+                            <TableHead className="font-semibold text-[#5409cd] dark:text-[#bd8efb]">{t("views")}</TableHead>
+                            <TableHead className="font-semibold text-[#5409cd] dark:text-[#bd8efb]"> {t( "addedToWishlist")}</TableHead>
                         </TableRow>
                     </TableHeader>
 
